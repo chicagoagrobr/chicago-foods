@@ -3,10 +3,9 @@ import SubHeader from './components/SubHeader'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-blue-100">
+    <div className="min-h-screen bg-stone-50">
       <Header />
       <SubHeader />
-      <h1 className="text-green-700 text-3xl font-bold p-4">Teste</h1>
     </div>
   )
 }
