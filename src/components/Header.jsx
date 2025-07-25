@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
+import nome from '../assets/nome.png';
+import logo from '../assets/cf.png';
 
 export default function Header() {
   const [search, setSearch] = useState("");
 
   return (
-    <header className="bg-amber-950 py-5">
+    <header className="bg-amber-950 py-4">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-4">
-      <div
-        className="font-title text-2xl text-orange-200"
-        style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
-      >
-        Chicago Foods
-      </div>
+        <div className="flex items-center space-x-3">
+          <img src= {logo} alt="Logo da empresa: Chicago Foods" className="h-20" />
+          <img src= {nome} alt="Nome da empresa: Chicago Foods" className="h-20" />
+        </div>
 
         <div className="relative w-52">
           <input
