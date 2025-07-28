@@ -5,11 +5,7 @@ import funcionario from '../assets/funcionario.png';
 export default function HomeContent() {
     return (
         <section
-            className="w-full relative"
-            style={{
-                boxShadow: `inset 0px 4px 8px rgba(0,0,0,0.2), inset 0px -4px 8px rgba(0,0,0,0.2)`
-            }}
-        >
+            className="w-full relative">
             <div>
                 <img
                     src={imgfundocontent}
@@ -21,7 +17,7 @@ export default function HomeContent() {
             <img
                 src={funcionario}
                 alt="Imagem de um funcionário em uma plantação de milho"
-                className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-lg rounded-lg"
+                className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-lg rounded-2xl"
             />
 
             <div className="max-w-5xl mx-auto px-4 pt-32 text-center">
