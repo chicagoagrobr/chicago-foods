@@ -7,7 +7,7 @@ export default function SubHeader() {
 
     return (
         <div className="bg-lime-200 font-body py-4"
-            style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.25)`}}>
+            style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)`}}>
             <div className="max-w-5xl mx-auto flex items-center justify-between">
                 <Link to="/contato" className="text-green-900 text-sm hover:text-orange-400 flex items-center gap-1">
                     Contato
