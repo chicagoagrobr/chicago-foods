@@ -4,13 +4,14 @@ import funcionario from '../assets/funcionario.png';
 export default function HomeContent() {
     return (
         <section
-            className="w-full relative">
-            <div>
+            className="w-full relative" style={{boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.25)`}}>
+            <div className="relative w-full h-auto">
                 <img
                     src={imgfundocontent}
                     alt="Imagem de uma plantação de milho"
                     className="w-full h-auto object-cover"
                 />
+                <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/20 pointer-events-none"/>
             </div>
 
             <div className="absolute top-16 right-20 w-[650px] h-[400px] px-20 flex items-center">
