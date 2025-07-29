@@ -13,13 +13,13 @@ export default function SubHeader() {
                     <Phone className="w-4 h-4" />
                 </Link>
 
-                <div className="relative w-52">
+                <div className="relative w-64">
                     <input
                         type="text"
                         placeholder="Pesquisar..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="text-xs font-normal rounded-full px-4 py-2 bg-white placeholder-gray-500 border border-gray-300 shadow-inner focus:outline-none w-full"
+                        className="text-sm rounded-full px-4 py-2  pl-5  pr-10 bg-lime-200 placeholder-gray-600 border border-green-400 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 transition-all w-full"
                     />
                     <Search className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-600 w-5 h-5 pointer-events-none" />
                 </div>
