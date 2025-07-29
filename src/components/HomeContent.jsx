@@ -1,6 +1,5 @@
 import imgfundocontent from '../assets/imgfundocontent.png';
 import funcionario from '../assets/funcionario.png';
-import milho from '../assets/milho.png';
 
 export default function HomeContent() {
     return (

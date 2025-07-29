@@ -12,11 +12,11 @@ export default function Header() {
           <img src= {nome} alt="Nome da empresa: Chicago Foods" className="w-42 h-20" />
         </div>
         <nav className="flex items-center justify-center gap-x-12 p-3">
-          <Link to="/" className="flex items-center gap-2 text-orange-200 text-sm hover:text-orange-400">
+          <Link to="/" className="flex items-center gap-2 text-orange-200 text-sm hover:text-orange-500 transitions-colors duration-200">
           <Home className="w-5 h-5"/>
           Home
           </Link>
-          <Link to="/produtos" className="flex items-center gap-2 text-orange-200 text-sm hover:text-orange-400">
+          <Link to="/produtos" className="flex items-center gap-2 text-orange-200 text-sm hover:text-orange-500 transition-colors duration-200">
           <Boxes className="w-5 h-5"/>
           Produtos
           </Link>
