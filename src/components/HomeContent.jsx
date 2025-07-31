@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FaCheckCircle } from "react-icons/fa";
 import funcionario from '../assets/funcionario.png';
 import img1 from '../assets/fundo1.png';
 import img2 from '../assets/fundo2.png';
@@ -9,65 +10,69 @@ const images = [img1, img2, img3, img4];
 
 export default function HomeContent() {
     const [currentImage, setCurrentImage] = useState(0);
-    const [paused, setPaused] = useState(false);
 
     useEffect(() => {
-    if (paused) return;
-
-    const interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
     }, 4000);
 
     return () => clearInterval(interval);
-    }, [paused]);
-
-    const handleMouseEnter = () => setPaused(true);
-    const handleMouseLeave = () => setPaused(false);
+    }, []);
 
     return (
     <section
         className="w-full relative"
         style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.25)` }}
     >
-        <div className="relative w-full h-[500px] overflow-hidden"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            >
-
+        <div className="relative w-full h-[500px] overflow-hidden">
             <img
-                src={images[currentImage]}
-                alt="Imagem do carrossel"
-                className="w-full h-full object-cover transition-all duration-500"
+            src={images[currentImage]}
+            alt="Imagem do carrossel"
+            className="w-full h-full object-cover transition-opacity duration-1000"
             />
             <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/20 pointer-events-none" />
+        </div>
 
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {images.map((_, index) => (
-                <button
-                    key={index}
-                    className={`w-3 h-3 rounded-full ${
-                    index === currentImage ? 'bg-white' : 'bg-white/40'
-                    } hover:scale-110 transition-all`}
-                    onClick={() => setCurrentImage(index)}
-                />
-                ))}
+        <div className="absolute top-16 right-20 w-[680px] max-w-[90%] h-auto flex items-center mt-2">
+            <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-8 text-lime-50 shadow-lg">
+                <div className="space-y-6 text-base md:text-lg leading-relaxed">
+                    <div>
+                        <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
+                        <FaCheckCircle size={20} className="text-green-400" />
+                        <span>Produção Personalizada:</span>
+                        </div>
+                        <p>Capacidade de adaptação para atender especificações exclusivas.</p>
+                    </div>
+
+                    <div>
+                        <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
+                        <FaCheckCircle size={20} className="text-green-400" />
+                        <span>Qualidade e Segurança como Prioridade:</span>
+                        </div>
+                        <p>
+                        Processos controlados, rastreabilidade total e padrão internacional de segurança alimentar,
+                        respeitando o meio ambiente e o produtor rural.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
+                        <FaCheckCircle size={20} className="text-green-400" />
+                        <span>Localização Estratégica:</span>
+                        </div>
+                        <p>
+                        Complexo com silos, centros de distribuição e unidades de produção automatizadas,
+                        posicionando a <span className="text-orange-300 font-semibold">CHIGAGO FOODS</span> entre as mais completas estruturas do agronegócio brasileiro.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div className="absolute top-16 right-20 w-[650px] h-[400px] px-20 flex items-center">
-            <p className="text-white text-xl leading-relaxed">
-                Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade adaptados para atender à sua marca própria.
-                <br /><br />
-                Nossa flexibilidade e capacidade de produção nos tornam o parceiro ideal para atender às suas necessidades exclusivas e em expansão no mercado norte-americano.
-                <br /><br />
-                Vamos transformar suas ideias em produtos que geram valor e confiança!
-            </p>
-        </div>
-
         <img
-        src={funcionario}
-        alt="Funcionário"
-        className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-lg rounded-2xl"
+            src={funcionario}
+            alt="Funcionário"
+            className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-lg rounded-2xl"
         />
 
         <div className="relative py-20 px-8 md:px-32 text-gray-800">
@@ -122,5 +127,5 @@ export default function HomeContent() {
             </p>
         </div>
     </section>
-  );
+    );
 }
