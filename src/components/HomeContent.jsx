@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FaCheckCircle } from "react-icons/fa";
+import empresa from '../assets/empresa.png';
 import funcionario from '../assets/funcionario.png';
 import img1 from '../assets/fundo1.png';
 import img2 from '../assets/fundo2.png';
 import img3 from '../assets/fundo3.png';
 import img4 from '../assets/fundo4.png';
+import CepeaWidget from './CepeaWidget';
 
 const images = [img1, img2, img3, img4];
 
@@ -14,7 +16,7 @@ export default function HomeContent() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 10000);
 
     return () => clearInterval(interval);
     }, []);
@@ -75,7 +77,23 @@ export default function HomeContent() {
             className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-lg rounded-2xl"
         />
 
-        <div className="relative py-20 px-8 md:px-32 text-gray-800">
+        <div className="w-full flex justify-center px-4 mt-24">
+            <p className="max-w-[1200px] text-xl md:text-2xl p-6">
+                Na <span className="font-semibold text-orange-400">Chicago Foods</span>, temos o compromisso de fornecer derivados de milho de alta qualidade adaptados para atender à sua marca própria.
+                Nossa flexibilidade e capacidade de produção nos tornam o parceiro ideal para atender às suas necessidades exclusivas e em expansão no mercado norte-americano.
+                Vamos transformar suas ideias em produtos que geram valor e confiança.
+            </p>
+        </div>
+
+        <img
+            src={empresa}
+            alt="Imagem da empresa"
+            className="w-[420px] h-[500px] h-auto rounded-2xl mt-56 shadow-md ml-[360px]"
+        />
+
+        <CepeaWidget />
+
+        <div className="relative mt-20 pb-20 px-8 md:px-32 text-gray-800">
             <h2 className="text-2xl md:text-3xl font-semibold mb-6">
                 🌽 Transformamos Derivados de Milho em Alimentos e Rações
             </h2>
@@ -87,28 +105,6 @@ export default function HomeContent() {
                 <li>Alimentos derivados para o consumo humano;</li>
                 <li>Ingredientes industriais e aditivos de base vegetal.</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-8 mb-2">Produção Personalizada</h3>
-            <p className="mb-4">Capacidade de adaptação para atender especificações exclusivas.</p>
-        
-            <h3 className="text-xl font-semibold mb-2">Qualidade Garantida</h3>
-            <p className="mb-4">
-                Processos controlados para os mais altos padrões alimentícios.
-            </p>
-
-            <h3 className="text-xl font-semibold mb-2">Qualidade e Segurança como Prioridade</h3>
-            <p className="mb-4">
-                Da armazenagem de grãos e fertilizantes à transformação industrial, garantimos processos
-                controlados, rastreabilidade total e padrão internacional de segurança alimentar,
-                respeitando o meio ambiente e o produtor rural.
-            </p>
-
-            <h3 className="text-xl font-semibold mb-2">Localização Estratégica</h3>
-            <p className="mb-4">
-                Facilita exportações para mercados internacionais. Nosso complexo conta com silos,
-                centros de distribuição e unidades de produção altamente automatizadas, posicionando
-                a CHIGAGO FOODS entre as mais completas estruturas do agronegócio brasileiro.
-            </p>
 
             <h3 className="text-xl font-semibold mb-2">Prontos para Atender Sua Operação</h3>
             <p className="mb-4">
