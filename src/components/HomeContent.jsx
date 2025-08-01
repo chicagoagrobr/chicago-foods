@@ -3,9 +3,9 @@ import { FaCheckCircle } from "react-icons/fa";
 import empresa from '../assets/empresa.png';
 import funcionario from '../assets/funcionario.png';
 import img1 from '../assets/fundo1.png';
-import img2 from '../assets/fundo2.png';
-import img3 from '../assets/fundo3.png';
-import img4 from '../assets/fundo4.png';
+import img2 from '../assets/fundo2.jpeg';
+import img3 from '../assets/fundo3.jpeg';
+import img4 from '../assets/fundo4.jpeg';
 import CepeaWidget from './CepeaWidget';
 
 const images = [img1, img2, img3, img4];
@@ -16,7 +16,7 @@ export default function HomeContent() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 10000);
+    }, 4000);
 
     return () => clearInterval(interval);
     }, []);
