@@ -9,8 +9,7 @@ export default function Footer(){
 
                 <div className="flex gap-16">
                     <a href="#" className="hover:text-orange-300 transition-colors">Política de Privacidade</a>
-                    <a href="#" className="hover:text-orange-300 transition-colors">Redes Sociais</a>
-                    <a href="#" className="hover:text-orange-300 transition-colors">Contato</a>
+                    <a href="/contato" className="hover:text-orange-300 transition-colors">Contato</a>
                 </div>
             </div>
         </footer>

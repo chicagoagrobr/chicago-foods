@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FaCheckCircle } from "react-icons/fa";
 import empresa from '../assets/empresa.png';
+import empresa1 from '../assets/empresa3.png';
+import empresa2 from '../assets/empresa2.png';
 import funcionario from '../assets/funcionario.png';
 import img1 from '../assets/fundo1.png';
 import img2 from '../assets/fundo2.jpeg';
@@ -85,26 +87,44 @@ export default function HomeContent() {
             </p>
         </div>
 
-        <img
-            src={empresa}
-            alt="Imagem da empresa"
-            className="w-[420px] h-[500px] h-auto rounded-2xl mt-56 shadow-md ml-[360px]"
-        />
+        <div className="w-full h-[600px] relative flex">
+            <img
+                src={empresa}
+                alt="Imagem da empresa"
+                className="absolute left-[22%] top-48 w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
+            />
+            <img
+                src={empresa1}
+                alt="Imagem da empresa"
+                className="absolute left-[6%] top-28 w-[320px] rounded-2xl shadow-2xl"
+            />
+            <img
+                src={empresa2}
+                alt="Imagem da empresa"
+                className="absolute left-[26%] top-14 w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
+            />
+            <div className="absolute top-[310px] right-[15%] shadow-2xl">
+                <CepeaWidget/>
+            </div>
 
-        <CepeaWidget />
+            <div className="absolute right-[8%] top-20">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+                    Transformamos Derivados de <span className="font-semibold text-orange-400">Milho</span>
+                    <br/> em Alimentos e Rações
+                </h2>
+                <p className="mb-4">
+                    Com foco em eficiência e aproveitamento integral do milho, produzimos:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 marker:text-green-800">
+                    <li>Rações balanceadas para diversos tipos de animais;</li>
+                    <li>Alimentos derivados para o consumo humano;</li>
+                    <li>Ingredientes industriais e aditivos de base vegetal.</li>
+                </ul>
+            </div>
+
+        </div>
 
         <div className="relative mt-20 pb-20 px-8 md:px-32 text-gray-800">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-                🌽 Transformamos Derivados de Milho em Alimentos e Rações
-            </h2>
-            <p className="mb-4">
-                Com foco em eficiência e aproveitamento integral do milho, produzimos:
-            </p>
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Rações balanceadas para diversos tipos de animais;</li>
-                <li>Alimentos derivados para o consumo humano;</li>
-                <li>Ingredientes industriais e aditivos de base vegetal.</li>
-            </ul>
 
             <h3 className="text-xl font-semibold mb-2">Prontos para Atender Sua Operação</h3>
             <p className="mb-4">
