@@ -1,6 +1,6 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
-export default function ContactPage() {
+export default function ContactContent() {
   return (
     <section className="min-h-screen px-6 py-16 bg-gray-50 text-gray-800">
       <div className="max-w-4xl mx-auto">
