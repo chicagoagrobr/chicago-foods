@@ -1,9 +1,9 @@
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import SubHeader from './components/TopHeader'
-import Footer from './components/Footer'
-import HomeContent from './components/HomeContent'
-import ContactPage from './components/ContactContent'
+import { Route, Routes } from 'react-router-dom'
+import ContactPage from '../pages/ContactContent'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import SubHeader from '../components/TopHeader'
+import HomeContent from '../pages/HomeContent'
 
 export default function AppRoutes() {
   return (

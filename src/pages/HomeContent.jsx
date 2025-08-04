@@ -6,7 +6,7 @@ import img1 from '../assets/fundo1.png';
 import img2 from '../assets/fundo2.jpeg';
 import img3 from '../assets/fundo3.jpeg';
 import img4 from '../assets/fundo4.jpeg';
-import CepeaWidget from './CepeaWidget';
+import CepeaWidget from '../components/CepeaWidget';
 
 const images = [img1, img2, img3, img4];
 
