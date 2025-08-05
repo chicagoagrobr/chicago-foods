@@ -10,6 +10,9 @@ module.exports = {
         title: ['"Playfair Display"', 'serif'],
         body: ['"Nunito"', 'sans-serif'],
       },
+      blur: {
+        xs: '2px',
+      },
     },
   },
   plugins: [],

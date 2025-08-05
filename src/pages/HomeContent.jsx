@@ -8,6 +8,7 @@ import img1 from '../assets/fundo1.png';
 import img2 from '../assets/fundo2.jpeg';
 import img3 from '../assets/fundo3.jpeg';
 import img4 from '../assets/fundo4.jpeg';
+import colaboracao from '../assets/colaboracao.jpeg'
 import CepeaWidget from '../components/CepeaWidget';
 
 const images = [img1, img2, img3, img4];
@@ -125,7 +126,6 @@ export default function HomeContent() {
         </div>
 
         <div className="relative mt-20 pb-20 px-8 md:px-32 text-gray-800">
-
             <h3 className="text-xl font-semibold mb-2">Prontos para Atender Sua Operação</h3>
             <p className="mb-4">
                 Com o compromisso de investir em novas máquinas e expandir conforme necessário,
@@ -135,12 +135,21 @@ export default function HomeContent() {
             <p className="mb-4">
                 Vamos construir juntos uma relação de confiança e crescimento.
             </p>
+        </div>
+        <div className="relative w-full h-[300px]">
+                <img
+                    src={colaboracao}
+                    alt="Colaboração entre pessoas"
+                    className="w-full h-full object-cover blur-xs"
+                />
 
-            <h3 className="text-xl font-semibold mb-2">Compromisso com Quem Alimenta o Mundo</h3>
-            <p>
-                Trabalhamos lado a lado com produtores, cooperativas e distribuidores, levando ao mercado
-                soluções nutritivas, sustentáveis e acessíveis, do campo à mesa.
-            </p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
+                <h3 className="text-2xl font-semibold mb-2"><span className="text-orange-300">Compromisso</span> com Quem Alimenta o Mundo</h3>
+                <p className="max-w-2xl">
+                    Trabalhamos lado a lado com produtores, cooperativas e distribuidores, levando ao mercado
+                    soluções nutritivas, sustentáveis e acessíveis, do campo à mesa.
+                </p>
+            </div>
         </div>
     </section>
     );
