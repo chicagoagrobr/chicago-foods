@@ -2,7 +2,7 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ContactContent() {
   return (
-    <section className="min-h-screen px-6 py-16 bg-gray-50 text-gray-800">
+    <section className="min-h-screen px-6 py-16 bg-gray-50 text-gray-800" style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)`}}>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-center text-green-800">
           Fale Conosco

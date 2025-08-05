@@ -26,7 +26,7 @@ export default function HomeContent() {
     return (
     <section
         className="w-full relative"
-        style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.25)` }}
+        style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)` }}
     >
         <div className="relative w-full h-[500px] overflow-hidden">
             <img

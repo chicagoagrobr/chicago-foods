@@ -52,7 +52,7 @@ export default function ProductsPage() {
   ];
 
   return (
-    <section className="min-h-screen px-6 py-16 bg-lime-50 text-gray-800">
+    <section className="min-h-screen px-6 py-16 bg-lime-50 text-gray-800" style={{ boxShadow:`inset 0px -4px 4px rgba(0,0,0,0.10)`}}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-lg font-bold mb-10 text-center text-green-800">
             A Chicago Foods oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, produzidos com
