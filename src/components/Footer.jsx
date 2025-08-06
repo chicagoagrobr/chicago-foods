@@ -19,7 +19,7 @@ export default function Footer() {
 
         <div className="md:col-span-2 flex flex-col md:flex-row justify-end gap-8">
           <div className="flex flex-col items-start text-left gap-2">
-            <h3 className="text-xl text-lime-200 font-semibold">Seja um Parceiro</h3>
+            <h3 className="text-xl font-semibold">Seja um Parceiro</h3>
             <p className="text-sm max-w-xs">
               Trabalhamos lado a lado com quem alimenta o mundo. Junte-se a nós.
             </p>

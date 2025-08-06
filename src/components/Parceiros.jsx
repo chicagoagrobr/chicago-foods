@@ -24,7 +24,7 @@ const Parceiros = () => {
               key={index}
               src={logo}
               alt={`Parceiro ${index + 1}`}
-              className="h-[84px] w-auto object-contain"
+              className="h-[84px] w-auto object-contain duration-300 hover:scale-110"
             />
           ))}
         </div>

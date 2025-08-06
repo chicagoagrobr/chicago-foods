@@ -3,12 +3,12 @@ import colaboracao from '../assets/colaboracao.jpeg'
 
 export default function ContactContent() {
   return (
-    <section className="min-h-screen bg-gray-50 text-gray-800" style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)`}}>
-      <div className="relative w-full h-[200px] bg-gradient-to-b from-black/80">
+    <section className="min-h-screen text-gray-800" style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)`}}>
+      <div className="relative w-full h-[200px] bg-gradient-to-b from-black/100">
         <img
             src={colaboracao}
             alt="Colaboração entre pessoas"
-            className="w-full h-full object-cover blur-xs"
+            className="w-full h-full object-cover blur-xs" style={{ boxShadow: `0px 4px 16px rgba(0,0,0,0.4)`}}
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
