@@ -1,17 +1,45 @@
-export default function Footer(){
-    return (
-        <footer className="bg-green-800 text-orange-100 text-sm font-semibold">
-            <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+import nome from '../assets/nome.png';
+import logo from '../assets/cf.png';
+import { Link } from 'react-router-dom';
 
-                <p className="font-body text-center md:text-left">
-                    &copy; {new Date().getFullYear()} Chicago Foods. Todos os direitos reservados.
-                </p>
+export default function Footer() {
+  return (
+    <footer className="bg-green-800 text-orange-100 text-sm font-medium">
+      <div className="max-w-7xl mx-auto py-8 px-4 grid md:grid-cols-3 gap-4 items-start">
 
-                <div className="flex gap-16">
-                    <a href="#" className="hover:text-orange-300 transition-colors">Política de Privacidade</a>
-                    <a href="/contato" className="hover:text-orange-300 transition-colors">Contato</a>
-                </div>
-            </div>
-        </footer>
-    );
+        <div className="flex flex-col items-center md:items-start gap-1">
+          <div className="flex items-center space-x-1">
+            <img src={logo} alt="Logo Chicago Foods" className="w-[105px]" />
+            <img src={nome} alt="Nome Chicago Foods" className="h-[60px]" />
+          </div>
+          <p className="text-center md:text-left leading-relaxed">
+            Chicago Foods. Distrito Agroindustrial de<br/> Jataí, GO - Av. Primária Qd 07
+          </p>
+        </div>
+
+        <div className="md:col-span-2 flex flex-col md:flex-row justify-end gap-8">
+          <div className="flex flex-col items-start text-left gap-2">
+            <h3 className="text-xl text-lime-200 font-semibold">Seja um Parceiro</h3>
+            <p className="text-sm max-w-xs">
+              Trabalhamos lado a lado com quem alimenta o mundo. Junte-se a nós.
+            </p>
+            <Link
+              to="/contato"
+              className="text-orange-300 text-lg font-bold hover:text-orange-400"
+            >
+              Faça Parte
+            </Link>
+          </div>
+
+          <div className="flex flex-col items-start text-left gap-2">
+            <p>&copy; {new Date().getFullYear()} Chicago Foods</p>
+            <p>Todos os direitos reservados.</p>
+            <Link to="#" className="text-orange-300 hover:text-lime-300">
+              Política de Privacidade
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
