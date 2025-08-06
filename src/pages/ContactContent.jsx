@@ -1,20 +1,27 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import colaboracao from '../assets/colaboracao.jpeg'
 
 export default function ContactContent() {
   return (
-    <section className="min-h-screen px-6 py-16 bg-gray-50 text-gray-800" style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)`}}>
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center text-green-800">
-          Fale Conosco
-        </h2>
+    <section className="min-h-screen bg-gray-50 text-gray-800" style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)`}}>
+      <div className="relative w-full h-[200px] bg-gradient-to-b from-black/80">
+        <img
+            src={colaboracao}
+            alt="Colaboração entre pessoas"
+            className="w-full h-full object-cover blur-xs"
+        />
 
-        <p className="text-center mb-12 text-lg text-gray-600">
-          Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias.
-        </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
+            <h3 className="text-2xl font-semibold mb-2"><span className="text-orange-300">Fale Conosco</span></h3>
+            <p className="max-w-2xl">
+                Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias.
+            </p>
+        </div>
+      </div>
 
+      <div className="max-w-4xl mx-auto py-16">
         <div className="grid md:grid-cols-2 gap-10">
-
-          <form className="space-y-4 bg-white p-8 rounded-xl shadow">
+          <form className="space-y-4 bg-white p-8 rounded-xl shadow-xl">
             <div>
               <label className="block text-sm font-medium mb-1">Nome</label>
               <input
@@ -55,7 +62,7 @@ export default function ContactContent() {
           </form>
 
 
-          <div className="bg-white p-8 rounded-xl shadow flex flex-col">
+          <div className="bg-white p-8 rounded-xl shadow-xl flex flex-col">
             <h3 className="text-xl font-semibold mb-4">Informações de Contato</h3>
 
             <div className="flex items-start gap-4 mb-4">
