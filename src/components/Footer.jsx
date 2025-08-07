@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start gap-1">
           <div className="flex items-center space-x-1">
             <img src={logo} alt="Logo Chicago Foods" className="w-[105px]" />
-            <img src={nome} alt="Nome Chicago Foods" className="h-[60px]" />
+            <img src={nome} alt="Nome Chicago Foods" className="h-[57px]" />
           </div>
           <p className="text-center md:text-left leading-relaxed">
             Chicago Foods. Distrito Agroindustrial de<br/> Jataí, GO - Av. Primária Qd 07
@@ -19,7 +19,7 @@ export default function Footer() {
 
         <div className="md:col-span-2 flex flex-col md:flex-row justify-end gap-8">
           <div className="flex flex-col items-start text-left gap-2">
-            <h3 className="text-xl font-semibold">Seja um Parceiro</h3>
+            <h3 className="text-xl font-semibold text-lime-200">Seja um Parceiro</h3>
             <p className="text-sm max-w-xs">
               Trabalhamos lado a lado com quem alimenta o mundo. Junte-se a nós.
             </p>
@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="flex flex-col items-start text-left gap-2">
             <p>&copy; {new Date().getFullYear()} Chicago Foods</p>
             <p>Todos os direitos reservados.</p>
-            <Link to="#" className="text-orange-300 hover:text-lime-300">
+            <Link to="#" className="text-orange-300 hover:text-orange-400">
               Política de Privacidade
             </Link>
           </div>

@@ -13,7 +13,7 @@ const parceiros = [parceiro1, parceiro2, parceiro3, parceiro4, parceiro5, parcei
 
 const Parceiros = () => {
   return (
-    <section className="py-3 bg-white" style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.25)` }}>
+    <section className="py-3 bg-white" style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.3)` }}>
       <div className="flex justify-center items-center gap-10">
         <h2 className="text-xl font-semibold text-gray-800">
           Nossos <br/> Parceiros
