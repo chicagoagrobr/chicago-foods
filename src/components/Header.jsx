@@ -7,9 +7,9 @@ export default function Header() {
   return (
     <header className="bg-green-800 py-3.5 sticky top-0 z-50 shadow-md shadow-green-900/30">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
-        <div className="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
-          <img src= {logo} alt="Logo da empresa: Chicago Foods" className="w-16 h-12 sm:w-24 sm:h-16" />
-          <img src= {nome} alt="Nome da empresa: Chicago Foods" className="h-14 sm:h-16" />
+        <div className="flex items-center space-x-1 transition-transform duration-300 hover:scale-105">
+          <img src= {logo} alt="Logo da empresa: Chicago Foods" className="w-[104px]" />
+          <img src= {nome} alt="Nome da empresa: Chicago Foods" className="h-[59px] mt-1" />
         </div>
         <nav className="flex items-center justify-center gap-x-16 p-3">
           <Link to="/" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 px-6 transitions-all duration-200">

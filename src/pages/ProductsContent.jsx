@@ -91,7 +91,7 @@ export default function ProductsPage() {
   ];
 
   return (
-  <section className="relative min-h-screen px-6 py-12 text-gray-800 overflow-hidden" style={{ boxShadow:`inset 0px 4px 12px rgba(0,0,0,0.4), inset 0px -4px 8px rgba(0,0,0,0.2)`}}>
+  <section className="relative min-h-screen px-6 py-12 text-gray-800 overflow-hidden" style={{ boxShadow:`inset 0px 4px 12px rgba(0,0,0,0.2), inset 0px -4px 8px rgba(0,0,0,0.1)`}}>
     <div
       className="absolute inset-0 z-0 top-[100px]"
       style={{

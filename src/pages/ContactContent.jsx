@@ -8,7 +8,7 @@ export default function ContactContent() {
         <img
             src={colaboracao}
             alt="Colaboração entre pessoas"
-            className="w-full h-full object-cover blur-xs" style={{ boxShadow: `0px 4px 16px rgba(0,0,0,0.4)`}}
+            className="w-full h-full object-cover blur-xs" style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.6)`}}
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
@@ -21,7 +21,7 @@ export default function ContactContent() {
 
       <div className="max-w-4xl mx-auto py-16">
         <div className="grid md:grid-cols-2 gap-10">
-          <form className="space-y-4 bg-white p-8 rounded-xl shadow-xl">
+          <form className="space-y-4 bg-white p-8 rounded-xl shadow-2xl">
             <div>
               <label className="block text-sm font-medium mb-1">Nome</label>
               <input
