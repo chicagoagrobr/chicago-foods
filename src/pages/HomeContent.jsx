@@ -39,7 +39,7 @@ export default function HomeContent() {
         </div>
 
         <div className="absolute top-16 right-20 w-[680px] max-w-[90%] h-auto flex items-center mt-2">
-            <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-8 text-lime-50 shadow-lg">
+            <div className="bg-black/50 backdrop-blur-md rounded-xl  p-6 md:p-8 text-lime-50 shadow-2xl">
                 <div className="space-y-6 text-base md:text-lg leading-relaxed">
                     <div>
                         <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
@@ -77,7 +77,7 @@ export default function HomeContent() {
         <img
             src={funcionario}
             alt="Funcionário"
-            className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-lg rounded-2xl"
+            className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-2xl rounded-2xl"
         />
 
         <div className="w-full flex justify-center px-4 mt-24">

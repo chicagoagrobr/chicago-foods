@@ -6,6 +6,7 @@ import SubHeader from '../components/TopHeader'
 import HomeContent from '../pages/HomeContent'
 import ProductsContent from '../pages/ProductsContent'
 import Parceiros from '../components/Parceiros'
+import ProductDetail from '../pages/ProductDetail'
 
 export default function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function AppRoutes() {
           <Route path="/" element={<HomeContent />} />
           <Route path="/contato" element={<ContactContent />} />
           <Route path="/produtos" element={<ProductsContent/>}/>
+          <Route path="/produtos/:id" element={<ProductDetail/>}/>
         </Routes>
       </main>
       <Parceiros />
