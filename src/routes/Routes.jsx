@@ -11,7 +11,7 @@ import ScrollToTop from "../components/ScrollToTop";
 
 export default function AppRoutes() {
   return (
-    <div className="flex flex-col min-h-screen bg-lime-50">
+    <div className="flex flex-col min-h-screen bg-lime-75">
       <ScrollToTop />
       <SubHeader />
       <Header />

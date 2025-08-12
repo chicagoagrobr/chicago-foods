@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-green-800 text-orange-100 text-sm font-medium">
       <div className="max-w-7xl mx-auto py-8 px-4 grid md:grid-cols-3 gap-4 items-start">
 
-        <div className="flex flex-col items-center md:items-start gap-1">
+        <div className="flex flex-col items-center md:items-start gap-1 -mt-1">
           <div className="flex items-center space-x-1">
             <img src={logo} alt="Logo Chicago Foods" className="w-[105px]" />
             <img src={nome} alt="Nome Chicago Foods" className="h-[57px]" />

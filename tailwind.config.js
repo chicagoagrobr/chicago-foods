@@ -11,8 +11,13 @@ module.exports = {
         body: ['"Nunito"', 'sans-serif'],
       },
       blur: {
-        xs: '2px',
+        xs: '1.5px',
       },
+      colors: {
+        lime: {
+          75: '#f2f8dcff',
+        }
+      }
     },
   },
   plugins: [],
