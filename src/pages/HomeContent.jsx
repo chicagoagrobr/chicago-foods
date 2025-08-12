@@ -122,26 +122,28 @@ export default function HomeContent() {
                     <li>Ingredientes industriais e aditivos de base vegetal.</li>
                 </ul>
             </div>
-
         </div>
 
-        <div className="relative mt-20 pb-20 px-8 md:px-32 text-gray-800">
-            <h3 className="text-xl font-semibold mb-2">Prontos para Atender Sua Operação</h3>
-            <p className="mb-4">
+        <div className="relative px-6 mb-24 md:px-32" >
+            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                Prontos para Atender Sua Operação
+                </h3>
+                <p className="text-lg text-gray-700 mb-4 leading-relaxed">
                 Com o compromisso de investir em novas máquinas e expandir conforme necessário,
                 oferecemos a flexibilidade que seu mercado exige.
-            </p>
-
-            <p className="mb-4">
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
                 Vamos construir juntos uma relação de confiança e crescimento.
-            </p>
+                </p>
+            </div>
         </div>
         <div className="relative w-full h-[300px]">
-                <img
-                    src={colaboracao}
-                    alt="Colaboração entre pessoas"
-                    className="w-full h-full object-cover blur-xs"
-                />
+            <img
+                src={colaboracao}
+                alt="Colaboração entre pessoas"
+                className="w-full h-full object-cover blur-xs"
+            />
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
                 <h3 className="text-2xl font-semibold mb-2"><span className="text-orange-300">Compromisso</span> com Quem Alimenta o Mundo</h3>
