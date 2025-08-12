@@ -26,6 +26,7 @@ export default function Footer() {
             <Link
               to="/contato"
               className="text-orange-300 text-lg font-bold hover:text-orange-400"
+              onClick={() => window.scrollTo(0,0)}
             >
               Faça Parte
             </Link>
