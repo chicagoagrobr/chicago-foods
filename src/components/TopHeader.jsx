@@ -1,9 +1,32 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+const keywordMap = [
+    { keywords: ['contato', 'fale', 'suporte', 'orçamento', 'email', 'endereço'], path: '/contato', label:'Página de Contato'},
+    { keywords: ['sobre', 'empresa', 'quem somos'], path: '/', label: 'Sobre Nós'},
+    { keywords: ['produto', 'serviço', 'oferta', 'milho', 'canjica', 'fuba', 'germen', 'gritz'], path: '/produtos', label:'Produtos'},
+];
 
 export default function SubHeader() {
     const [search, setSearch] = useState("");
+    const navigate = useNavigate();
+
+    function handleSearch() {
+        const term = search.trim().toLowerCase();
+        if (!term) return;
+
+        const match = keywordMap.find(({ keywords }) =>
+            keywords.some(k => term.includes(k))
+        );
+
+        if (match) {
+            navigate(match.path);
+        } else {
+            alert('Nenhuma página encontrada para sua pesquisa.');
+        }
+    }
 
     return (
         <div className="bg-lime-200 font-body py-3" style={{boxShadow: `inset 0px 4px 12px rgba(0,0,0,0.15), inset 0px -4px 8px rgba(0,0,0,0.25)`}}>
@@ -19,11 +42,18 @@ export default function SubHeader() {
                         placeholder="Pesquisar..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
+                        onKeyDown={e => { if (e.key === 'Enter') handleSearch()}}
                         className="text-sm font-semibold rounded-full px-4 py-2 pl-5 pr-10 bg-lime-50
                         placeholder-green-800 w-full focus:outline-none
                         focus:ring-2 focus:ring-green-900 transition-all duration-200"
                     />
-                    <Search className="absolute right-5 top-1/2 transform -translate-y-1/2 text-green-900 w-5 h-5 pointer-events-none" />
+                    <button
+                        onClick={handleSearch}
+                        className="absolute right-5 top-1/2 -translate-y-1/2 text-green-900 w-5 h-5 flex items-center justify-center"
+                        aria-label="Pesquisar"
+                    >
+                        <Search className="w-5 h-5"/>
+                    </button>
                 </div>
             </div>
         </div>
