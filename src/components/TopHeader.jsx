@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Phone } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Search, Phone, KeyRound } from "lucide-react";
 
 const keywordMap = [
     { keywords: ['contato', 'fale', 'suporte', 'orçamento', 'email', 'endereço'], path: '/contato', label:'Página de Contato'},
@@ -9,25 +8,32 @@ const keywordMap = [
     { keywords: ['produto', 'serviço', 'oferta', 'milho', 'canjica', 'fuba', 'germen', 'gritz'], path: '/produtos', label:'Produtos'},
 ];
 
+
 export default function SubHeader() {
     const [search, setSearch] = useState("");
-    const navigate = useNavigate();
 
-    function handleSearch() {
-        const term = search.trim().toLowerCase();
-        if (!term) return;
+    function normalize(text) {
+        return text
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+    }
 
-        const match = keywordMap.find(({ keywords }) =>
-            keywords.some(k => term.includes(k))
+    function searchRedirect() {
+        const userInput = normalize(search);
+
+        const match = keywordMap.find(item =>
+            item.keywords.some(keyword => userInput.includes(normalize(keyword)))
         );
 
         if (match) {
             navigate(match.path);
         } else {
-            alert('Nenhuma página encontrada para sua pesquisa.');
+            // Alert melhorado com estilização simples
+            window.alert("Nenhuma página encontrada para sua pesquisa. Tente palavras como: oferta, orçamento, quem somos...");
         }
     }
-
+    
     return (
         <div className="bg-lime-200 font-body py-3" style={{boxShadow: `inset 0px 4px 12px rgba(0,0,0,0.15), inset 0px -4px 8px rgba(0,0,0,0.25)`}}>
             <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
@@ -42,13 +48,13 @@ export default function SubHeader() {
                         placeholder="Pesquisar..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        onKeyDown={e => { if (e.key === 'Enter') handleSearch()}}
+                        onKeyDown={e => { if (e.key === 'Enter') searchRedirect()}}
                         className="text-sm font-semibold rounded-full px-4 py-2 pl-5 pr-10 bg-lime-50
                         placeholder-green-800 w-full focus:outline-none
                         focus:ring-2 focus:ring-green-900 transition-all duration-200"
                     />
                     <button
-                        onClick={handleSearch}
+                        onClick={searchRedirect}
                         className="absolute right-5 top-1/2 -translate-y-1/2 text-green-900 w-5 h-5 flex items-center justify-center"
                         aria-label="Pesquisar"
                     >
