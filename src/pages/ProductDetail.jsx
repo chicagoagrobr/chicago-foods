@@ -55,7 +55,7 @@ export default function ProductDetail() {
               <thead className="bg-gray-100">
                 <tr>
                   <th className="border border-gray-300 p-3 text-left">Característica</th>
-                  <th className="border border-gray-300 p-3 text-left">Valor</th>
+                  <th className="border border-gray-300 p-3 text-left">Padrão</th>
                 </tr>
               </thead>
               <tbody>

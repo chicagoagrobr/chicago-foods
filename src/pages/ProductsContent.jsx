@@ -8,6 +8,7 @@ import canjiquinha from '../assets/canjiquinha.jpeg';
 import dz1 from '../assets/dz1.jpeg';
 import gritz1 from '../assets/gritz1.jpeg';
 import { Link } from "react-router-dom";
+import fundo5 from '../assets/fundo5.jpeg'
 
 export default function ProductsPage() {
   const products = [
@@ -91,33 +92,44 @@ export default function ProductsPage() {
   ];
 
   return (
-  <section className="relative min-h-screen px-6 py-12 text-gray-800 overflow-hidden" style={{ boxShadow:`inset 0px 4px 12px rgba(0,0,0,0.2), inset 0px -4px 8px rgba(0,0,0,0.1)`}}>
-    <div className="relative z-10 max-w-6xl mx-auto">
-      <h2 className="text-lg text-center">
-        A <span className="text-orange-400 font-medium">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, produzidos com
-        alto padrão de qualidade, controle de umidade e uniformidade granulométrica. Nossos derivados atendem amplamente às
-        demandas das indústrias alimentícia, cervejeira, pet food, ração animal, entre outras aplicações que exigem padronização,
-        segurança alimentar e estabilidade de fornecimento.
-      </h2>
-
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-10">
-        {products.map((product) => (
-          <Link
-            key={product.id}
-            to={`/produtos/${product.id}`}
-            className="bg-white bg-opacity-90 rounded-xl shadow-2xl transition-all duration-300 hover:scale-110 p-5 flex flex-col">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="rounded-xl h-48 object-cover mb-4 shadow"
-            />
-            <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-            <p className="text-gray-600 mb-4 flex-grow">{product.description}</p>
-            <div className="text-green-800 font-bold text-lg">{product.desc}</div>
-          </Link>
-        ))}
+    <section className="min-h-screen text-gray-800 overflow-hidden">
+      <div className="relative">
+        <img
+          src={fundo5}
+          alt="Plantação"
+          className="w-full h-[180px] object-cover " style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)`}}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 flex flex-col justify-center items-center text-center">
+          <h2 className="text-white text-xl max-w-4xl leading-relaxed">
+            A <span className="text-orange-300 font-medium">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.
+          </h2>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div className="max-w-7xl mx-auto py-12 px-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-15">
+          {products.map((product) => (
+            <Link
+              key={product.id}
+              to={`/produtos/${product.id}`}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-48 w-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-5 flex flex-col h-full">
+                <h3 className="text-lg font-bold text-gray-700">{product.name}</h3>
+                <div className="text-green-700">{product.desc}</div>
+                <p className="text-sm text-gray-600 mt-2">{product.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
