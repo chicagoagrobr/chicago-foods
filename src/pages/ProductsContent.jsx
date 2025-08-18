@@ -102,14 +102,14 @@ export default function ProductsPage() {
           className="w-full h-[180px] object-cover " style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)`}}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 flex flex-col justify-center items-center text-center">
-          <h2 className="text-white text-xl max-w-4xl leading-relaxed">
-            A <span className="text-orange-300 font-medium">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.
+          <h2 className="text-white text-lg md:text-xl max-w-4xl leading-relaxed">
+            A <span className="text-orange-300 font-semibold">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.
           </h2>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto py-12 px-4">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-15">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 ml-10 mr-10 lg:ml-0 lg:mr-0 mb-15">
           {products.map((product) => (
             <Link
               key={product.id}

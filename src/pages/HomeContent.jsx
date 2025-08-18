@@ -92,23 +92,23 @@ export default function HomeContent() {
             <img
                 src={empresa}
                 alt="Imagem da empresa"
-                className="absolute left-[22%] top-48 w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
+                className="absolute left-[20%] md:left-[30%] lg:left-[22%] top-48 w-[320px] md:w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
             />
             <img
                 src={empresa1}
                 alt="Imagem da empresa"
-                className="absolute left-[6%] top-28 w-[320px] rounded-2xl shadow-2xl"
+                className="absolute left-[4%] md:left-[8%] lg:left-[6%] top-32 md:top-28 w-[220px] md:w-[320px] rounded-2xl shadow-2xl"
             />
             <img
                 src={empresa2}
                 alt="Imagem da empresa"
-                className="absolute left-[26%] top-14 w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
+                className="absolute left-[30%] md:left-[40%] lg:left-[26%] top-12 md:top-14 w-[320px] md:w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
             />
-            <div className="absolute top-[310px] right-[15%] shadow-2xl">
+            <div className="absolute mt-[710px] md:mt-[790px] lg:mt-[310px] ml-8 md:ml-0 md:right-[30%] lg:right-[15%] shadow-2xl">
                 <CepeaWidget/>
             </div>
 
-            <div className="absolute right-[8%] top-20">
+            <div className="absolute mt-[480px] md:mt-[560px] lg:mt-20 ml-8 md:ml-0 md:right-[20%] lg:right-[8%]">
                 <h2 className="text-2xl md:text-3xl font-semibold mb-6">
                     Transformamos Derivados de <span className="font-semibold text-orange-400">Milho</span>
                     <br/> em Alimentos e Rações
@@ -124,7 +124,7 @@ export default function HomeContent() {
             </div>
         </div>
 
-        <div className="relative px-6 mb-24 md:px-32" >
+        <div className="relative px-6 mt-[360px] md:mt-[440px] lg:mt-0 mb-24 md:px-32" >
             <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                 Prontos para Atender Sua Operação
