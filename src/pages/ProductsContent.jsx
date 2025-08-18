@@ -1,12 +1,14 @@
 import germen from '../assets/germen.jpeg';
-import gritz3 from '../assets/gritz3.jpeg';
 import fubafino from '../assets/fubafino.jpeg';
 import fubaitaliano from '../assets/fubaitaliano.jpeg';
-import fubamedio from '../assets/fubamedio.jpeg';
+import fubamimoso from '../assets/fubamimoso.jpeg';
+import canjica from '../assets/canjica.jpeg';
 import canjicao from '../assets/canjicao.jpeg';
 import canjiquinha from '../assets/canjiquinha.jpeg';
-import dz1 from '../assets/dz1.jpeg';
 import gritz1 from '../assets/gritz1.jpeg';
+import gritz2 from '../assets/gritz2.jpeg';
+import gritz3 from '../assets/gritz3.jpeg';
+import mixpro from '../assets/mixpro.jpeg';
 import { Link } from "react-router-dom";
 import fundo5 from '../assets/fundo5.jpeg'
 
@@ -24,7 +26,7 @@ export default function ProductsPage() {
       name: "Fubá Mimoso",
       description: "Produto de textura suave e coloração uniforme, ideal para receitas tradicionais e aplicações industriais que demandam acabamento refinado.",
       desc: "Moagem Fina Tradicional",
-      image: fubamedio,
+      image: fubamimoso,
     },
     {
       id: "fuba-italiano",
@@ -45,7 +47,7 @@ export default function ProductsPage() {
       name: "Gritz 2",
       description: "Versátil para aplicações que exigem equilíbrio entre estrutura e solubilidade.",
       desc: "Granulação Intermediária",
-      image: gritz1,
+      image: gritz2,
     },
     {
       id: "gritz-3",
@@ -59,7 +61,7 @@ export default function ProductsPage() {
       name: "MixPro",
       description: "Blend desenvolvido para oferecer equilíbrio entre solubilidade e estrutura, unindo as características de duas granulometrias diferentes.",
       desc: "Mistura de Gritz1 e Gritz2",
-      image: gritz1,
+      image: mixpro,
     },
     {
       id: "canjiquinha",
@@ -73,7 +75,7 @@ export default function ProductsPage() {
       name: "Canjica",
       description: "Grão médio ideal para preparações doces e pratos gourmet industrializados.",
       desc: "Grão Degerminado",
-      image: dz1,
+      image: canjica,
     },
     {
       id: "canjicao",

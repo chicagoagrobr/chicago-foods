@@ -1,12 +1,14 @@
 import germen from './assets/germen.jpeg';
-import gritz3 from './assets/gritz3.jpeg';
 import fubafino from './assets/fubafino.jpeg';
 import fubaitaliano from './assets/fubaitaliano.jpeg';
-import fubamedio from './assets/fubamedio.jpeg';
+import fubamimoso from './assets/fubamimoso.jpeg';
+import canjica from './assets/canjica.jpeg';
 import canjicao from './assets/canjicao.jpeg';
 import canjiquinha from './assets/canjiquinha.jpeg';
-import dz1 from './assets/dz1.jpeg';
 import gritz1 from './assets/gritz1.jpeg';
+import gritz2 from './assets/gritz2.jpeg';
+import gritz3 from './assets/gritz3.jpeg';
+import mixpro from './assets/mixpro.jpeg';
 
 const products = [
     {
@@ -41,7 +43,7 @@ const products = [
       description:
         "Produto de textura suave e coloração uniforme, ideal para receitas tradicionais e aplicações industriais que demandam acabamento refinado.",
       longDesc: "Reconhecido pela suavidade e uniformidade, o Fubá Mimoso de Moagem Fina Tradicional é a escolha ideal para preparações que exigem acabamento delicado e textura aveludada. Produzido com rigoroso controle de qualidade, mantém coloração uniforme e granulometria precisa, favorecendo o preparo de bolos, biscoitos e pães de milho. Sua estrutura fina possibilita absorção e hidratação homogênea, o que garante massas mais leves e consistentes. Muito utilizado na indústria de alimentos instantâneos e pré-cozidos, bem como em cremes e sopas, oferece excelente desempenho técnico aliado a uma experiência sensorial agradável, atendendo desde pequenas produções artesanais até linhas industriais de alto padrão.",
-      image: fubamedio,
+      image: fubamimoso,
       tables: [
         {
           title: "Aplicações Industriais",
@@ -180,7 +182,7 @@ const products = [
       name: "GRITZ 2 – Granulação Intermediária",
       description: "Versátil para aplicações que exigem equilíbrio entre estrutura e solubilidade.",
       longDesc: "O GRITZ 2 apresenta um ponto de granulação intermediário que equilibra estrutura e solubilidade, atendendo a um amplo espectro de aplicações industriais. Com partículas uniformes e retenção mínima de 50% na peneira ABNT 16, oferece excelente absorção de líquidos e estabilidade térmica durante o cozimento, características essenciais para processos como a produção de cerveja (como adjunto cervejeiro), rações extrusionadas, misturas para panificação, molhos espessantes e alimentos congelados. Sua granulometria otimizada possibilita melhor rendimento e textura nas formulações, preservando o sabor e garantindo consistência no produto final. Com qualidade controlada desde a seleção do milho até a embalagem, o GRITZ 2 é a escolha ideal para indústrias que buscam desempenho técnico aliado à versatilidade produtiva.",
-      image: gritz1,
+      image: gritz2,
       tables: [
         {
           title: "Aplicações Industriais",
@@ -231,7 +233,7 @@ const products = [
       name: "MIXPRO – Mistura de Gritz 1 e Gritz 2",
       description: "Blend desenvolvido para oferecer equilíbrio entre solubilidade e estrutura, unindo as características de duas granulometrias diferentes.",
       longDesc: "O MIXPRO foi desenvolvido para unir o melhor de duas granulometrias em um único produto: a fluidez e homogeneidade do GRITZ 1 com a estrutura e retenção do GRITZ 2. Essa combinação estratégica proporciona um equilíbrio perfeito entre solubilidade e resistência, resultando em um desempenho estável em diferentes processos industriais. É indicado para fabricação de snacks extrusados, panificação, massas pré-prontas, adjuntos cervejeiros, misturas para sopas, cremes e molhos, além de rações extrusionadas. Sua composição híbrida reduz a necessidade de múltiplos insumos, gerando economia logística e simplificação no controle de estoque, sem abrir mão da qualidade e da padronização do produto final. O MIXPRO é ideal para indústrias que buscam eficiência operacional e flexibilidade de uso.",
-      image: gritz1,
+      image: mixpro,
       tables: [
         {
           title: "Aplicações Industriais",
@@ -373,7 +375,7 @@ const products = [
       name: "CANJICA – Grão Degerminado",
       description: "Grão grande ideal para preparações doces e pratos gourmet industrializados.",
       longDesc: "A Canjica é formada por grãos inteiros de milho degerminado, cuidadosamente classificados para atender a padrões rigorosos de tamanho e aparência. Com predominância de retenção nas peneiras ABNT 5 e 7, apresenta grãos grandes, de alto valor visual, ideais para preparações doces e pratos típicos industrializados, como canjica e curau. O processo de beneficiamento garante uniformidade de cor, peso específico adequado para embalagens e baixa umidade, contribuindo para maior vida útil. Sua textura firme e resistência ao cozimento preservam a integridade dos grãos, tornando-a uma matéria-prima essencial para a indústria de sobremesas congeladas, refeições prontas e o setor gourmet, onde aparência e qualidade sensorial são fatores decisivos.",
-      image: dz1,
+      image: canjica,
       tables: [
         {
           title: "Aplicações Industriais",
