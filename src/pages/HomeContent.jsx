@@ -38,9 +38,9 @@ export default function HomeContent() {
             <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/20 pointer-events-none" />
         </div>
 
-        <div className="absolute top-16 right-20 w-[680px] max-w-[90%] h-auto flex items-center mt-2">
+        <div className="mt-[100px] ml-6 md:ml-0 md:mt-0 md:absolute md:top-16 md:right-5 lg:right-20 w-[540px] lg:w-[680px] max-w-[90%] flex items-center">
             <div className="bg-black/50 backdrop-blur-md rounded-xl  p-6 md:p-8 text-lime-50 shadow-2xl">
-                <div className="space-y-6 text-base md:text-lg leading-relaxed">
+                <div className="space-y-6 text-base lg:text-lg leading-relaxed">
                     <div>
                         <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
                         <FaCheckCircle size={20} className="text-green-400" />
@@ -77,10 +77,10 @@ export default function HomeContent() {
         <img
             src={funcionario}
             alt="Funcionário"
-            className="absolute left-56 top-16 w-[420px] h-[500px] object-cover shadow-2xl rounded-2xl"
+            className="absolute lg:left-56 md:left-16 left-[80px] top-16 w-[320px] lg:w-[420px] h-[500px]  object-cover shadow-2xl rounded-2xl"
         />
 
-        <div className="w-full flex justify-center px-4 mt-24">
+        <div className="w-full flex justify-center px-4 mt-8 md:mt-24">
             <p className="max-w-[1200px] text-xl md:text-2xl p-6">
                 Na <span className="font-semibold text-orange-400">Chicago Foods</span>, temos o compromisso de fornecer derivados de milho de alta qualidade adaptados para atender à sua marca própria.
                 Nossa flexibilidade e capacidade de produção nos tornam o parceiro ideal para atender às suas necessidades exclusivas e em expansão no mercado norte-americano.
