@@ -1,0 +1,19 @@
+# Ambientes virtuais
+venv/
+.env
+
+# Cache / compilações
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*

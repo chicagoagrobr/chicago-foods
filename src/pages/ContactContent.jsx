@@ -1,7 +1,39 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import colaboracao from '../assets/colaboracao.jpeg'
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 export default function ContactContent() {
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    assunto: '',
+    mensagem: ''
+  });
+
+  function handleChange(e) {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value}));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formData,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then((res) => {
+      console.log("✅ Sucesso:", res);
+      alert("Mensagem enviada com sucesso!");
+    })
+    .catch((err) => {
+      console.error("❌ Erro:", err);
+      alert("Erro ao enviar a mensagem. Veja o console.");
+    });
+  }
+
   return (
     <section className="min-h-screen text-gray-800">
       <div className="relative w-full h-[180px]">
@@ -21,36 +53,52 @@ export default function ContactContent() {
 
       <div className="max-w-4xl mx-auto py-16">
         <div className="grid md:grid-cols-2 gap-10">
-          <form className="space-y-4 bg-white p-8 rounded-xl shadow-2xl w-full max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-xl shadow-2xl w-full max-w-md mx-auto">
             <div>
               <label className="block text-sm font-medium mb-1">Nome</label>
               <input
                 type="text"
+                name="nome"
+                value={formData.nome}
+                onChange={handleChange}
                 className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
                 placeholder="Seu nome"
+                required
               />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">E-mail</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
                 placeholder="email@exemplo.com"
+                required
               />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">Assunto</label>
               <input
                 type="text"
+                name="assunto"
+                value={formData.assunto}
+                onChange={handleChange}
                 className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
                 placeholder="Assunto da mensagem"
+                required
               />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">Mensagem</label>
               <textarea
+                name="mensagem"
+                value={formData.mensagem}
+                onChange={handleChange}
                 className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800"
                 placeholder="Digite sua mensagem..."
+                required
               ></textarea>
             </div>
             <button
