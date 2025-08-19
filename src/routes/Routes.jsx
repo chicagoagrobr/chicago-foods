@@ -8,6 +8,7 @@ import ProductsContent from '../pages/ProductsContent'
 import Parceiros from '../components/Parceiros'
 import ProductDetail from '../pages/ProductDetail'
 import ScrollToTop from "../components/ScrollToTop";
+import PolicyPrivacyContent from '../pages/PrivacyPolicyContent'
 
 export default function AppRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function AppRoutes() {
           <Route path="/contato" element={<ContactContent />} />
           <Route path="/produtos" element={<ProductsContent/>}/>
           <Route path="/produtos/:id" element={<ProductDetail/>}/>
+          <Route path="/politica" element={<PolicyPrivacyContent/>}/>
         </Routes>
       </main>
       <Parceiros />

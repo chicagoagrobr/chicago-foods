@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="flex flex-col items-start text-left gap-2">
             <p>&copy; {new Date().getFullYear()} Chicago Foods</p>
             <p>Todos os direitos reservados.</p>
-            <Link to="#" className="text-orange-300 hover:text-orange-400">
+            <Link to="/politica" className="text-orange-300 hover:text-orange-400">
               Política de Privacidade
             </Link>
           </div>

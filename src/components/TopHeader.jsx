@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Phone, KeyRound } from "lucide-react";
+import { Search, Phone } from "lucide-react";
 
 const keywordMap = [
     { keywords: ['contato', 'fale', 'suporte', 'orçamento', 'email', 'endereço'], path: '/contato', label:'Página de Contato'},
@@ -29,7 +29,6 @@ export default function SubHeader() {
         if (match) {
             navigate(match.path);
         } else {
-            // Alert melhorado com estilização simples
             window.alert("Nenhuma página encontrada para sua pesquisa. Tente palavras como: oferta, orçamento, quem somos...");
         }
     }
