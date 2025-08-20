@@ -109,7 +109,7 @@ export default function ProductsPage() {
       </div>
 
       <div className="max-w-7xl mx-auto py-12 px-4">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 ml-2 mr-2 md:ml-16 md:mr-16 mb-15">
+        <div className="grid gap-8 big:grid-cols-2 lg:grid-cols-4 ml-2 mr-2 md:ml-16 md:mr-16 mb-15">
           {products.map((product) => (
             <Link
               key={product.id}

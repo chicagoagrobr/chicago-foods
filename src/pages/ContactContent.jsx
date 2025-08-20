@@ -51,9 +51,9 @@ export default function ContactContent() {
         </div>
       </div>
 
-      <div className="max-w-4xl pl-4 pr-8 lg:pl-0 lg:pr-0 mx-auto py-16">
+      <div className="max-w-4xl md:pl-2 xxs:pl-0 pr-2 mx-auto py-16">
         <div className="grid md:grid-cols-2 gap-10">
-          <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-xl shadow-2xl w-full max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
             <div>
               <label className="block text-sm font-medium mb-1">Nome</label>
               <input
@@ -110,7 +110,7 @@ export default function ContactContent() {
           </form>
 
 
-          <div className="bg-white p-8 rounded-xl shadow-xl flex flex-col  w-full max-w-md mx-auto">
+          <div className="bg-white p-8 rounded-xl shadow-xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
             <h3 className="text-xl font-semibold mb-4">Informações de Contato</h3>
 
             <div className="flex items-start gap-4 mb-4">

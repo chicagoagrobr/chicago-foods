@@ -10,14 +10,20 @@ module.exports = {
         title: ['"Playfair Display"', 'serif'],
         body: ['"Nunito"', 'sans-serif'],
       },
-      blur: {
-        xs: '1.5px',
-      },
-      colors: {
-        lime: {
-          75: '#f2f8dcff',
-        }
-      }
+        blur: {
+          xs: '1.5px',
+        },
+        colors: {
+          lime: {
+            75: '#f2f8dcff',
+          }
+        },
+        screens: {
+          'xxs': '320px',
+          'celular':'360px',
+          'xs': '400px',
+          'big': '500px',
+        },
     },
   },
   plugins: [],
