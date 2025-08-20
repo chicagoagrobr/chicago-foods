@@ -51,7 +51,7 @@ export default function ContactContent() {
         </div>
       </div>
 
-      <div className="max-w-4xl pl-8 pr-8 lg:pl-0 lg:pr-0 mx-auto py-16">
+      <div className="max-w-4xl pl-4 pr-8 lg:pl-0 lg:pr-0 mx-auto py-16">
         <div className="grid md:grid-cols-2 gap-10">
           <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-xl shadow-2xl w-full max-w-md mx-auto">
             <div>
