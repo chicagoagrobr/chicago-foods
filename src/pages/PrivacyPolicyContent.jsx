@@ -4,8 +4,8 @@ export default function PrivacyPolicyContent() {
 
       <div className="relative flex items-center justify-center h-64">
         <div className="text-center px-6">
-          <h1 className="text-4xl text-green-800 font-bold mb-4">Política de Privacidade</h1>
-          <p className="max-w-2xl text-gray-700 mx-auto text-lg">
+          <h1 className="text-lg sm:text-3xl mb-2 text-green-800 font-bold">Política de Privacidade</h1>
+          <p className="max-w-2xl text-gray-700 mx-auto text-sm sm:text-lg">
             Este site não coleta, armazena ou compartilha informações pessoais de seus usuários. Nosso objetivo é fornecer informações sem necessidade de cadastro ou dados pessoais.
           </p>
         </div>
