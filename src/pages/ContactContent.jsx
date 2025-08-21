@@ -35,7 +35,7 @@ export default function ContactContent() {
   }
 
   return (
-    <section className="min-h-screen text-gray-800">
+    <section className="min-h-0 text-gray-800">
       <div className="relative w-full h-[180px]">
         <img
             src={colaboracao}
