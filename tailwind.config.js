@@ -23,7 +23,8 @@ module.exports = {
           'celular':'360px',
           'xs': '400px',
           'big': '500px',
-          'xbig': '1800px'
+          'medium':'880px',
+          'xbig': '1800px',
         },
     },
   },
