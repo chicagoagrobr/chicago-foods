@@ -134,7 +134,7 @@ export default function HomeContent() {
                 </div>
             </div>
 
-            <div className="relative px-6 mt-[360px] md:mt-[440px] lg:mt-0 mb-24 md:px-32" >
+            <div className="relative px-6 mt-[360px] md:mt-[440px] lg:mt-0 mb-24 md:px-32 max-w-[1600px] mx-auto" >
                 <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                     Prontos para Atender Sua Operação
