@@ -33,12 +33,12 @@ export default function ProductDetail() {
           className="w-60 h-60 object-cover rounded-lg shadow-lg "
         />
         <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-          <p className="text-lg text-gray-700 mr-20">{product.description}</p>
+          <h1 className="text-lg xs:text-3xl font-bold mb-4">{product.name}</h1>
+          <p className="text-sm xs:text-lg text-gray-700 mr-20">{product.description}</p>
         </div>
       </div>
 
-      <p className="text-lg text-gray-700 text-justify pt-2 pb-2">{product.longDesc}</p>
+      <p className="text-sm xs:text-lg text-gray-700 text-justify pt-2 pb-2">{product.longDesc}</p>
 
       {product.tables?.map((table, index) => (
         <div key={index} className="mb-8">

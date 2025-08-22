@@ -455,7 +455,7 @@ const products = [
     },
     {
       id: "germen",
-      name: "Nutrição Animal-Gérmen de Milho – Alto Valor Nutricional",
+      name: "NUTRIÇÃO ANIMAL-GÉRMEN DE MILHO – Alto Valor Nutricional",
       description: "Subproduto nobre do milho, rico em nutrientes e óleos essenciais, indicado para enriquecimento nutricional e formulações de alto valor agregado.",
       longDesc: "O Gérmen de milho é a fração nobre do grão, rica em proteínas, fibras, vitaminas e ácidos graxos essenciais. Obtido durante o processo de degerminação, preserva compostos bioativos e óleos naturais de alto valor agregado. Sua versatilidade o torna ingrediente-chave para panificação funcional, produtos integrais, barras de cereais, suplementos e rações de alto desempenho. Disponível em granulometrias variáveis, adapta-se a diferentes linhas produtivas, desde a extração de óleo até o enriquecimento nutricional de formulações alimentícias. Sua composição favorece o aporte energético, melhora a textura e contribui para o sabor característico, tornando-o um insumo estratégico para indústrias que buscam unir qualidade nutricional e desempenho tecnológico.",
       image: germen,
