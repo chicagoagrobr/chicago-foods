@@ -98,43 +98,50 @@ export default function HomeContent() {
                 </p>
             </div>
 
-            <div className="w-full h-[600px] relative flex">
-                <img
-                    src={empresa}
-                    alt="Imagem da empresa"
-                    className="absolute left-[20%] md:left-[30%] lg:left-[22%] top-48 w-[320px] md:w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
-                />
-                <img
-                    src={empresa1}
-                    alt="Imagem da empresa"
-                    className="absolute left-[4%] md:left-[8%] lg:left-[6%] top-32 md:top-28 w-[220px] md:w-[320px] rounded-2xl shadow-2xl"
-                />
-                <img
-                    src={empresa2}
-                    alt="Imagem da empresa"
-                    className="absolute left-[30%] md:left-[40%] lg:left-[26%] top-12 md:top-14 w-[320px] md:w-[420px] max-h-[500px] rounded-2xl shadow-2xl"
-                />
-                <div className="absolute mt-[710px] md:mt-[790px] lg:mt-[310px] ml-8 md:ml-0 md:right-[30%] lg:right-[15%] shadow-2xl">
-                    <CepeaWidget/>
-                </div>
+            <div className="w-full py-10 px-4 mb-6 flex justify-center">
+                <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div className="w-full h-[400px] relative flex xxs:-mt-24 md:mt-0">
+                        <img
+                            src={empresa}
+                            alt="Imagem da empresa"
+                            className="absolute left-[26%] big:left-[34%] top-56 md:top-40 xxs:w-[220px] lg:w-[300px] xl:w-[340px] overflow-hidden rounded-2xl shadow-2xl"
+                        />
+                        <img
+                            src={empresa1}
+                            alt="Imagem da empresa"
+                            className="absolute lg:left-[6%] big:left-[12%] top-32 md:top-16 xxs:w-[220px] lg:w-[260px] overflow-hidden rounded-2xl shadow-2xl"
+                        />
+                        <img
+                            src={empresa2}
+                            alt="Imagem da empresa"
+                            className="absolute left-[29%] big:left-[40%] top-16 md:top-4 lg:top-2 xxs:w-[220px] lg:w-[300px] xl:w-[360px] overflow-hidden rounded-2xl shadow-2xl"
+                        />
+                    </div>
 
-                <div className="absolute mt-[480px] md:mt-[560px] lg:mt-20 ml-8 md:ml-0 md:right-[20%] lg:right-[8%]">
-                    <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-                        Transformamos Derivados de <span className="font-semibold text-orange-400">Milho</span>
-                        <br/> em Alimentos e Rações
-                    </h2>
-                    <p className="mb-4">
-                        Com foco em eficiência e aproveitamento integral do milho, produzimos:
-                    </p>
-                    <ul className="list-disc pl-6 mb-6 space-y-2 marker:text-green-800">
-                        <li>Rações balanceadas para diversos tipos de animais;</li>
-                        <li>Alimentos derivados para o consumo humano;</li>
-                        <li>Ingredientes industriais e aditivos de base vegetal.</li>
-                    </ul>
+                    <div className="flex flex-col gap-8 text-center text-lg md:text-sm xl:text-lg md:text-left">
+                        <div>
+                            <h2 className="text-xl big:text-2xl sm:text-3xl md:text-xl xl:text-2xl font-semibold mb-4">
+                                Transformamos Derivados de <span className="text-orange-400">Milho</span> <br /> em Alimentos e Rações
+                            </h2>
+                            <p className="mb-4 sm:text-left">
+                                Com foco em eficiência e aproveitamento integral do milho, produzimos:
+                            </p>
+                            <ul className="list-disc pl-6 space-y-2 marker:text-green-800 text-left">
+                                <li>Rações balanceadas para diversos tipos de animais;</li>
+                                <li>Alimentos derivados para o consumo humano;</li>
+                                <li>Ingredientes industriais e aditivos de base vegetal.</li>
+                            </ul>
+                        </div>
+                        <div className="flex justify-center md:justify-start md:-ml-10 xl:ml-0 -mt-10">
+                            <div className="scale-75 xs:scale-90 big:scale-100 md:scale-75 xl:scale-100">
+                                <CepeaWidget />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div className="relative px-6 mt-[360px] md:mt-[440px] lg:mt-0 mb-24 md:px-32 max-w-[1600px] mx-auto" >
+            <div className="relative px-6 mb-24 md:px-32 max-w-[1600px] mx-auto" >
                 <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                     Prontos para Atender Sua Operação
@@ -148,6 +155,7 @@ export default function HomeContent() {
                     </p>
                 </div>
             </div>
+
             <div className="relative w-full h-[300px]">
                 <img
                     src={colaboracao}

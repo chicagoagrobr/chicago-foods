@@ -24,6 +24,7 @@ module.exports = {
           'xs': '400px',
           'big': '500px',
           'medium':'880px',
+          'medium2':'1300px',
           'xbig': '1800px',
         },
     },
