@@ -86,7 +86,7 @@ export default function ProductsPage() {
     },
     {
       id: "germen",
-      name: "Gérmen",
+      name: "Nutrição Animal-Gérmen de Milho",
       description: "Subproduto nobre do milho, rico em nutrientes, sendo indicado para enriquecimento nutricional e formulações de alto valor agregado.",
       desc: "Alto Valor Nutricional",
       image: germen,
