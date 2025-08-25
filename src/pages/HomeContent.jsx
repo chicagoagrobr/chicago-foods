@@ -48,47 +48,48 @@ export default function HomeContent() {
                 <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/20 pointer-events-none" />
             </div>
 
-            <div className="mt-[100px] ml-6 md:ml-0 md:mt-0 md:absolute md:top-16 md:right-5 lg:right-20 w-[540px] lg:w-[680px] max-w-[90%] flex items-center">
-                <div className="bg-black/50 backdrop-blur-md rounded-xl  p-6 md:p-8 text-lime-50 shadow-2xl">
-                    <div className="space-y-6 text-base lg:text-lg leading-relaxed">
+            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-0 relative -mt-[430px] items-center ">
+                <div className="flex justify-center sm:justify-start -mt-[10px]">
+                    <img
+                        src={funcionario}
+                        alt="Funcionário"
+                        className="w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 object-cover shadow-2xl rounded-2xl"
+                    />
+                </div>
+                <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-8 text-lime-50 shadow-2xl medium:mr-14 sm:-mt-[90px] md:-mt-[100px] lg:mr-6 ">
+                    <div className="space-y-6 sm:text-xs medium:text-sm lg:text-base xl:text-lg leading-relaxed">
                         <div>
-                            <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
+                        <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
                             <FaCheckCircle size={20} className="text-green-400" />
                             <span>Produção Personalizada:</span>
-                            </div>
+                        </div>
                             <p>Capacidade de adaptação para atender especificações exclusivas.</p>
                         </div>
 
                         <div>
                             <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
-                            <FaCheckCircle size={20} className="text-green-400" />
-                            <span>Qualidade e Segurança como Prioridade:</span>
+                                <FaCheckCircle size={20} className="text-green-400" />
+                                <span>Qualidade e Segurança como Prioridade:</span>
                             </div>
                             <p>
-                            Processos controlados, rastreabilidade total e padrão internacional de segurança alimentar,
-                            respeitando o meio ambiente e o produtor rural.
+                                Processos controlados, rastreabilidade total e padrão internacional de segurança alimentar,
+                                respeitando o meio ambiente e o produtor rural.
                             </p>
                         </div>
 
                         <div>
                             <div className="flex items-center gap-2 text-orange-200 font-semibold mb-1">
-                            <FaCheckCircle size={20} className="text-green-400" />
-                            <span>Localização Estratégica:</span>
+                                <FaCheckCircle size={20} className="text-green-400" />
+                                <span>Localização Estratégica:</span>
                             </div>
                             <p>
-                            Complexo com silos, centros de distribuição e unidades de produção automatizadas,
-                            posicionando a <span className="text-orange-300 font-semibold">CHIGAGO FOODS</span> entre as mais completas estruturas do agronegócio brasileiro.
+                                Complexo com silos, centros de distribuição e unidades de produção automatizadas,
+                                posicionando a <span className="text-orange-300 font-semibold">CHIGAGO FOODS</span> entre as mais completas estruturas do agronegócio brasileiro.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <img
-                src={funcionario}
-                alt="Funcionário"
-                className="absolute lg:left-56 md:left-16 left-[80px] top-16 w-[320px] lg:w-[420px] h-[500px]  object-cover shadow-2xl rounded-2xl"
-            />
 
             <div className="w-full flex justify-center px-4 mt-8 md:mt-24">
                 <p className="max-w-[1200px] text-xl md:text-2xl p-6">
@@ -104,7 +105,7 @@ export default function HomeContent() {
                         <img
                             src={empresa}
                             alt="Imagem da empresa"
-                            className="absolute left-[26%] big:left-[34%] top-56 md:top-40 xxs:w-[220px] lg:w-[300px] xl:w-[340px] overflow-hidden rounded-2xl shadow-2xl"
+                            className="absolute left-[26%] big:left-[34%] top-56 md:top-40 xxs:w-[210px] lg:w-[300px] xl:w-[340px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                         <img
                             src={empresa1}
@@ -114,7 +115,7 @@ export default function HomeContent() {
                         <img
                             src={empresa2}
                             alt="Imagem da empresa"
-                            className="absolute left-[29%] big:left-[40%] top-16 md:top-4 lg:top-2 xxs:w-[220px] lg:w-[300px] xl:w-[360px] overflow-hidden rounded-2xl shadow-2xl"
+                            className="absolute left-[29%] big:left-[40%] top-16 md:top-4 lg:top-2 xxs:w-[205px] lg:w-[300px] xl:w-[360px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                     </div>
 
