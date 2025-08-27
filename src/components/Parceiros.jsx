@@ -31,7 +31,7 @@ const Parceiros = () => {
   return (
     <section
       className="py-3 bg-white relative px-2"
-      style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.3)` }}
+      style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
       
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

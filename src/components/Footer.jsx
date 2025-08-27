@@ -19,13 +19,13 @@ export default function Footer() {
 
         <div className="medium:col-span-2 flex flex-col medium:flex-row justify-end gap-8">
           <div className="flex flex-col items-start text-left gap-2">
-            <h3 className="text-lg text-orange-300">Seja um Parceiro</h3>
+            <h3 className="text-lg">Seja um Parceiro</h3>
             <p className="text-sm max-w-xs">
               Trabalhamos lado a lado com quem alimenta o mundo. Junte-se a nós.
             </p>
             <Link
               to="/contato"
-              className="text-orange-300 text-lg font-bold hover:text-orange-400"
+              className="text-orange-300 text-base hover:text-orange-400"
               onClick={() => window.scrollTo(0,0)}
             >
               Faça Parte
