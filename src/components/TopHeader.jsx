@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, Phone } from "lucide-react";
 
 const keywordMap = [
@@ -11,6 +11,7 @@ const keywordMap = [
 
 export default function SubHeader() {
     const [search, setSearch] = useState("");
+    const navigate = useNavigate();
 
     function normalize(text) {
         return text
@@ -28,6 +29,13 @@ export default function SubHeader() {
 
         if (match) {
             navigate(match.path);
+
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 100,
+                    behavior: "smooth"
+                });
+            }, 100);
         } else {
             window.alert("Nenhuma página encontrada para sua pesquisa. Tente palavras como: oferta, orçamento, quem somos...");
         }
