@@ -59,7 +59,7 @@ const Parceiros = () => {
         {hovered && (
           <button
             onClick={() => scroll("left")}
-            className="absolute left-[120px] bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition"
+            className="absolute left-[120px] bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
           >
             <ChevronLeft size={20} />
           </button>
@@ -68,7 +68,7 @@ const Parceiros = () => {
         {hovered && (
           <button
             onClick={() => scroll("right")}
-            className="absolute right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition"
+            className="absolute right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
           >
             <ChevronRight size={20} />
           </button>
