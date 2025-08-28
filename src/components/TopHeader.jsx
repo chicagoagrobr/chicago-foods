@@ -12,6 +12,7 @@ const keywordMap = [
 export default function SubHeader() {
     const [search, setSearch] = useState("");
     const navigate = useNavigate();
+    const [showToast, setShowToast] = useState(false);
 
     function normalize(text) {
         return text
@@ -37,7 +38,8 @@ export default function SubHeader() {
                 });
             }, 100);
         } else {
-            window.alert("Nenhuma página encontrada para sua pesquisa. Tente palavras como: oferta, orçamento, quem somos...");
+            setShowToast(true);
+            setTimeout(() => setShowToast(false), 4000);
         }
     }
     
@@ -69,6 +71,29 @@ export default function SubHeader() {
                     </button>
                 </div>
             </div>
+            
+            {showToast && (
+                <div className="fixed bottom-5 right-5 bg-white px-4 py-3 rounded shadow-lg animate-slide-in z-50">
+                    Nenhuma página encontrada para sua pesquisa. <br />
+                    Tente palavras como: <strong>oferta, orçamento, quem somos...</strong>
+                </div>
+            )}
+
+            <style jsx>{`
+                .animate-slide-in {
+                    animation: slide-in 0.3s ease-out;
+                }
+                @keyframes slide-in {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 0;
+                        transform: translateY(0);
+                    }
+                }
+            `}</style>
         </div>
     );
 }
