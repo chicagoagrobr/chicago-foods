@@ -43,7 +43,7 @@ const Parceiros = () => {
 
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-visible scrollbar-hide scroll-smooth"
+          className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pl-2"
           style={{ scrollBehavior: "smooth" }}
         >
           {parceiros.map((logo, index) => (
