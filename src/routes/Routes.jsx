@@ -1,14 +1,17 @@
-import { Route, Routes } from 'react-router-dom'
-import ContactContent from '../pages/ContactContent'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
-import SubHeader from '../components/TopHeader'
-import HomeContent from '../pages/HomeContent'
-import ProductsContent from '../pages/ProductsContent'
-import Parceiros from '../components/Parceiros'
-import ProductDetail from '../pages/ProductDetail'
+import { Route, Routes } from 'react-router-dom';
+import { Suspense, lazy } from "react";
+
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import SubHeader from '../components/TopHeader';
+import Parceiros from '../components/Parceiros';
 import ScrollToTop from "../components/ScrollToTop";
-import PolicyPrivacyContent from '../pages/PrivacyPolicyContent'
+
+const HomeContent = lazy(() => import ('../pages/HomeContent'));
+const ContactContent = lazy(() => import ('../pages/ContactContent'));
+const ProductsContent = lazy(() => import ('../pages/ProductsContent'));
+const ProductDetail = lazy(() => import ('../pages/ProductDetail'));
+const PolicyPrivacyContent = lazy (() => import ('../pages/PrivacyPolicyContent'));
 
 export default function AppRoutes() {
   return (
@@ -17,13 +20,15 @@ export default function AppRoutes() {
       <SubHeader />
       <Header />
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<HomeContent />} />
-          <Route path="/contato" element={<ContactContent />} />
-          <Route path="/produtos" element={<ProductsContent/>}/>
-          <Route path="/produtos/:id" element={<ProductDetail/>}/>
-          <Route path="/politica" element={<PolicyPrivacyContent/>}/>
-        </Routes>
+        <Suspense fallback={<div className="text-center text-lg p-10">Carregando...</div>}>
+          <Routes>
+            <Route path="/" element={<HomeContent />} />
+            <Route path="/contato" element={<ContactContent />} />
+            <Route path="/produtos" element={<ProductsContent/>}/>
+            <Route path="/produtos/:id" element={<ProductDetail/>}/>
+            <Route path="/politica" element={<PolicyPrivacyContent/>}/>
+          </Routes>
+        </Suspense>
       </main>
       <Parceiros />
       <Footer />
