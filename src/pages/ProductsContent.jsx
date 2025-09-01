@@ -99,6 +99,7 @@ export default function ProductsPage() {
         <img
           src={fundo5}
           alt="Plantação"
+          loading="lazy"
           className="w-full h-[180px] object-cover " style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)`}}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 flex flex-col justify-center items-center text-center">
@@ -120,6 +121,7 @@ export default function ProductsPage() {
                 <img
                   src={product.image}
                   alt={product.name}
+                  loading="lazy"
                   className="h-48 w-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>

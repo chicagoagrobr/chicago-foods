@@ -40,6 +40,7 @@ export default function ContactContent() {
         <img
             src={colaboracao}
             alt="Colaboração entre pessoas"
+            loading="lazy"
             className="w-full h-full object-cover" style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)`}}
         />
 

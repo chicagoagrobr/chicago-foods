@@ -30,6 +30,7 @@ export default function ProductDetail() {
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
           className="w-60 h-60 object-cover rounded-lg shadow-lg "
         />
         <div className="flex-1">

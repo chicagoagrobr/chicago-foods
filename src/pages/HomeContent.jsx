@@ -34,6 +34,7 @@ export default function HomeContent() {
         return () => clearInterval(interval);
     }, []);
 
+    
     return (
         <section
             className="w-full relative"
@@ -53,6 +54,7 @@ export default function HomeContent() {
                     <img
                         src={funcionario}
                         alt="Funcionário"
+                        loading="lazy"
                         className="w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 object-cover shadow-2xl rounded-2xl"
                     />
                 </div>
@@ -105,6 +107,7 @@ export default function HomeContent() {
                         <img
                             src={empresa}
                             alt="Imagem da empresa"
+                            loading="lazy"
                             className="absolute left-[26%] big:left-[34%] top-56 md:top-40 xxs:w-[210px] lg:w-[300px] xl:w-[340px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                         <img
@@ -115,6 +118,7 @@ export default function HomeContent() {
                         <img
                             src={empresa2}
                             alt="Imagem da empresa"
+                            loading="lazy"
                             className="absolute left-[29%] big:left-[40%] top-16 md:top-4 lg:top-2 xxs:w-[205px] lg:w-[300px] xl:w-[360px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                     </div>
@@ -161,6 +165,7 @@ export default function HomeContent() {
                 <img
                     src={colaboracao}
                     alt="Colaboração entre pessoas"
+                    loading="lazy"
                     className="w-full h-full object-cover blur-xs"
                 />
 
