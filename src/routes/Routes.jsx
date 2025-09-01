@@ -20,7 +20,7 @@ export default function AppRoutes() {
       <SubHeader />
       <Header />
       <main className="flex-grow">
-        <Suspense fallback={<div className="text-center text-lg p-10">Carregando...</div>}>
+        <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<HomeContent />} />
             <Route path="/contato" element={<ContactContent />} />
