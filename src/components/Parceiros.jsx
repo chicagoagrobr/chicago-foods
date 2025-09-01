@@ -1,25 +1,14 @@
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import parceiro1 from "../assets/parceiro1.png";
-import parceiro2 from "../assets/parceiro2.png";
-import parceiro3 from "../assets/parceiro3.png";
-import parceiro4 from "../assets/parceiro4.webp";
-import parceiro5 from "../assets/parceiro5.png";
-import parceiro6 from "../assets/parceiro6.png";
-import parceiro7 from "../assets/parceiro7.png";
-import parceiro8 from "../assets/parceiro8.png";
-import parceiro9 from "../assets/parceiro9.png";
-import parceiro10 from "../assets/parceiro10.png";
-
-const parceiros = [
-  parceiro1, parceiro2, parceiro3, parceiro4, parceiro5,
-  parceiro6, parceiro7, parceiro8, parceiro9, parceiro10
-];
+const parceiros = Object.values(
+  import.meta.glob("../assets/parceiros/*.{png,jpg,jpeg,webp}", { eager: true })
+).map((m) => m.default);
 
 const Parceiros = () => {
   const scrollRef = useRef(null);
   const [hovered, setHovered] = useState(false);
+  const [loaded, setLoaded] = useState({});
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -32,7 +21,6 @@ const Parceiros = () => {
     <section
       className="py-3 bg-white relative px-2"
       style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
-      
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -44,14 +32,16 @@ const Parceiros = () => {
         <div
           ref={scrollRef}
           className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pl-2"
-          style={{ scrollBehavior: "smooth" }}
         >
           {parceiros.map((logo, index) => (
             <img
               key={index}
               src={logo}
               alt={`Parceiro ${index + 1}`}
-              className="h-[84px] w-auto object-contain duration-300 hover:scale-110 flex-shrink-0"
+              loading="lazy"
+              onLoad={() => setLoaded((prev) => ({ ...prev, [index]: true }))}
+              className={`h-[84px] w-auto object-contain duration-500 hover:scale-110 flex-shrink-0 transition-all
+                ${loaded[index] ? "blur-0" : "blur-sm"}`}
             />
           ))}
         </div>
