@@ -22,30 +22,41 @@ const allImages = [
 
 export default function HomeContent() {
     const [currentImage, setCurrentImage] = useState(0);
+    const [loadedImages, setLoadedImages] = useState({});
 
     useEffect(() => {
-        allImages.forEach((src) => {
+        images.forEach((src, i) => {
             const img = new Image();
             img.src = src;
+            img.onload = () => {
+                setLoadedImages((prev) => ({ ...prev, [i]: true }));
+            };
         });
+
         const interval = setInterval(() => {
             setCurrentImage((prev) => (prev + 1) % images.length);
         }, 4000);
+
         return () => clearInterval(interval);
     }, []);
-
-    
+        
     return (
         <section
             className="w-full relative"
             style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)` }}
         >
             <div className="relative w-full h-[500px] overflow-hidden">
+                {images.map((src, index) => (
                 <img
-                src={images[currentImage]}
-                alt="Imagem do carrossel"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                    key={index}
+                    src={src}
+                    alt={`Imagem ${index}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out
+                    ${index === currentImage ? "opacity-100" : "opacity-0"}
+                    ${loadedImages[index] ? "blur-0 scale-100" : "blur-sm scale-105"}`}
+                    style={{ transitionProperty: "filter, transform, opacity" }}
                 />
+                ))}
                 <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/20 pointer-events-none" />
             </div>
 
