@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import parceiro1 from "../assets/parceiro1.png";
 import parceiro2 from "../assets/parceiro2.png";
 import parceiro3 from "../assets/parceiro3.png";
-import parceiro4 from "../assets/parceiro4.png";
+import parceiro4 from "../assets/parceiro4.webp";
 import parceiro5 from "../assets/parceiro5.png";
 import parceiro6 from "../assets/parceiro6.png";
 import parceiro7 from "../assets/parceiro7.png";

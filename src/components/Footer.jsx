@@ -1,5 +1,5 @@
-import nome from '../assets/nome.png';
-import logo from '../assets/cf.png';
+import nome from '../assets/nome.webp';
+import logo from '../assets/cf.webp';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {

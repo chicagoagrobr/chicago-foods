@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { FaCheckCircle } from "react-icons/fa";
-import empresa from '../assets/empresa.png';
-import empresa1 from '../assets/empresa3.png';
-import empresa2 from '../assets/empresa2.png';
-import funcionario from '../assets/funcionario.png';
-import img1 from '../assets/fundo1.png';
-import img2 from '../assets/fundo2.jpeg';
-import img3 from '../assets/fundo3.jpeg';
-import img4 from '../assets/fundo4.jpeg';
-import colaboracao from '../assets/colaboracao.jpeg'
+import empresa from '../assets/empresa.webp';
+import empresa1 from '../assets/empresa3.webp';
+import empresa2 from '../assets/empresa2.webp';
+import funcionario from '../assets/funcionario.webp';
+import img1 from '../assets/fundo1.webp';
+import img2 from '../assets/fundo2.webp';
+import img3 from '../assets/fundo3.webp';
+import img4 from '../assets/fundo4.webp';
+import colaboracao from '../assets/colaboracao.webp'
 import CepeaWidget from '../components/CepeaWidget';
 
 const images = [img1, img2, img3, img4];

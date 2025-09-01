@@ -1,14 +1,14 @@
-import germen from './assets/germen.jpeg';
-import fubafino from './assets/fubafino.jpeg';
-import fubaitaliano from './assets/fubaitaliano.jpeg';
-import fubamimoso from './assets/fubamimoso.jpeg';
-import canjica from './assets/canjica.jpeg';
-import canjicao from './assets/canjicao.jpeg';
-import canjiquinha from './assets/canjiquinha.jpeg';
-import gritz1 from './assets/gritz1.jpeg';
-import gritz2 from './assets/gritz2.jpeg';
-import gritz3 from './assets/gritz3.jpeg';
-import mixpro from './assets/mixpro.jpeg';
+import germen from './assets/germen.webp';
+import fubafino from './assets/fubafino.webp';
+import fubaitaliano from './assets/fubaitaliano.webp';
+import fubamimoso from './assets/fubamimoso.webp';
+import canjica from './assets/canjica.webp';
+import canjicao from './assets/canjicao.webp';
+import canjiquinha from './assets/canjiquinha.webp';
+import gritz1 from './assets/gritz1.webp';
+import gritz2 from './assets/gritz2.webp';
+import gritz3 from './assets/gritz3.webp';
+import mixpro from './assets/mixpro.webp';
 
 const products = [
     {
