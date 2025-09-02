@@ -22,6 +22,7 @@ O site está disponível online em:
 
 ## 🏗 Estrutura do Projeto
 
+```text
 src/
 │
 ├── assets/ # Imagens e logos
@@ -29,7 +30,7 @@ src/
 ├── pages/ # Páginas (Home, Produtos, Contato, Política de Privacidade)
 ├── routes/ # Rotas da aplicação
 └── utils/ # Funções utilitárias
-
+```
 ---
 
 ## 🛠 Instalação e Execução Local
