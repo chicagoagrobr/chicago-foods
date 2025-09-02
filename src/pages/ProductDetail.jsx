@@ -31,7 +31,7 @@ export default function ProductDetail() {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-60 h-60 object-cover rounded-lg shadow-lg "
+          className="w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105"
         />
         <div className="flex-1">
           <h1 className="text-lg xs:text-3xl font-bold mb-4">{product.name}</h1>
