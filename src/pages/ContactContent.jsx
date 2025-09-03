@@ -1,7 +1,8 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import colaboracao from '../assets/colaboracao.webp'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import { status } from "nprogress";
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ export default function ContactContent() {
     assunto: '',
     mensagem: ''
   });
+
+  const [statusMessage, setStatusMessage] = useState(null);
 
   function handleChange(e) {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value}));
@@ -25,30 +28,47 @@ export default function ContactContent() {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then((res) => {
-      console.log("✅ Sucesso:", res);
-      alert("Mensagem enviada com sucesso!");
+      console.log(" Sucesso:", res);
+      setStatusMessage({
+        type: "success",
+        text: "Obrigado por entrar em contato! Responderemos em breve."
+      });
+      setFormData({ nome: '', email: '', assunto: '', mensagem: '' });
     })
     .catch((err) => {
-      console.error("❌ Erro:", err);
-      alert("Erro ao enviar a mensagem. Veja o console.");
+      console.error(" Erro:", err);
+      setStatusMessage({
+        type: "error",
+        text: "Ops! Tivemos um problema ao enviar sua mensagem. Tente novamente."
+      });
     });
   }
+
+  useEffect(() => {
+    if (statusMessage) {
+      const timer = setTimeout(() => setStatusMessage(null), 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [statusMessage]);
 
   return (
     <section className="min-h-0 text-gray-800">
       <div className="relative w-full h-[180px]">
         <img
-            src={colaboracao}
-            alt="Colaboração entre pessoas"
-            loading="lazy"
-            className="w-full h-full object-cover" style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)`}}
+          src={colaboracao}
+          alt="Colaboração entre pessoas"
+          loading="lazy"
+          className="w-full h-full object-cover"
+          style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)` }}
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
-            <h3 className="text-2xl font-semibold mb-2"><span className="text-orange-300">Fale Conosco</span></h3>
-            <p className="max-w-2xl">
-                Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias.
-            </p>
+          <h3 className="text-2xl font-semibold mb-2">
+            <span className="text-orange-300">Fale Conosco</span>
+          </h3>
+          <p className="max-w-2xl">
+            Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias.
+          </p>
         </div>
       </div>
 
@@ -110,7 +130,6 @@ export default function ContactContent() {
             </button>
           </form>
 
-
           <div className="bg-white p-8 rounded-xl shadow-xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
             <h3 className="text-xl font-semibold mb-4">Informações de Contato</h3>
 
@@ -144,6 +163,31 @@ export default function ContactContent() {
           </div>
         </div>
       </div>
+
+      {statusMessage && (
+        <div
+          className={`fixed animate-slide-in z-50 bottom-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white transition-opacity duration-500
+            ${statusMessage.type === "success" ? "bg-green-600" : "bg-red-600"}`}
+        >
+          {statusMessage.text}
+        </div>
+      )}
+
+      <style jsx>{`
+        .animate-slide-in {
+          animation: slide-in 0.3s ease-out;
+        }
+        @keyframes slide-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }
