@@ -89,7 +89,7 @@ export default function SubHeader() {
                         transform: translateY(20px);
                     }
                     to {
-                        opacity: 0;
+                        opacity: 1;
                         transform: translateY(0);
                     }
                 }
