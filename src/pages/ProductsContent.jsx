@@ -11,6 +11,7 @@ import gritz3 from '../assets/gritz3.webp';
 import mixpro from '../assets/mixpro.webp';
 import { Link } from "react-router-dom";
 import fundo5 from '../assets/fundo5.webp'
+import { useState } from "react";
 
 export default function ProductsPage() {
   const products = [
@@ -92,6 +93,8 @@ export default function ProductsPage() {
       image: germen,
     },
   ];
+    const [loadedImages, setLoadedImages] = useState({});
+    const [bgLoaded, setBgLoaded] = useState(false);
 
   return (
     <section className="min-h-screen text-gray-800 overflow-hidden">
@@ -100,7 +103,10 @@ export default function ProductsPage() {
           src={fundo5}
           alt="Plantação"
           loading="lazy"
-          className="w-full h-[180px] object-cover " style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)`}}
+          onLoad={() => setBgLoaded(true)}
+          className={`w-full h-[180px] object-cover transition-all duration-700
+            ${bgLoaded ? "blur-0 opacity-100" : "blur-sm opacity-70"}`}
+          style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 flex flex-col justify-center items-center text-center">
           <h2 className="text-white text-lg md:text-xl max-w-4xl leading-relaxed">
@@ -122,7 +128,11 @@ export default function ProductsPage() {
                   src={product.image}
                   alt={product.name}
                   loading="lazy"
-                  className="h-48 w-full object-cover transition-transform duration-300 hover:scale-110"
+                  onLoad={() =>
+                    setLoadedImages((prev) => ({ ...prev, [product.id]: true }))
+                  }
+                  className={`h-48 w-full object-cover transition-all duration-700 hover:scale-110
+                    ${loadedImages[product.id] ? "blur-0 opacity-100" : "blur-md opacity-70"}`}
                 />
               </div>
               <div className="p-5 flex flex-col h-full">
