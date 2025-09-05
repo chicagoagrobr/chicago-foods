@@ -105,7 +105,7 @@ export default function ProductsPage() {
           loading="lazy"
           onLoad={() => setBgLoaded(true)}
           className={`w-full h-[180px] object-cover transition-all duration-700
-            ${bgLoaded ? "blur-0 opacity-100" : "blur-sm opacity-70"}`}
+            ${bgLoaded ? "blur-0 scale-100" : "blur-sm scale-105"}`}
           style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 flex flex-col justify-center items-center text-center">
