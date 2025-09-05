@@ -60,7 +60,7 @@ export default function ContactContent() {
           alt="Colaboração entre pessoas"
           loading="lazy"
           onLoad ={() => setLoadedImg(true)}
-          className={`w-full h-full object-cover transition-all
+          className={`w-full h-full object-cover transition-all duration-700
             ${loadedImg ? "blur-0 scale-100" : "blur-sm scale-105"}`}
           style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)` }}
         />
