@@ -13,6 +13,7 @@ export default function ContactContent() {
   });
 
   const [statusMessage, setStatusMessage] = useState(null);
+  const [loadedImg, setLoadedImg] = useState(false);
 
   function handleChange(e) {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value}));
@@ -58,7 +59,9 @@ export default function ContactContent() {
           src={colaboracao}
           alt="Colaboração entre pessoas"
           loading="lazy"
-          className="w-full h-full object-cover"
+          onLoad ={() => setLoadedImg(true)}
+          className={`w-full h-full object-cover transition-all
+            ${loadedImg ? "blur-0 scale-100" : "blur-sm scale-105"}`}
           style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)` }}
         />
 
