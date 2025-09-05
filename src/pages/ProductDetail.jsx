@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import products from '../productsData';
+import { useState } from "react";
 
 function isListOnly(table){
   return table.data.every(row => !row.valor || row.valor.trim() === "");
@@ -15,6 +16,8 @@ export default function ProductDetail() {
   if (!product) {
     return <h2 className="text-center text-red-500">Produto não encontrado</h2>;
   }
+
+  const [loadedImg, setLoadedImg] = useState(false);
 
   return (
     <div className="max-w-5xl mx-auto mt-8 mb-12 p-6 space-y-8">
@@ -31,7 +34,9 @@ export default function ProductDetail() {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105"
+          onLoad={() => setLoadedImg(true)}
+          className={`w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105
+            ${loadedImg ? "blur-0 scale-100" : "blur-sm scale-105"}`}
         />
         <div className="flex-1">
           <h1 className="text-lg xs:text-3xl font-bold mb-4">{product.name}</h1>
