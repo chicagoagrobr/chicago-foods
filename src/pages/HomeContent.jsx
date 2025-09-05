@@ -23,6 +23,7 @@ const allImages = [
 export default function HomeContent() {
     const [currentImage, setCurrentImage] = useState(0);
     const [loadedImages, setLoadedImages] = useState({});
+    const [loadedImg, setLoadedImg] = useState(false);
 
     useEffect(() => {
         images.forEach((src, i) => {
@@ -66,7 +67,9 @@ export default function HomeContent() {
                         src={funcionario}
                         alt="Funcionário"
                         loading="lazy"
-                        className="w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 object-cover shadow-2xl rounded-2xl"
+                        onLoad = {() => setLoadedImg(true)}
+                        className={`w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 object-cover shadow-2xl rounded-2xl transition durantion-700
+                            ${loadedImg ? "blur-0 opacity-100" : "blur-xs opacity-70"}`}
                     />
                 </div>
                 <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-8 text-lime-50 shadow-2xl medium:mr-14 sm:-mt-[90px] md:-mt-[100px] lg:mr-6 ">
@@ -124,6 +127,7 @@ export default function HomeContent() {
                         <img
                             src={empresa1}
                             alt="Imagem da empresa"
+                            loading="lazy"
                             className="absolute lg:left-[6%] big:left-[12%] top-32 md:top-16 xxs:w-[220px] lg:w-[260px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                         <img
