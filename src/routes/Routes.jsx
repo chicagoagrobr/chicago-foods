@@ -4,7 +4,6 @@ import { Suspense, lazy, useEffect } from "react";
 import Header from "../components/Header";
 import SubHeader from "../components/TopHeader";
 import ScrollToTop from "../components/ScrollToTop";
-import { useState, useRef } from "react";
 
 const HomeContent = lazy(() => import("../pages/HomeContent"));
 const ContactContent = lazy(() => import("../pages/ContactContent"));

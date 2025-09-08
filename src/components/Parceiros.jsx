@@ -1,14 +1,18 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const parceiros = Object.values(
+const eagerModules = Object.values(
   import.meta.glob("../assets/parceiros/*.{png,jpg,jpeg,webp}", { eager: true })
-).map((m) => m.default);
+).map((m) => m.default).slice(0, 3);
+
+const lazyModules = import.meta.glob("../assets/parceiros/*.{png,jpg,jpeg,webp}");
 
 const Parceiros = () => {
+  const sectionRef = useRef(null);
   const scrollRef = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [loaded, setLoaded] = useState({});
+  const [parceiros, setParceiros] = useState(eagerModules);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -17,8 +21,38 @@ const Parceiros = () => {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      async ([entry]) => {
+        if (entry.isIntersecting) {
+          const allModules = Object.values(lazyModules);
+          const loadedImages = await Promise.all(allModules.map((fn) => fn()));
+          const allLogos = loadedImages.map((m) => m.default);
+
+          setParceiros((prev) => {
+            const combined = [...prev];
+            allLogos.forEach((logo) => {
+              if (!combined.includes(logo)) {
+                combined.push(logo);
+              }
+            });
+            return combined;
+          });
+
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="py-3 bg-white relative px-2"
       style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
       onMouseEnter={() => setHovered(true)}
@@ -39,7 +73,9 @@ const Parceiros = () => {
               src={logo}
               alt={`Parceiro ${index + 1}`}
               loading="lazy"
-              onLoad={() => setLoaded((prev) => ({ ...prev, [index]: true }))}
+              onLoad={() =>
+                setLoaded((prev) => ({ ...prev, [index]: true }))
+              }
               className={`h-[84px] w-auto object-contain duration-500 hover:scale-110 flex-shrink-0 transition-all
                 ${loaded[index] ? "blur-0" : "blur-sm"}`}
             />
