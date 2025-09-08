@@ -12,26 +12,6 @@ const ProductsContent = lazy(() => import("../pages/ProductsContent"));
 const ProductDetail = lazy(() => import("../pages/ProductDetail"));
 const PolicyPrivacyContent = lazy(() => import("../pages/PrivacyPolicyContent"));
 
-function LazyOnView({ children }) {
-  const ref = useRef();
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setVisible(true);
-        observer.disconnect();
-      }
-    }, { threshold: 0.1 });
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return <div ref={ref}>{visible ? children : null}</div>;
-}
-
 const Parceiros = lazy(() => import("../components/Parceiros"));
 const Footer = lazy(() => import("../components/Footer"));
 
@@ -61,17 +41,13 @@ export default function AppRoutes() {
         </Suspense>
       </main>
 
-      <LazyOnView>
-        <Suspense fallback={<div style={{ minHeight: "200px" }}></div>}>
-          <Parceiros />
-        </Suspense>
-      </LazyOnView>
-      
-      <LazyOnView>
-        <Suspense fallback={<div style={{ minHeight: "200px" }}></div>}>
-          <Footer />
-        </Suspense>
-      </LazyOnView>
+      <Suspense fallback={<div />}>
+        <Parceiros />
+      </Suspense>
+
+      <Suspense fallback={<div />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
