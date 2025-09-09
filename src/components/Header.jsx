@@ -11,13 +11,17 @@ export default function Header() {
     <header className="bg-green-800 py-3.5 sticky top-0 z-50 shadow-md shadow-green-900/30">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
         
-        <Link to="/" className="flex items-center space-x-1 transition-transform duration-300 hover:scale-105">
+        <Link
+          to="/"
+          onClick={() => window.scrollTo({ top: 550, behavior: "smooth" })}
+          className="flex items-center space-x-1 transition-transform duration-300 hover:scale-105"
+        >
           <img src={logo} alt="Logo da empresa: Chicago Foods" className="w-20 sm:w-[104px]" />
           <img src={nome} alt="Nome da empresa: Chicago Foods" className="h-10 sm:h-[59px] mt-1" />
         </Link>
 
         <nav className="hidden md:flex items-center justify-center gap-x-8 p-3">
-          <Link to="/" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 px-2">
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 px-2">
             <Home className="w-5 h-5" /> Home
           </Link>
           <Link to="/produtos" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300">
