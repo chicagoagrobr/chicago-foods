@@ -1,5 +1,14 @@
+import SEO from "../components/SEO";
+
 export default function PrivacyPolicyContent() {
   return (
+    <>
+    <SEO
+        title="Política de Privacidade | Chicago Foods"
+        description="Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
+        url="https://chicagofoods.com.br/politica"
+        image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
+    />
     <section className="min-h-screen text-gray-800">
 
       <div className="relative flex items-center justify-center h-64">
@@ -42,5 +51,6 @@ export default function PrivacyPolicyContent() {
         </div>
       </div>
     </section>
+    </>
   );
 }

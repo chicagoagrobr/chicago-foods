@@ -2,7 +2,7 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import colaboracao from '../assets/colaboracao.webp'
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-import { status } from "nprogress";
+import SEO from "../components/SEO";
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({
@@ -53,6 +53,14 @@ export default function ContactContent() {
   }, [statusMessage]);
 
   return (
+    <>
+    <SEO
+        title="Contato | Chicago Foods"
+        description="Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
+        url="https://chicagofoods.com.br/contato"
+        image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
+    />
+    
     <section className="min-h-0 text-gray-800">
       <div className="relative w-full h-[180px]">
         <img
@@ -192,5 +200,6 @@ export default function ContactContent() {
         }
       `}</style>
     </section>
+    </>
   );
 }

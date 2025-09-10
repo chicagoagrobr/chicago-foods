@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import products from '../productsData';
 import { useState } from "react";
+import SEO from "../components/SEO";
 
 function isListOnly(table){
   return table.data.every(row => !row.valor || row.valor.trim() === "");
@@ -20,6 +21,13 @@ export default function ProductDetail() {
   const [loadedImg, setLoadedImg] = useState(false);
 
   return (
+    <>
+    <SEO
+      title={`${product.name} | Chicago Foods`}
+      description={product.description}
+      url={`https://chicagofoods.com.br/produtos/${product.id}`}
+      image={product.image}
+    />
     <div className="max-w-5xl mx-auto mt-8 mb-12 p-6 space-y-8">
       <button
         onClick={() => navigate('/produtos')}
@@ -77,5 +85,6 @@ export default function ProductDetail() {
         </div>
       ))}
     </div>
+    </>
   );
 }

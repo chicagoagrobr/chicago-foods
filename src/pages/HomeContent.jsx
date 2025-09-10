@@ -10,6 +10,7 @@ import img3 from '../assets/fundo3.webp';
 import img4 from '../assets/fundo4.webp';
 import colaboracao from '../assets/colaboracao.webp'
 import CepeaWidget from '../components/CepeaWidget';
+import SEO from "../components/SEO";
 
 const images = [img1, img2, img3, img4];
 
@@ -42,6 +43,14 @@ export default function HomeContent() {
     }, []);
         
     return (
+        <>
+        <SEO
+            title="Chicago Foods | Derivados de milho de alta qualidade"
+            description="Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
+            url="https://chicagofoods.com.br/"
+            image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
+        />
+
         <section
             className="w-full relative"
             style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)` }}
@@ -193,5 +202,6 @@ export default function HomeContent() {
                 </div>
             </div>
         </section>
+        </>
     );
 }

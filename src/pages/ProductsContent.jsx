@@ -12,6 +12,7 @@ import mixpro from '../assets/mixpro.webp';
 import { Link } from "react-router-dom";
 import fundo5 from '../assets/fundo5.webp'
 import { useState } from "react";
+import SEO from "../components/SEO";
 
 export default function ProductsPage() {
   const products = [
@@ -97,6 +98,13 @@ export default function ProductsPage() {
     const [bgLoaded, setBgLoaded] = useState(false);
 
   return (
+    <>
+    <SEO
+        title="Produtos | Chicago Foods"
+        description="Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
+        url="https://chicagofoods.com.br/produtos"
+        image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
+    />
     <section className="min-h-screen text-gray-800 overflow-hidden">
       <div className="relative">
         <img
@@ -145,5 +153,6 @@ export default function ProductsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }
