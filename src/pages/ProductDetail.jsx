@@ -48,7 +48,7 @@ export default function ProductDetail() {
         />
         <div className="flex-1">
           <h1 className="text-lg xs:text-3xl font-bold mb-4">{product.name}</h1>
-          <p className="text-sm xs:text-lg text-gray-700 mr-20">{product.description}</p>
+          <p className="text-sm xs:text-lg text-gray-700">{product.description}</p>
         </div>
       </div>
 
