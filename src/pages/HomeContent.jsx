@@ -14,12 +14,12 @@ import SEO from "../components/SEO";
 
 const images = [img1, img2, img3, img4];
 
-const allImages = [
-  img1, img2, img3, img4,
-  empresa, empresa1, empresa2,
-  funcionario, colaboracao
+const carouselAlts = [
+  "Vista de uma plantação de milho saudável e bem cultivada",
+  "Trabalhador colhendo milho na plantação",
+  "Saco de milho de alta qualidade para distribuição",
+  "Caminhão carregando milho pronto para transporte e processamento"
 ];
-
 
 export default function HomeContent() {
     const [currentImage, setCurrentImage] = useState(0);
@@ -60,7 +60,7 @@ export default function HomeContent() {
                 <img
                     key={index}
                     src={src}
-                    alt={`Imagem ${index}`}
+                    alt={carouselAlts[index]}
                     className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out
                     ${index === currentImage ? "opacity-100" : "opacity-0"}
                     ${loadedImages[index] ? "blur-0 scale-100" : "blur-sm scale-105"}`}
@@ -74,7 +74,7 @@ export default function HomeContent() {
                 <div className="flex justify-center sm:justify-start -mt-[10px]">
                     <img
                         src={funcionario}
-                        alt="Funcionário"
+                        alt="Funcionário da Chicago Foods garantindo qualidade na produção"
                         loading="lazy"
                         onLoad = {() => setLoadedImg(true)}
                         className={`w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 object-cover shadow-2xl rounded-2xl transition durantion-700
@@ -129,19 +129,19 @@ export default function HomeContent() {
                     <div className="w-full h-[400px] relative flex xxs:-mt-24 md:mt-0">
                         <img
                             src={empresa}
-                            alt="Imagem da empresa"
+                            alt="Sede da Chicago Foods - indústria de derivados de milho"
                             loading="lazy"
                             className="absolute left-[26%] big:left-[34%] top-56 md:top-40 xxs:w-[210px] lg:w-[300px] xl:w-[340px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                         <img
                             src={empresa1}
-                            alt="Imagem da empresa"
+                            alt="Unidade da Chicago Foods com equipe trabalhando na linha de produção"
                             loading="lazy"
                             className="absolute lg:left-[6%] big:left-[12%] top-32 md:top-16 xxs:w-[220px] lg:w-[260px] overflow-hidden rounded-2xl shadow-2xl"
                         />
                         <img
                             src={empresa2}
-                            alt="Imagem da empresa"
+                            alt="Área de produção da Chicago Foods com máquinas automatizadas"
                             loading="lazy"
                             className="absolute left-[29%] big:left-[40%] top-16 md:top-4 lg:top-2 xxs:w-[205px] lg:w-[300px] xl:w-[360px] overflow-hidden rounded-2xl shadow-2xl"
                         />
