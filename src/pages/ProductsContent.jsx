@@ -109,7 +109,7 @@ export default function ProductsPage() {
       <div className="relative">
         <img
           src={fundo5}
-          alt="Plantação"
+          alt="Campo de milho pronto para colheita"
           loading="lazy"
           onLoad={() => setBgLoaded(true)}
           className={`w-full h-[180px] object-cover transition-all duration-700
@@ -134,7 +134,7 @@ export default function ProductsPage() {
               <div className="overflow-hidden">
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} - `}
                   loading="lazy"
                   onLoad={() =>
                     setLoadedImages((prev) => ({ ...prev, [product.id]: true }))

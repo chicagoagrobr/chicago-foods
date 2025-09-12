@@ -188,7 +188,7 @@ export default function HomeContent() {
             <div className="relative w-full h-[300px]">
                 <img
                     src={colaboracao}
-                    alt="Colaboração entre pessoas"
+                    alt="Equipe agrícola unida para garantir qualidade do milho"
                     loading="lazy"
                     className="w-full h-full object-cover blur-xs"
                 />

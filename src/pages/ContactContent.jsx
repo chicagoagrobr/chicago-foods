@@ -65,7 +65,7 @@ export default function ContactContent() {
       <div className="relative w-full h-[180px]">
         <img
           src={colaboracao}
-          alt="Colaboração entre pessoas"
+          alt="Colaboração entre profissionais na indústria de milho"
           loading="lazy"
           onLoad ={() => setLoadedImg(true)}
           className={`w-full h-full object-cover transition-all duration-700

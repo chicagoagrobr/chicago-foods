@@ -40,7 +40,7 @@ export default function ProductDetail() {
       <div className="max-w-4xl p-6 bg-white rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6">
         <img
           src={product.image}
-          alt={product.name}
+          alt={`${product.name} - milho de alta qualidade da Chicago Foods`}
           loading="lazy"
           onLoad={() => setLoadedImg(true)}
           className={`w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105
