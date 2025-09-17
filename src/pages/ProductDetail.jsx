@@ -43,7 +43,7 @@ export default function ProductDetail() {
           alt={`${product.name} - milho de alta qualidade da Chicago Foods`}
           loading="lazy"
           onLoad={() => setLoadedImg(true)}
-          className={`w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105
+          className={`w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 ease-in-out hover:scale-105
             ${loadedImg ? "blur-0 scale-100" : "blur-sm scale-105"}`}
         />
         <div className="flex-1">
@@ -65,8 +65,8 @@ export default function ProductDetail() {
               ))}
             </ul>
           ) : (
-            <table className="w-full border-collapse border border-gray-300 shadow-md">
-              <thead className="bg-gray-100">
+            <table className="w-full border-collapse border shadow-md bg-white rounded-2xl overflow-hidden">
+              <thead className="bg-green-800 text-lime-100">
                 <tr>
                   <th className="border border-gray-300 p-3 text-left">Característica</th>
                   <th className="border border-gray-300 p-3 text-left">Padrão</th>
