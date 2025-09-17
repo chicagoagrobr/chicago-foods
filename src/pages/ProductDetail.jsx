@@ -66,7 +66,7 @@ export default function ProductDetail() {
             </ul>
           ) : (
             <table className="w-full border-collapse border shadow-md bg-white rounded-2xl overflow-hidden">
-              <thead className="bg-green-800 text-lime-100">
+              <thead className="bg-green-800 text-lime-75">
                 <tr>
                   <th className="border border-gray-300 p-3 text-left">Característica</th>
                   <th className="border border-gray-300 p-3 text-left">Padrão</th>
