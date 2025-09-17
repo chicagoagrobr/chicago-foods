@@ -2,10 +2,10 @@ import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const eagerModules = Object.values(
-  import.meta.glob("../assets/parceiros/*.{png,jpg,jpeg,webp}", { eager: true })
+  import.meta.glob("../assets/parceiros/*.avif", { eager: true })
 ).map((m) => m.default).slice(0, 3);
 
-const lazyModules = import.meta.glob("../assets/parceiros/*.{png,jpg,jpeg,webp}");
+const lazyModules = import.meta.glob("../assets/parceiros/*.avif");
 
 const Parceiros = () => {
   const sectionRef = useRef(null);

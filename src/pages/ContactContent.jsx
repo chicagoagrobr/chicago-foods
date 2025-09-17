@@ -1,5 +1,5 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
-import colaboracao from '../assets/colaboracao.webp'
+import colaboracao from '../assets/colaboracao.avif'
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import SEO from "../components/SEO";

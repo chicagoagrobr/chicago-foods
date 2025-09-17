@@ -1,14 +1,14 @@
-import germen from './assets/germen.webp';
-import fubafino from './assets/fubafino.webp';
-import fubaitaliano from './assets/fubaitaliano.webp';
-import fubamimoso from './assets/fubamimoso.webp';
-import canjica from './assets/canjica.webp';
-import canjicao from './assets/canjicao.webp';
-import canjiquinha from './assets/canjiquinha.webp';
-import gritz1 from './assets/gritz1.webp';
-import gritz2 from './assets/gritz2.webp';
-import gritz3 from './assets/gritz3.webp';
-import mixpro from './assets/mixpro.webp';
+import germen from './assets/germen.avif';
+import fubafino from './assets/fubafino.avif';
+import fubaitaliano from './assets/fubaitaliano.avif';
+import fubamimoso from './assets/fubamimoso.avif';
+import canjica from './assets/canjica.avif';
+import canjicao from './assets/canjicao.avif';
+import canjiquinha from './assets/canjiquinha.avif';
+import gritz1 from './assets/gritz1.avif';
+import gritz2 from './assets/gritz2.avif';
+import gritz3 from './assets/gritz3.avif';
+import mixpro from './assets/mixpro.avif';
 
 const products = [
     {

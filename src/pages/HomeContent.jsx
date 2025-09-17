@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { FaCheckCircle } from "react-icons/fa";
-import empresa from '../assets/empresa.webp';
-import empresa1 from '../assets/empresa3.webp';
-import empresa2 from '../assets/empresa2.webp';
-import funcionario from '../assets/funcionario.webp';
-import img1 from '../assets/fundo1.webp';
-import img2 from '../assets/fundo2.webp';
-import img3 from '../assets/fundo3.webp';
-import img4 from '../assets/fundo4.webp';
-import colaboracao from '../assets/colaboracao.webp'
+import empresa from '../assets/empresa.avif';
+import empresa1 from '../assets/empresa3.avif';
+import empresa2 from '../assets/empresa2.avif';
+import funcionario from '../assets/funcionario.avif';
+import img1 from '../assets/fundo1.avif';
+import img2 from '../assets/fundo2.avif';
+import img3 from '../assets/fundo3.avif';
+import img4 from '../assets/fundo4.avif';
+import colaboracao from '../assets/colaboracao.avif'
 import CepeaWidget from '../components/CepeaWidget';
 import SEO from "../components/SEO";
 
