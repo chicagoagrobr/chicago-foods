@@ -1,7 +1,6 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import colaboracao from '../assets/colaboracao.avif'
 import React, { useState, useEffect } from 'react';
-import emailjs from 'emailjs-com';
 import SEO from "../components/SEO";
 
 export default function ContactContent() {
@@ -19,30 +18,31 @@ export default function ContactContent() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value}));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formData,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-    .then((res) => {
-      console.log(" Sucesso:", res);
+    try {
+      const emailjs = await import('emailjs-com'); // Carrega apenas quando necessário
+      
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       setStatusMessage({
         type: "success",
         text: "Obrigado por entrar em contato! Responderemos em breve."
       });
       setFormData({ nome: '', email: '', assunto: '', mensagem: '' });
-    })
-    .catch((err) => {
-      console.error(" Erro:", err);
+    } catch (err) {
+      console.error("Erro:", err);
       setStatusMessage({
         type: "error",
         text: "Ops! Tivemos um problema ao enviar sua mensagem. Tente novamente."
       });
-    });
+    }
   }
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function ContactContent() {
 
       <div className="max-w-4xl md:pl-2 xxs:pl-0 pr-2 mx-auto py-16">
         <div className="grid md:grid-cols-2 gap-10">
-          <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
+          <form aria-label="Formulário de contato" onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
             <div>
               <label className="block text-sm font-medium mb-1">Nome</label>
               <input
