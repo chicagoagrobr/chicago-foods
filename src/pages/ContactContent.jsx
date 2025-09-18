@@ -65,80 +65,72 @@ export default function ContactContent() {
         image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
       />
 
-      <section className="min-h-0 text-gray-800">
-        <div className="relative w-full h-[180px]">
+      <main className="min-h-0 text-gray-800">
+        <section className="relative w-full h-[180px]">
           <img
             src={colaboracao}
             alt="Colaboração entre profissionais na indústria de milho"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             className="w-full h-full object-cover"
             style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)` }}
           />
-
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
-            <h3 className="text-2xl font-semibold mb-2">
+            <h1 className="text-2xl font-semibold mb-2">
               <span className="text-orange-300">Fale Conosco</span>
-            </h3>
-            <p className="max-w-2xl">
+            </h1>
+            <h2 className="max-w-2xl">
               Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias.
-            </p>
+            </h2>
           </div>
-        </div>
+        </section>
 
-        <div className="max-w-4xl md:pl-2 xxs:pl-0 pr-2 mx-auto py-16">
+        <section className="max-w-4xl md:pl-2 xxs:pl-0 pr-2 mx-auto py-16">
           <div className="grid md:grid-cols-2 gap-10">
             <form
               aria-label="Formulário de contato"
               onSubmit={handleSubmit}
               className="space-y-4 bg-white p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto"
             >
-              <div>
-                <label className="block text-sm font-medium mb-1">Nome</label>
-                <input
-                  type="text"
-                  name="nome"
-                  value={formData.nome}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
-                  placeholder="Seu nome"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">E-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
-                  placeholder="email@exemplo.com"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Assunto</label>
-                <input
-                  type="text"
-                  name="assunto"
-                  value={formData.assunto}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
-                  placeholder="Assunto da mensagem"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Mensagem</label>
-                <textarea
-                  name="mensagem"
-                  value={formData.mensagem}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800"
-                  placeholder="Digite sua mensagem..."
-                  required
-                ></textarea>
-              </div>
+              <label className="block text-sm font-medium mb-1">Nome</label>
+              <input
+                type="text"
+                name="nome"
+                value={formData.nome}
+                onChange={handleChange}
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
+                placeholder="Seu nome"
+                required
+              />
+              <label className="block text-sm font-medium mb-1">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
+                placeholder="email@exemplo.com"
+                required
+              />
+              <label className="block text-sm font-medium mb-1">Assunto</label>
+              <input
+                type="text"
+                name="assunto"
+                value={formData.assunto}
+                onChange={handleChange}
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
+                placeholder="Assunto da mensagem"
+                required
+              />
+              <label className="block text-sm font-medium mb-1">Mensagem</label>
+              <textarea
+                name="mensagem"
+                value={formData.mensagem}
+                onChange={handleChange}
+                className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800"
+                placeholder="Digite sua mensagem..."
+                required
+              ></textarea>
               <button
                 disabled={sending}
                 className={`px-6 py-2 rounded text-white transition ${
@@ -151,7 +143,7 @@ export default function ContactContent() {
               </button>
             </form>
 
-            <div className="bg-white p-8 rounded-xl shadow-xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-2xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
               <h3 className="text-xl font-semibold mb-4">Informações de Contato</h3>
 
               <div className="flex items-start gap-4 mb-4">
@@ -183,7 +175,7 @@ export default function ContactContent() {
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         {statusMessage && (
           <div
@@ -209,7 +201,7 @@ export default function ContactContent() {
             }
           }
         `}</style>
-      </section>
+      </main>
     </>
   );
 }

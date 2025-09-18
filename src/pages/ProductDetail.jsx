@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import products from '../productsData';
-import { useState } from "react";
 import SEO from "../components/SEO";
 
 function isListOnly(table){
@@ -18,8 +17,6 @@ export default function ProductDetail() {
     return <h2 className="text-center text-red-500">Produto não encontrado</h2>;
   }
 
-  const [loadedImg, setLoadedImg] = useState(false);
-
   return (
     <>
     <SEO
@@ -28,8 +25,9 @@ export default function ProductDetail() {
       url={`https://chicagofoods.com.br/produtos/${product.id}`}
       image={product.image}
     />
-    <div className="max-w-5xl mx-auto mt-8 mb-12 p-6 space-y-8">
+    <main className="max-w-5xl mx-auto mt-8 mb-12 p-6 space-y-8">
       <button
+        aria-label="Voltar para lista de produtos"
         onClick={() => navigate('/produtos')}
         className="flex items-center gap-2 text-gray-700 hover:text-gray-900 mb-4"
       >
@@ -37,25 +35,26 @@ export default function ProductDetail() {
         Voltar
       </button>
 
-      <div className="max-w-4xl p-6 bg-white rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6">
+      <section className="max-w-4xl p-6 bg-white rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6">
         <img
           src={product.image}
           alt={`${product.name} - milho de alta qualidade da Chicago Foods`}
-          loading="lazy"
-          onLoad={() => setLoadedImg(true)}
-          className={`w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 ease-in-out hover:scale-105
-            ${loadedImg ? "blur-0 scale-100" : "blur-sm scale-105"}`}
+          loading="eager"
+          fetchPriority="high"
+          className="w-60 h-60 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105"
         />
         <div className="flex-1">
           <h1 className="text-lg xs:text-3xl font-bold mb-4">{product.name}</h1>
           <p className="text-sm xs:text-lg text-gray-700">{product.description}</p>
         </div>
-      </div>
+      </section>
 
-      <p className="text-sm xs:text-lg text-gray-700 text-justify pt-2 pb-2">{product.longDesc}</p>
+      <section>
+        <p className="text-sm xs:text-lg text-gray-700 text-justify pt-2 pb-2">{product.longDesc}</p>
+      </section>
 
       {product.tables?.map((table, index) => (
-        <div key={index} className="mb-8">
+        <section key={index} className="mb-8">
           <h2 className="text-xl font-semibold mb-4">{table.title}</h2>
 
           {isListOnly(table) ? (
@@ -82,9 +81,9 @@ export default function ProductDetail() {
               </tbody>
             </table>
           )}
-        </div>
+        </section>
       ))}
-    </div>
+    </main>
     </>
   );
 }
