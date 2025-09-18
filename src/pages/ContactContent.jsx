@@ -71,7 +71,7 @@ export default function ContactContent() {
             src={colaboracao}
             alt="Colaboração entre profissionais na indústria de milho"
             loading="lazy"
-            className="w-full h-full object-cove"
+            className="w-full h-full object-cover"
             style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)` }}
           />
 
