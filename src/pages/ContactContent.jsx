@@ -1,6 +1,6 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import colaboracao from '../assets/colaboracao.avif'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SEO from "../components/SEO";
 
 export default function ContactContent() {

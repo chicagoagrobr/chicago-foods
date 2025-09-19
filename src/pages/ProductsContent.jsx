@@ -11,7 +11,6 @@ import gritz3 from '../assets/gritz3.avif';
 import mixpro from '../assets/mixpro.avif';
 import { Link } from "react-router-dom";
 import fundo5 from '../assets/fundo5.avif'
-import { useState } from "react";
 import SEO from "../components/SEO";
 
 export default function ProductsPage() {
@@ -94,8 +93,6 @@ export default function ProductsPage() {
       image: germen,
     },
   ];
-    const [loadedImages, setLoadedImages] = useState({});
-    const [bgLoaded, setBgLoaded] = useState(false);
 
   return (
     <>
@@ -105,25 +102,24 @@ export default function ProductsPage() {
         url="https://chicagofoods.com.br/produtos"
         image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
     />
-    <section className="min-h-screen text-gray-800 overflow-hidden">
-      <div className="relative">
+    <main className="min-h-screen text-gray-800 overflow-hidden">
+      <section className="relative">
         <img
           src={fundo5}
           alt="Campo de milho pronto para colheita"
-          loading="lazy"
-          onLoad={() => setBgLoaded(true)}
-          className={`w-full h-[180px] object-cover transition-all duration-700
-            ${bgLoaded ? "blur-0 scale-100" : "blur-sm scale-105"}`}
+          loading="eager"
+          fetchpriority="high"
+          className="w-full h-[180px] object-cover"
           style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 flex flex-col justify-center items-center text-center">
-          <h2 className="text-white text-lg md:text-xl max-w-4xl leading-relaxed">
+          <h1 className="text-white text-lg md:text-xl max-w-4xl leading-relaxed">
             A <span className="text-orange-300 font-semibold">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.
-          </h2>
+          </h1>
         </div>
-      </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto py-12 px-4">
+      <section className="max-w-7xl mx-auto py-12 px-4">
         <div className="grid gap-8 big:grid-cols-2 lg:grid-cols-4 ml-2 mr-2 md:ml-16 md:mr-16 mb-15">
           {products.map((product) => (
             <Link
@@ -139,20 +135,19 @@ export default function ProductsPage() {
                   onLoad={() =>
                     setLoadedImages((prev) => ({ ...prev, [product.id]: true }))
                   }
-                  className={`h-48 w-full object-cover transition-all duration-700 hover:scale-110
-                    ${loadedImages[product.id] ? "blur-0 opacity-100" : "blur-md opacity-70"}`}
+                  className="h-48 w-full object-cover transition-all duration-700 hover:scale-110"
                 />
               </div>
               <div className="p-5 flex flex-col h-full">
-                <h3 className="text-lg font-bold text-gray-700">{product.name}</h3>
+                <h2 className="text-lg font-bold text-gray-700">{product.name}</h2>
                 <div className="text-green-700">{product.desc}</div>
                 <p className="text-sm text-gray-600 mt-2">{product.description}</p>
               </div>
             </Link>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     </>
   );
 }
