@@ -20,20 +20,26 @@ export default function Header() {
           <img src={nome} alt="Nome da empresa: Chicago Foods" className="h-10 sm:h-[59px] mt-1" />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center gap-x-8 p-3">
-          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 px-2">
+        <nav className="hidden medium:flex items-center justify-center gap-x-8 p-3">
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 px-2 font-semibold">
             <Home className="w-5 h-5" /> Home
           </Link>
-          <Link to="/produtos" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300">
+          <Link to="/produtos" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 font-semibold">
             <Boxes className="w-5 h-5" /> Produtos
           </Link>
-          <Link to="/contato" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 ml-1">
+          <Link to="/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 ml-1 font-semibold">
             <Mail className="w-5 h-5" /> Contato
+          </Link>
+          <Link
+            to="/contato"
+            onClick={() => window.scrollTo({ top: 290, behavior: "smooth" })}
+            className="hidden medium:inline-flex items-center bg-orange-400 hover:bg-orange-300 text-green-900 font-semibold px-4 py-2 rounded-full shadow-2xl transition">
+            Solicitar Orçamento
           </Link>
         </nav>
 
         <button
-          className="md:hidden text-orange-100 hover:text-orange-300 transition-all duration-200"
+          className="medium:hidden text-orange-100 hover:text-orange-300 transition-all duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -41,16 +47,23 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-green-700">
+        <div className="medium:hidden border-t border-green-700">
           <nav className="flex flex-col p-4 space-y-4">
-            <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-orange-100 hover:text-orange-300">
+            <Link to="/" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className="flex items-center gap-2 text-orange-100 hover:text-orange-300 font-semibold">
               <Home className="w-5 h-5" /> Home
             </Link>
-            <Link to="/produtos" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-orange-100 hover:text-orange-300">
+            <Link to="/produtos" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-orange-100 hover:text-orange-300 font-semibold">
               <Boxes className="w-5 h-5" /> Produtos
             </Link>
-            <Link to="/contato" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-orange-100 hover:text-orange-300">
+            <Link to="/contato" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className="flex items-center gap-2 text-orange-100 hover:text-orange-300 font-semibold">
               <Mail className="w-5 h-5" /> Contato
+            </Link>
+            <Link
+              to="/contato"
+              onClick={() => {window.scrollTo({ top: 290, behavior: "smooth" }); 
+              setMenuOpen(false);}}
+              className="flex items-center bg-orange-400 hover:bg-orange-300 w-44 text-green-900 font-semibold px-4 py-2 font-semibold  rounded-full shadow-2xl transition">
+              Solicitar Orçamento
             </Link>
           </nav>
         </div>
