@@ -1,11 +1,13 @@
 import { useState } from "react";
 import nome from '../assets/nome.avif';
 import logo from '../assets/cf.avif';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Home, Boxes, Mail, Menu, X } from "lucide-react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="bg-green-800 py-3.5 sticky top-0 z-50 shadow-md shadow-green-900/30">
@@ -21,13 +23,13 @@ export default function Header() {
         </Link>
 
         <nav className="hidden medium:flex items-center justify-center gap-x-8 p-3">
-          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 px-2 font-semibold">
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm px-2 font-semibold`}>
             <Home className="w-5 h-5" /> Home
           </Link>
-          <Link to="/produtos" className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 font-semibold">
+          <Link to="/produtos" className={`flex items-center gap-2 ${isActive("/produtos") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm font-semibold`}>
             <Boxes className="w-5 h-5" /> Produtos
           </Link>
-          <Link to="/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 text-orange-100 text-sm hover:text-orange-300 ml-1 font-semibold">
+          <Link to="/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/contato") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm ml-1 font-semibold`}>
             <Mail className="w-5 h-5" /> Contato
           </Link>
           <Link
@@ -49,13 +51,13 @@ export default function Header() {
       {menuOpen && (
         <div className="medium:hidden border-t border-green-700">
           <nav className="flex flex-col p-4 space-y-4">
-            <Link to="/" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className="flex items-center gap-2 text-orange-100 hover:text-orange-300 font-semibold">
+            <Link to="/" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className={`flex items-center gap-2 ${isActive("/") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
               <Home className="w-5 h-5" /> Home
             </Link>
-            <Link to="/produtos" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-orange-100 hover:text-orange-300 font-semibold">
+            <Link to="/produtos" onClick={() => setMenuOpen(false)} className={`flex items-center gap-2 ${isActive("/produtos") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
               <Boxes className="w-5 h-5" /> Produtos
             </Link>
-            <Link to="/contato" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className="flex items-center gap-2 text-orange-100 hover:text-orange-300 font-semibold">
+            <Link to="/contato" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className={`flex items-center gap-2 ${isActive("/contato") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
               <Mail className="w-5 h-5" /> Contato
             </Link>
             <Link
