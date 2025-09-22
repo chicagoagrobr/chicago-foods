@@ -1,10 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const eagerModules = Object.values(
-  import.meta.glob("../assets/parceiros/*.avif", { eager: true })
-).map((m) => m.default).slice(0, 3);
-
 const lazyModules = import.meta.glob("../assets/parceiros/*.avif");
 
 const Parceiros = () => {
@@ -12,7 +8,7 @@ const Parceiros = () => {
   const scrollRef = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [loaded, setLoaded] = useState({});
-  const [parceiros, setParceiros] = useState(eagerModules);
+  const [parceiros, setParceiros] = useState([]);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -28,17 +24,7 @@ const Parceiros = () => {
           const allModules = Object.values(lazyModules);
           const loadedImages = await Promise.all(allModules.map((fn) => fn()));
           const allLogos = loadedImages.map((m) => m.default);
-
-          setParceiros((prev) => {
-            const combined = [...prev];
-            allLogos.forEach((logo) => {
-              if (!combined.includes(logo)) {
-                combined.push(logo);
-              }
-            });
-            return combined;
-          });
-
+          setParceiros(allLogos);
           observer.disconnect();
         }
       },
@@ -77,7 +63,7 @@ const Parceiros = () => {
                 setLoaded((prev) => ({ ...prev, [index]: true }))
               }
               className={`h-[84px] w-auto object-contain duration-500 hover:scale-110 flex-shrink-0 transition-all
-                ${loaded[index] ? "blur-0" : "blur-sm"}`}
+                ${loaded[index] ? "blur-0 bg-transparent" : "blur-sm bg-gray-200 animate-pulse"}`}
             />
           ))}
         </div>
