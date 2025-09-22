@@ -58,7 +58,6 @@ const Parceiros = () => {
               key={index}
               src={logo}
               alt={`Parceiro ${index + 1}`}
-              loading="lazy"
               onLoad={() =>
                 setLoaded((prev) => ({ ...prev, [index]: true }))
               }
