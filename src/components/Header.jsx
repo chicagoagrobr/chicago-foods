@@ -33,7 +33,7 @@ export default function Header() {
           <Link
             to="/contato"
             onClick={() => window.scrollTo({ top: 290, behavior: "smooth" })}
-            className="hidden medium:inline-flex items-center bg-orange-400 hover:bg-orange-300 text-green-900 font-semibold px-4 py-2 rounded-full shadow-2xl transition">
+            className="hidden medium:inline-flex items-center bg-orange-400 shadow-2xl hover:bg-orange-300 text-white font-medium px-4 py-2 rounded-full transition">
             Solicitar Orçamento
           </Link>
         </nav>
