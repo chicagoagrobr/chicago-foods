@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import funcionario from "../assets/funcionario.avif";
 
@@ -16,7 +16,7 @@ const features = [
     text: (
       <>
         Complexo com silos, centros de distribuição e unidades de produção automatizadas,
-        posicionando a <span className="text-orange-300 font-semibold">CHIGAGO FOODS</span> 
+        posicionando a <span className="text-orange-300 font-semibold">CHIGAGO FOODS </span> 
         entre as mais completas estruturas do agronegócio brasileiro.
       </>
     ),
@@ -53,13 +53,15 @@ export default function HeroSection({ images, carouselAlts }) {
             key={index}
             src={src}
             alt={carouselAlts[index]}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "low"}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out
               ${index === currentImage ? "opacity-100" : "opacity-0"}
               ${loadedImages[index] ? "blur-0 scale-100" : "blur-sm scale-105"}`}
             style={{ transitionProperty: "filter, transform, opacity" }}
           />
         ))}
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40 pointer-events-none" />
       </section>
 
       <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-0 relative -mt-[430px] items-center">
@@ -75,7 +77,7 @@ export default function HeroSection({ images, carouselAlts }) {
           />
         </div>
 
-        <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-8 text-lime-50 shadow-2xl medium:mr-14 sm:-mt-[90px] md:-mt-[100px] lg:mr-6">
+        <div className="bg-black/50 backdrop-blur-lg border border-white/10 rounded-xl p-6 md:p-8 text-lime-50 shadow-2xl medium:mr-14 sm:-mt-[90px] md:-mt-[100px] lg:mr-6">
           <h1 className="sr-only">Destaques da Chicago Foods</h1> {/* para SEO e acessibilidade */}
           <ul className="space-y-6 sm:text-xs medium:text-sm lg:text-base xl:text-lg leading-relaxed">
             {features.map((f, i) => (
