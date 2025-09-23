@@ -9,6 +9,7 @@ import colaboracao from '../assets/colaboracao.avif'
 import CepeaWidget from '../components/CepeaWidget';
 import SEO from "../components/SEO";
 import HeroSection from "../components/HeroSection";
+import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
 const images = [img1, img2, img3, img4];
 
@@ -34,6 +35,17 @@ export default function HomeContent() {
             style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)` }}
         >
             <HeroSection images={images} carouselAlts={carouselAlts} />
+
+            <a
+                href="https://wa.me/5564999642170"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+            >
+                <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake z-50">
+                    <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
+                </button>
+            </a>
 
             <section className="w-full flex justify-center px-4 mt-8 md:mt-24">
                 <p className="max-w-[1200px] text-xl md:text-2xl p-6">

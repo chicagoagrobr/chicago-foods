@@ -28,6 +28,16 @@ module.exports = {
           'medium3':'1420px',
           'xbig': '1800px',
         },
+      keyframes: {
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-5px)' },
+          '20%, 40%, 60%, 80%': { transform: 'translateX(5px)' },
+        },
+      },
+      animation: {
+        'shake-once': 'shake 0.8s ease-in-out 1',
+      },
     },
   },
   plugins: [
