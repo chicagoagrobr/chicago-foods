@@ -10,6 +10,8 @@ const ContactContent = lazy(() => import("../pages/ContactContent"));
 const ProductsContent = lazy(() => import("../pages/ProductsContent"));
 const ProductDetail = lazy(() => import("../pages/ProductDetail"));
 const PolicyPrivacyContent = lazy(() => import("../pages/PrivacyPolicyContent"));
+const AboutContent = lazy(() => import("../pages/AboutContent"));
+
 
 const Parceiros = lazy(() => import("../components/Parceiros"));
 const Footer = lazy(() => import("../components/Footer"));
@@ -43,6 +45,7 @@ export default function AppRoutes() {
             <Route path="/produtos" element={<ProductsContent />} />
             <Route path="/produtos/:id" element={<ProductDetail />} />
             <Route path="/politica" element={<PolicyPrivacyContent />} />
+            <Route path="/sobre" element={<AboutContent />} />
           </Routes>
         </main>
 

@@ -29,6 +29,9 @@ export default function Header() {
           <Link to="/produtos" className={`flex items-center gap-2 ${isActive("/produtos") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm font-semibold`}>
             <Boxes className="w-5 h-5" /> Produtos
           </Link>
+          <Link to="/sobre" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/sobre") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm ml-1 font-semibold`}>
+            <Mail className="w-5 h-5" /> Sobre
+          </Link>
           <Link to="/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/contato") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm ml-1 font-semibold`}>
             <Mail className="w-5 h-5" /> Contato
           </Link>
