@@ -135,7 +135,7 @@ export default function ProductsPage() {
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
       >
-        <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake z-50">
+        <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake-every-10s z-50">
           <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
         </button>
       </a>

@@ -30,13 +30,14 @@ module.exports = {
         },
       keyframes: {
         shake: {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-5px)' },
-          '20%, 40%, 60%, 80%': { transform: 'translateX(5px)' },
+          '0%, 80%, 100%': { transform: 'translateX(0)' }, // parado antes e depois
+          '85%, 87%, 89%, 91%, 93%, 95%': { transform: 'translateX(-5px)' },
+          '86%, 88%, 90%, 92%, 94%, 96%': { transform: 'translateX(5px)' },
         },
       },
       animation: {
-        'shake-once': 'shake 0.8s ease-in-out 1',
+        'shake-once': 'shake 2s ease-in-out 1',
+        'shake-every-10s': 'shake 10s ease-in-out infinite',
       },
     },
   },
