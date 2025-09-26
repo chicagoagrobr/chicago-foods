@@ -1,6 +1,7 @@
 import SEO from "../components/SEO";
 import heroImg from "../assets/fundoSobre.avif";
 import { ChevronDown } from "lucide-react";
+import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
 export default function AboutContent() {
   return (
@@ -11,7 +12,17 @@ export default function AboutContent() {
         url="https://chicagofoods.com.br/sobre"
         image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
     />
-    
+    <a
+      href="https://wa.me/5564999642170"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake z-50">
+        <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
+      </button>
+    </a>
+
     <section
       className="relative h-[500px] flex items-center justify-center text-white"
       style={{

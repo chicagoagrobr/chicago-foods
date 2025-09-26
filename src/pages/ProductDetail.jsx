@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import products from '../productsData';
 import SEO from "../components/SEO";
+import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
 function isListOnly(table){
   return table.data.every(row => !row.valor || row.valor.trim() === "");
@@ -34,6 +35,17 @@ export default function ProductDetail() {
         <ArrowLeft size={20} />
         Voltar
       </button>
+
+      <a
+        href="https://wa.me/5564999642170"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake z-50">
+          <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
+        </button>
+      </a>
 
       <section className="max-w-4xl p-6 bg-white rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6">
         <img

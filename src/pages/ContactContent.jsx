@@ -2,6 +2,7 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import colaboracao from '../assets/colaboracao.avif'
 import { useState, useEffect } from 'react';
 import SEO from "../components/SEO";
+import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({
@@ -66,6 +67,16 @@ export default function ContactContent() {
       />
 
       <main className="min-h-0 text-gray-800">
+        <a
+          href="https://wa.me/5564999642170"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+        >
+          <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake z-50">
+            <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
+          </button>
+        </a>
         <section className="relative w-full h-[180px]">
           <img
             src={colaboracao}
