@@ -102,7 +102,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-lime-50">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-4xl font-bold text-green-900 drop-shadow-md">
             Quem Somos
@@ -152,7 +152,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="max-w-full mx-auto py-16 px-6 bg-lime-50">
+      <section className="max-w-full mx-auto py-16 px-6 bg-white">
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="max-w-4xl mx-auto bg-gradient-to-br from-lime-50 via-white to-green-50 rounded-2xl shadow-xl border-l-4 border-green-800 p-8 md:p-12 hover:scale-105 transition-transform duration-300">
             <p className="text-lg md:text-xl leading-relaxed text-gray-800">
@@ -165,7 +165,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-16 bg-lime-50">
+      <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl text-green-900  font-bold mb-10">Nossos Produtos</h2>
 

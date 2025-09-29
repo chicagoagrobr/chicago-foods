@@ -31,7 +31,7 @@ export default function HomeContent() {
         />
 
         <main
-            className="w-full relative"
+            className="w-full relative bg-white"
             style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)` }}
         >
             <HeroSection images={images} carouselAlts={carouselAlts} />
@@ -105,7 +105,7 @@ export default function HomeContent() {
             </section>
 
             <section className="relative px-6 mb-24 md:px-32 max-w-[1600px] mx-auto" >
-                <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
+                <div className="bg-white bg-gradient-to-br from-lime-50 via-white to-green-50 rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                         Prontos para Atender Sua Operação
                     </h3>
