@@ -17,6 +17,13 @@ import gritz2 from "../assets/gritz2.avif";
 import gritz3 from "../assets/gritz3.avif";
 import mixpro from "../assets/mixpro.avif";
 import fundo3 from "../assets/fundo3.avif";
+import empresa from '../assets/empresa3.avif';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import colaboracao from '../assets/colaboracao.avif'
+import Slider from "react-slick";
+
+const carouselImages = [fundo3, canjicao, empresa, colaboracao];
 
 const products = [
   { id: "fuba-fino", name: "Fubá Fino", image: fubafino },
@@ -84,14 +91,10 @@ export default function AboutContent() {
 
           <div className="mt-8">
             <a
-              href="#institucional"
               onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("institucional")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                window.scrollBy({ top: 500, behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-700 text-orange-200 font-semibold px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105"
+              className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105"
             >
               Saiba Mais <ChevronDown className="w-5 h-5" />
             </a>
@@ -99,29 +102,26 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-16 px-6 text-center" id="institucional">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-3xl font-bold text-green-900 ">Quem Somos</h2>
-          <p className="leading-relaxed text-lg">
-            A{" "}
-            <span className="font-semibold text-green-900">
-              Chicago Agrobusiness
-            </span>{" "}
-            nasceu com a missão de transformar o potencial agrícola do{" "}
-            <span className="font-semibold text-green-900">Centro-Oeste</span>{" "}
-            em negócios sólidos, inovadores e sustentáveis. Com raízes fortes em Goiás, consolidamos nossa atuação no setor de 
-            agronegócio, especialmente na produção, industrialização e comercialização de derivados do milho e outras commodities.
+      <section className="py-20 px-6 bg-lime-50">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h2 className="text-4xl font-bold text-green-900 drop-shadow-md">
+            Quem Somos
+          </h2>
+          <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+            A <span className="font-semibold text-green-900">Chicago Agrobusiness</span> nasceu com a missão de transformar 
+            o potencial agrícola do <span className="font-semibold text-green-900">Centro-Oeste</span> em negócios sólidos, 
+            inovadores e sustentáveis. Com raízes fortes em Goiás, consolidamos nossa atuação no setor de agronegócio, 
+            especialmente na produção, industrialização e comercialização de derivados do milho e outras commodities.
           </p>
         </div>
       </section>
 
-      <section className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-6 px-6 gap-10">
-        {/* Texto à esquerda */}
-        <div className="md:w-1/2 space-y-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-green-900 mb-4">
+      <section className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-12 md:py-16 px-4 md:px-6 gap-8 md:gap-12">
+        <div className="md:w-1/2 space-y-4 md:space-y-6 p-4 md:p-12">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mb-2 md:mb-4">
             Nossa História
           </h3>
-          <p className="text-lg leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-800">
             Ao longo dos anos, expandimos nossa estrutura e diversificamos operações, sempre com foco em eficiência, 
             qualidade e geração de valor para produtores, clientes e parceiros. Nossa trajetória é marcada pela combinação 
             de tradição no campo com visão empresarial moderna, resultando em projetos de grande impacto, como a 
@@ -129,17 +129,43 @@ export default function AboutContent() {
           </p>
         </div>
 
-        {/* Imagem à direita */}
-        <div className="md:w-1/2">
-          <img 
-            src={fundo3}
-            alt="Nossa história"
-            className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
-          />
+        <div className="md:w-1/2 w-full">
+          <Slider
+            dots={true}
+            infinite={true}
+            speed={400}
+            slidesToShow={1}
+            slidesToScroll={1}
+            autoplay={true}
+            autoplaySpeed={3000}
+          >
+            {carouselImages.map((img, index) => (
+              <div key={index}>
+                <img
+                  src={img}
+                  alt={`Foto ${index + 1}`}
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover"
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
 
-      <section className="py-16 bg-lime-75">
+      <section className="max-w-full mx-auto py-16 px-6 bg-lime-50">
+        <div className="flex flex-col md:flex-row items-center gap-10">
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-lime-50 via-white to-green-50 rounded-2xl shadow-xl border-l-4 border-green-800 p-8 md:p-12 hover:scale-105 transition-transform duration-300">
+            <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+              Hoje, a <span className="font-semibold text-green-900">Chicago Agrobusiness</span> se posiciona como um grupo integrado, 
+              que alia produção agrícola, indústria de alimentos e estratégias de mercado em um ecossistema de crescimento sustentável. 
+              Nosso compromisso é continuar inovando, fortalecendo a cadeia produtiva e contribuindo para o desenvolvimento regional 
+              e nacional.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-lime-50">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl text-green-900  font-bold mb-10">Nossos Produtos</h2>
 
