@@ -16,6 +16,7 @@ import gritz1 from "../assets/gritz1.avif";
 import gritz2 from "../assets/gritz2.avif";
 import gritz3 from "../assets/gritz3.avif";
 import mixpro from "../assets/mixpro.avif";
+import fundo3 from "../assets/fundo3.avif";
 
 const products = [
   { id: "fuba-fino", name: "Fubá Fino", image: fubafino },
@@ -90,7 +91,7 @@ export default function AboutContent() {
                   .getElementById("institucional")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-300 text-green-900 font-semibold px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105"
+              className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-700 text-orange-200 font-semibold px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105"
             >
               Saiba Mais <ChevronDown className="w-5 h-5" />
             </a>
@@ -100,22 +101,47 @@ export default function AboutContent() {
 
       <section className="py-16 px-6 text-center" id="institucional">
         <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-3xl font-semibold">Quem Somos</h2>
-          <p className="leading-relaxed">
+          <h2 className="text-3xl font-bold text-green-900 ">Quem Somos</h2>
+          <p className="leading-relaxed text-lg">
             A{" "}
             <span className="font-semibold text-green-900">
               Chicago Agrobusiness
             </span>{" "}
             nasceu com a missão de transformar o potencial agrícola do{" "}
             <span className="font-semibold text-green-900">Centro-Oeste</span>{" "}
-            em negócios sólidos, inovadores e sustentáveis.
+            em negócios sólidos, inovadores e sustentáveis. Com raízes fortes em Goiás, consolidamos nossa atuação no setor de 
+            agronegócio, especialmente na produção, industrialização e comercialização de derivados do milho e outras commodities.
           </p>
+        </div>
+      </section>
+
+      <section className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-6 px-6 gap-10">
+        {/* Texto à esquerda */}
+        <div className="md:w-1/2 space-y-4">
+          <h3 className="text-2xl md:text-3xl font-bold text-green-900 mb-4">
+            Nossa História
+          </h3>
+          <p className="text-lg leading-relaxed">
+            Ao longo dos anos, expandimos nossa estrutura e diversificamos operações, sempre com foco em eficiência, 
+            qualidade e geração de valor para produtores, clientes e parceiros. Nossa trajetória é marcada pela combinação 
+            de tradição no campo com visão empresarial moderna, resultando em projetos de grande impacto, como a 
+            industrialização de grãos, exportações e parcerias estratégicas.
+          </p>
+        </div>
+
+        {/* Imagem à direita */}
+        <div className="md:w-1/2">
+          <img 
+            src={fundo3}
+            alt="Nossa história"
+            className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
+          />
         </div>
       </section>
 
       <section className="py-16 bg-lime-75">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-10">Nossos Produtos</h2>
+          <h2 className="text-3xl text-green-900  font-bold mb-10">Nossos Produtos</h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {products.map((product, index) => (
@@ -127,7 +153,7 @@ export default function AboutContent() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+                  className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover rounded-full shadow-xl hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <h3 className="mt-2 text-sm font-medium text-gray-800">

@@ -107,14 +107,14 @@ export default function HomeContent() {
             <section className="relative px-6 mb-24 md:px-32 max-w-[1600px] mx-auto" >
                 <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    Prontos para Atender Sua Operação
+                        Prontos para Atender Sua Operação
                     </h3>
                     <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                    Com o compromisso de investir em novas máquinas e expandir conforme necessário,
-                    oferecemos a flexibilidade que seu mercado exige.
+                        Com o compromisso de investir em novas máquinas e expandir conforme necessário,
+                        oferecemos a flexibilidade que seu mercado exige.
                     </p>
                     <p className="text-lg text-gray-700 leading-relaxed">
-                    Vamos construir juntos uma relação de confiança e crescimento.
+                        Vamos construir juntos uma relação de confiança e crescimento.
                     </p>
                 </div>
             </section>
