@@ -146,11 +146,11 @@ export default function ProductsPage() {
           loading="eager"
           fetchpriority="high"
           className="w-full h-[180px] object-cover"
-          style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.45)` }}
+          style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.25)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 flex flex-col justify-center items-center text-center">
-          <h1 className="text-white text-lg md:text-xl max-w-4xl leading-relaxed">
-            A <span className="text-orange-300 font-semibold">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.
+          <h1 className="text-white text-lg font-medium md:text-xl max-w-4xl leading-relaxed">
+            A <span className="text-orange-300 font-bold">Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.
           </h1>
         </div>
       </section>
