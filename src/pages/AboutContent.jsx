@@ -75,8 +75,8 @@ export default function AboutContent() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-b from-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-green-700/20 to-orange-700/30"></div>
+        <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-b from-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-green-700/20 to-orange-700/30"></div>
 
         <div className="relative z-10 max-w-3xl px-6">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">
