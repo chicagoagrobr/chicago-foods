@@ -84,13 +84,13 @@ export default function ContactContent() {
             loading="eager"
             fetchpriority="high"
             className="w-full h-full object-cover"
-            style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.35)` }}
+            style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.25)` }}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
-            <h1 className="text-2xl font-semibold mb-2">
+            <h1 className="text-2xl font-bold mb-2">
               <span className="text-orange-300">Fale Conosco</span>
             </h1>
-            <h2 className="max-w-2xl">
+            <h2 className="max-w-2xl font-medium">
               Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias.
             </h2>
           </div>
