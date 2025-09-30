@@ -133,7 +133,7 @@ export default function AboutContent() {
           <Slider
             dots={true}
             infinite={true}
-            speed={400}
+            speed={500}
             slidesToShow={1}
             slidesToScroll={1}
             autoplay={true}
@@ -144,6 +144,9 @@ export default function AboutContent() {
                 <img
                   src={img}
                   alt={`Foto ${index + 1}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
                   className="w-full h-64 sm:h-80 md:h-96 object-cover"
                 />
               </div>
