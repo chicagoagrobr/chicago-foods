@@ -47,7 +47,7 @@ export default function HomeContent() {
                 </button>
             </a>
 
-            <section className="w-full flex justify-center px-4 mt-8 md:mt-24">
+            <section className="w-full flex justify-center px-4 mt-8 md:mt-16">
                 <p className="max-w-[1200px] text-xl md:text-2xl p-6">
                     Na <span className="font-semibold text-orange-400">Chicago Foods</span>, temos o compromisso de fornecer derivados de milho de alta qualidade adaptados para atender à sua marca própria.
                     Nossa flexibilidade e capacidade de produção nos tornam o parceiro ideal para atender às suas necessidades exclusivas e em expansão no mercado norte-americano.
@@ -55,7 +55,7 @@ export default function HomeContent() {
                 </p>
             </section>
 
-            <section className="w-full py-10 px-4 mb-6 flex justify-center">
+            <section className="w-full py-10 px-4 mb-6 mt-8 flex justify-center">
                 <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     <div className="w-full h-[400px] relative flex xxs:-mt-24 md:mt-0">
                         <img
@@ -104,7 +104,7 @@ export default function HomeContent() {
                 </div>
             </section>
 
-            <section className="relative px-6 mb-24 md:px-32 max-w-[1600px] mx-auto" >
+            <section className="relative px-6 mt-4 lg:mt-16 mb-24 md:px-32 max-w-[1600px] mx-auto" >
                 <div className="bg-white bg-gradient-to-br from-lime-50 via-white to-green-50 rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                         Prontos para Atender Sua Operação
