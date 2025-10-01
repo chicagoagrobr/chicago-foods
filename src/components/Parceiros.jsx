@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const lazyModules = import.meta.glob("../assets/parceiros/*.avif");
+const eagerModules = import.meta.glob("../assets/parceiros/*.avif", {eager: true});
 
 const Parceiros = () => {
   const sectionRef = useRef(null);
@@ -18,22 +18,8 @@ const Parceiros = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      async ([entry]) => {
-        if (entry.isIntersecting) {
-          const allModules = Object.values(lazyModules);
-          const loadedImages = await Promise.all(allModules.map((fn) => fn()));
-          const allLogos = loadedImages.map((m) => m.default);
-          setParceiros(allLogos);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
+    const allImages = Object.values(eagerModules).map((m) => m.default);
+    setParceiros(allImages);
   }, []);
 
   return (
@@ -58,6 +44,9 @@ const Parceiros = () => {
               key={index}
               src={logo}
               alt={`Parceiro ${index + 1}`}
+              loading="lazy"
+              fetchpriority="auto"
+              decoding="async"
               onLoad={() =>
                 setLoaded((prev) => ({ ...prev, [index]: true }))
               }
