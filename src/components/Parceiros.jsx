@@ -44,7 +44,7 @@ const Parceiros = () => {
               key={index}
               src={logo}
               alt={`Parceiro ${index + 1}`}
-              loading="lazy"
+              loading="eager"
               fetchpriority="auto"
               decoding="async"
               onLoad={() =>
