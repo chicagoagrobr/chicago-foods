@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const eagerModules = import.meta.glob("../assets/parceiros/*.avif", { eager: true });
 
-export default function Parceiros({ lang }) {
+export default function Parceiros() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const scrollRef = useRef(null);
   const [hovered, setHovered] = useState(false);
@@ -32,15 +34,7 @@ export default function Parceiros({ lang }) {
     >
       <div className="flex justify-center items-center gap-10 relative">
         <h2 className="text-xl font-semibold text-gray-800 whitespace-nowrap text-center">
-          {lang === "pt" ? (
-            <>
-              Nossos <br /> Parceiros
-            </>
-          ) : (
-            <>
-              Our Partners
-            </>
-          )}
+          {t("partners.title")}
         </h2>
 
         <div
@@ -51,7 +45,7 @@ export default function Parceiros({ lang }) {
             <img
               key={index}
               src={logo}
-              alt={`${lang === "pt" ? "Parceiro" : "Partner"} ${index + 1}`}
+              alt={`${t("partners.alt")} ${index + 1}`}
               loading="eager"
               fetchpriority="auto"
               decoding="async"
@@ -66,7 +60,7 @@ export default function Parceiros({ lang }) {
           <button
             onClick={() => scroll("left")}
             className="absolute left-[120px] bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
-            aria-label={lang === "pt" ? "Rolar para a esquerda" : "Scroll left"}
+            aria-label={t("partners.scrollLeft")}
           >
             <ChevronLeft size={20} />
           </button>
@@ -76,7 +70,7 @@ export default function Parceiros({ lang }) {
           <button
             onClick={() => scroll("right")}
             className="absolute right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
-            aria-label={lang === "pt" ? "Rolar para a direita" : "Scroll right"}
+            aria-label={t("partners.scrollRight")}
           >
             <ChevronRight size={20} />
           </button>

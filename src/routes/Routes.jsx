@@ -22,7 +22,7 @@ function LoadingScreen() {
   );
 }
 
-export default function AppRoutes({ lang, setLang }) {
+export default function AppRoutes() {
   useEffect(() => {
     import("../pages/ProductsContent");
     import("../pages/ContactContent");
@@ -33,13 +33,13 @@ export default function AppRoutes({ lang, setLang }) {
     <Suspense fallback={<LoadingScreen />}>
       <div className="flex flex-col min-h-screen bg-lime-75">
         <ScrollToTop />
-        <SubHeader lang={lang} setLang={setLang} />
-        <Header lang={lang} />
+        <SubHeader />
+        <Header />
 
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomeContent />} />
-            <Route path="/contato" element={<ContactContent lang={lang}/>} />
+            <Route path="/contato" element={<ContactContent />} />
             <Route path="/produtos" element={<ProductsContent />} />
             <Route path="/produtos/:id" element={<ProductDetail />} />
             <Route path="/politica" element={<PolicyPrivacyContent />} />
@@ -47,8 +47,8 @@ export default function AppRoutes({ lang, setLang }) {
           </Routes>
         </main>
 
-        <Parceiros lang={lang}/>
-        <Footer lang={lang}/>
+        <Parceiros />
+        <Footer />
       </div>
     </Suspense>
   );

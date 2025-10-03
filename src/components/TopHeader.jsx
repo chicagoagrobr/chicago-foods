@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Search, Phone } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
+import { useTranslation } from "react-i18next";
 
 const keywordMap = [
   { keywords: ["contato", "fale", "suporte", "orçamento", "email", "endereço"], path: "/contato", label: "Página de Contato" },
@@ -9,34 +10,30 @@ const keywordMap = [
   { keywords: ["produto", "serviço", "oferta", "milho", "canjica", "fuba", "germen", "gritz"], path: "/produtos", label: "Produtos" },
 ];
 
-export default function SubHeader({ lang, setLang }) {
+export default function SubHeader() {
+  const { t, i18n } = useTranslation();
   const [search, setSearch] = useState("");
   const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
 
   function toggleLang() {
-    setLang((prev) => (prev === "pt" ? "en" : "pt"));
+    const newLang = i18n.language === "pt" ? "en" : "pt";
+    i18n.changeLanguage(newLang);
   }
 
   function normalize(text) {
-    return text
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
 
   function searchRedirect() {
     const userInput = normalize(search);
-
     const match = keywordMap.find((item) =>
       item.keywords.some((keyword) => userInput.includes(normalize(keyword)))
     );
 
     if (match) {
       navigate(match.path);
-      setTimeout(() => {
-        window.scrollTo({ top: 100, behavior: "smooth" });
-      }, 100);
+      setTimeout(() => window.scrollTo({ top: 100, behavior: "smooth" }), 100);
     } else {
       setShowToast(true);
       setTimeout(() => setShowToast(false), 4000);
@@ -53,7 +50,7 @@ export default function SubHeader({ lang, setLang }) {
           to="/contato"
           className="text-green-900 font-semibold text-xs sm:text-sm transition-transform duration-300 hover:scale-105 flex items-center gap-1"
         >
-          {lang === "pt" ? "Fale Conosco!" : "Contact Us"}
+          {t("subheader.contactLink")}
           <Phone className="w-4 h-5 xxs:hidden xs:flex" />
         </Link>
 
@@ -61,12 +58,10 @@ export default function SubHeader({ lang, setLang }) {
           <div className="relative w-48 xxs:w-40 celular:w-48 sm:w-64">
             <input
               type="text"
-              placeholder={lang === "pt" ? "Pesquisar..." : "Search..."}
+              placeholder={t("subheader.searchPlaceholder")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") searchRedirect();
-              }}
+              onKeyDown={(e) => e.key === "Enter" && searchRedirect()}
               className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white
                          placeholder-green-800 w-full focus:outline-none
                          focus:ring-2 focus:ring-green-900 transition-all duration-200"
@@ -83,15 +78,12 @@ export default function SubHeader({ lang, setLang }) {
           <button
             onClick={toggleLang}
             className="hover:scale-110 transition"
-            title={lang === "pt" ? "Change to English" : "Mudar para Português"}
+            title={i18n.language === "pt" ? "Change to English" : "Mudar para Português"}
           >
             <ReactCountryFlag
-              countryCode={lang === "pt" ? "BR" : "US"}
+              countryCode={i18n.language === "pt" ? "BR" : "US"}
               svg
-              style={{
-                width: "1.5em",
-                height: "1.5em",
-              }}
+              style={{ width: "1.5em", height: "1.5em" }}
             />
           </button>
         </div>
@@ -99,17 +91,7 @@ export default function SubHeader({ lang, setLang }) {
 
       {showToast && (
         <div className="fixed bottom-5 right-5 bg-white px-4 py-3 rounded shadow-lg animate-slide-in z-50">
-          {lang === "pt" ? (
-            <>
-              Nenhuma página encontrada para sua pesquisa. <br />
-              Tente palavras como: <strong>oferta, orçamento, quem somos...</strong>
-            </>
-          ) : (
-            <>
-              No page found for your search. <br />
-              Try words like: <strong>offer, quote, about us...</strong>
-            </>
-          )}
+          {t("subheader.noPageFound")}
         </div>
       )}
 

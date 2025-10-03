@@ -3,8 +3,10 @@ import colaboracao from '../assets/colaboracao.avif';
 import { useState, useEffect } from 'react';
 import SEO from "../components/SEO";
 import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from "react-i18next";
 
-export default function ContactContent({ lang }) {
+export default function ContactContent() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -35,9 +37,7 @@ export default function ContactContent({ lang }) {
 
       setStatusMessage({
         type: "success",
-        text: lang === "pt"
-          ? "Obrigado por entrar em contato! Responderemos em breve."
-          : "Thank you for contacting us! We will get back to you soon."
+        text: t("contact.successMessage")
       });
 
       setFormData({ nome: '', email: '', assunto: '', mensagem: '' });
@@ -45,9 +45,7 @@ export default function ContactContent({ lang }) {
       console.error("Erro:", err);
       setStatusMessage({
         type: "error",
-        text: lang === "pt"
-          ? "Ops! Tivemos um problema ao enviar sua mensagem. Tente novamente."
-          : "Oops! There was a problem sending your message. Please try again."
+        text: t("contact.errorMessage")
       });
     } finally {
       setSending(false);
@@ -64,11 +62,8 @@ export default function ContactContent({ lang }) {
   return (
     <>
       <SEO
-        title={lang === "pt" ? "Contato | Chicago Foods" : "Contact | Chicago Foods"}
-        description={lang === "pt"
-          ? "Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
-          : "At Chicago Foods, we are committed to providing high-quality corn-based products. We transform your ideas into products that create value and trust."
-        }
+        title={t("contact.seo.title")}
+        description={t("contact.seo.description")}
         url="https://chicagofoods.com.br/contato"
         image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
       />
@@ -78,7 +73,7 @@ export default function ContactContent({ lang }) {
           href="https://wa.me/5564999642170"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
+          aria-label={t("contact.whatsappLabel")}
         >
           <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake-every-10s z-50">
             <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
@@ -88,10 +83,7 @@ export default function ContactContent({ lang }) {
         <section className="relative w-full h-[180px]">
           <img
             src={colaboracao}
-            alt={lang === "pt"
-              ? "Colaboração entre profissionais na indústria de milho"
-              : "Collaboration between professionals in the corn industry"
-            }
+            alt={t("contact.heroImageAlt")}
             loading="eager"
             fetchpriority="high"
             className="w-full h-full object-cover"
@@ -99,64 +91,59 @@ export default function ContactContent({ lang }) {
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
             <h1 className="text-2xl font-bold mb-2">
-              <span className="text-orange-300">{lang === "pt" ? "Fale Conosco" : "Contact Us"}</span>
+              <span className="text-orange-300">{t("contact.heroTitle")}</span>
             </h1>
-            <h2 className="max-w-2xl font-medium">
-              {lang === "pt"
-                ? "Estamos à disposição para tirar dúvidas, receber sugestões e iniciar novas parcerias."
-                : "We are available to answer questions, receive suggestions, and start new partnerships."
-              }
-            </h2>
+            <h2 className="max-w-2xl font-medium">{t("contact.heroSubtitle")}</h2>
           </div>
         </section>
 
         <section className="max-w-4xl md:pl-2 xxs:pl-0 pr-2 mx-auto py-16">
           <div className="grid md:grid-cols-2 gap-10">
             <form
-              aria-label={lang === "pt" ? "Formulário de contato" : "Contact form"}
+              aria-label={t("contact.formLabel")}
               onSubmit={handleSubmit}
               className="space-y-4 bg-white p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto"
             >
-              <label className="block text-sm font-medium mb-1">{lang === "pt" ? "Nome" : "Name"}</label>
+              <label className="block text-sm font-medium mb-1">{t("contact.form.name")}</label>
               <input
                 type="text"
                 name="nome"
                 value={formData.nome}
                 onChange={handleChange}
                 className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
-                placeholder={lang === "pt" ? "Seu nome" : "Your name"}
+                placeholder={t("contact.form.namePlaceholder")}
                 required
               />
 
-              <label className="block text-sm font-medium mb-1">{lang === "pt" ? "E-mail" : "Email"}</label>
+              <label className="block text-sm font-medium mb-1">{t("contact.form.email")}</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
-                placeholder={lang === "pt" ? "email@exemplo.com" : "email@example.com"}
+                placeholder={t("contact.form.emailPlaceholder")}
                 required
               />
 
-              <label className="block text-sm font-medium mb-1">{lang === "pt" ? "Assunto" : "Subject"}</label>
+              <label className="block text-sm font-medium mb-1">{t("contact.form.subject")}</label>
               <input
                 type="text"
                 name="assunto"
                 value={formData.assunto}
                 onChange={handleChange}
                 className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
-                placeholder={lang === "pt" ? "Assunto da mensagem" : "Subject of the message"}
+                placeholder={t("contact.form.subjectPlaceholder")}
                 required
               />
 
-              <label className="block text-sm font-medium mb-1">{lang === "pt" ? "Mensagem" : "Message"}</label>
+              <label className="block text-sm font-medium mb-1">{t("contact.form.message")}</label>
               <textarea
                 name="mensagem"
                 value={formData.mensagem}
                 onChange={handleChange}
                 className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800"
-                placeholder={lang === "pt" ? "Digite sua mensagem..." : "Type your message..."}
+                placeholder={t("contact.form.messagePlaceholder")}
                 required
               ></textarea>
 
@@ -168,17 +155,17 @@ export default function ContactContent({ lang }) {
                     : "bg-green-800 hover:bg-green-900"
                 }`}
               >
-                {sending ? (lang === "pt" ? "Enviando..." : "Sending...") : (lang === "pt" ? "Enviar" : "Send")}
+                {sending ? t("contact.form.sending") : t("contact.form.send")}
               </button>
             </form>
 
             <div className="bg-white p-8 rounded-xl shadow-2xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
-              <h3 className="text-xl font-semibold mb-4">{lang === "pt" ? "Informações de Contato" : "Contact Information"}</h3>
+              <h3 className="text-xl font-semibold mb-4">{t("contact.infoTitle")}</h3>
 
               <div className="flex items-start gap-4 mb-4">
                 <FaEnvelope className="text-green-800 mt-1" />
                 <div>
-                  <p className="font-medium">{lang === "pt" ? "E-mail" : "Email"}</p>
+                  <p className="font-medium">{t("contact.info.email")}</p>
                   <p>contato@chicagofoods.com.br</p>
                 </div>
               </div>
@@ -186,7 +173,7 @@ export default function ContactContent({ lang }) {
               <div className="flex items-start gap-4 mb-4">
                 <FaPhoneAlt className="text-green-800 mt-1" />
                 <div>
-                  <p className="font-medium">{lang === "pt" ? "Telefone" : "Phone"}</p>
+                  <p className="font-medium">{t("contact.info.phone")}</p>
                   <p>(64) 99964-2170</p>
                 </div>
               </div>
@@ -194,20 +181,12 @@ export default function ContactContent({ lang }) {
               <div className="flex items-start gap-4 mb-4">
                 <FaMapMarkerAlt className="text-green-800 mt-1" />
                 <div>
-                  <p className="font-medium">{lang === "pt" ? "Endereço" : "Address"}</p>
-                  <p>{lang === "pt"
-                    ? "Av. Primária Qd 07 - Distrito Agroindustrial de Jataí, GO"
-                    : "Av. Primária Qd 07 - Jataí Industrial District, GO"
-                  }</p>
+                  <p className="font-medium">{t("contact.info.address")}</p>
+                  <p>{t("contact.info.addressDetail")}</p>
                 </div>
               </div>
 
-              <p className="mt-6 text-sm text-green-800">
-                {lang === "pt"
-                  ? "Responderemos sua mensagem o mais breve possível!"
-                  : "We will respond to your message as soon as possible!"
-                }
-              </p>
+              <p className="mt-6 text-sm text-green-800">{t("contact.info.note")}</p>
             </div>
           </div>
         </section>

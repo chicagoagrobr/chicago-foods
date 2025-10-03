@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { Suspense } from "react";
 import AppRoutes from "./routes/Routes.jsx";
+import "./i18n";
 
 export default function App() {
-  const [lang, setLang] = useState("pt");
-
-  return <AppRoutes lang={lang} setLang={setLang} />;
+  return (<AppRoutes />);
 }
