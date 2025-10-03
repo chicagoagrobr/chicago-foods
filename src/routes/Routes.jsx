@@ -39,7 +39,7 @@ export default function AppRoutes({ lang, setLang }) {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomeContent />} />
-            <Route path="/contato" element={<ContactContent />} />
+            <Route path="/contato" element={<ContactContent lang={lang}/>} />
             <Route path="/produtos" element={<ProductsContent />} />
             <Route path="/produtos/:id" element={<ProductDetail />} />
             <Route path="/politica" element={<PolicyPrivacyContent />} />
@@ -47,8 +47,8 @@ export default function AppRoutes({ lang, setLang }) {
           </Routes>
         </main>
 
-        <Parceiros />
-        <Footer />
+        <Parceiros lang={lang}/>
+        <Footer lang={lang}/>
       </div>
     </Suspense>
   );

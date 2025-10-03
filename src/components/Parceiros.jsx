@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const eagerModules = import.meta.glob("../assets/parceiros/*.avif", {eager: true});
+const eagerModules = import.meta.glob("../assets/parceiros/*.avif", { eager: true });
 
-const Parceiros = () => {
+export default function Parceiros({ lang }) {
   const sectionRef = useRef(null);
   const scrollRef = useRef(null);
   const [hovered, setHovered] = useState(false);
@@ -31,8 +31,16 @@ const Parceiros = () => {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex justify-center items-center gap-10 relative">
-        <h2 className="text-xl font-semibold text-gray-800 whitespace-nowrap">
-          Nossos <br /> Parceiros
+        <h2 className="text-xl font-semibold text-gray-800 whitespace-nowrap text-center">
+          {lang === "pt" ? (
+            <>
+              Nossos <br /> Parceiros
+            </>
+          ) : (
+            <>
+              Our Partners
+            </>
+          )}
         </h2>
 
         <div
@@ -43,13 +51,11 @@ const Parceiros = () => {
             <img
               key={index}
               src={logo}
-              alt={`Parceiro ${index + 1}`}
+              alt={`${lang === "pt" ? "Parceiro" : "Partner"} ${index + 1}`}
               loading="eager"
               fetchpriority="auto"
               decoding="async"
-              onLoad={() =>
-                setLoaded((prev) => ({ ...prev, [index]: true }))
-              }
+              onLoad={() => setLoaded((prev) => ({ ...prev, [index]: true }))}
               className={`h-[84px] w-auto object-contain duration-500 hover:scale-110 flex-shrink-0 transition-all
                 ${loaded[index] ? "blur-0 bg-transparent" : "blur-sm bg-gray-200 animate-pulse"}`}
             />
@@ -60,6 +66,7 @@ const Parceiros = () => {
           <button
             onClick={() => scroll("left")}
             className="absolute left-[120px] bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
+            aria-label={lang === "pt" ? "Rolar para a esquerda" : "Scroll left"}
           >
             <ChevronLeft size={20} />
           </button>
@@ -69,6 +76,7 @@ const Parceiros = () => {
           <button
             onClick={() => scroll("right")}
             className="absolute right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
+            aria-label={lang === "pt" ? "Rolar para a direita" : "Scroll right"}
           >
             <ChevronRight size={20} />
           </button>
@@ -76,6 +84,4 @@ const Parceiros = () => {
       </div>
     </section>
   );
-};
-
-export default Parceiros;
+}
