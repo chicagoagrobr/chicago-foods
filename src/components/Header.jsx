@@ -1,45 +1,108 @@
 import { useState } from "react";
-import nome from '../assets/nome.avif';
-import logo from '../assets/cf.avif';
+import nome from "../assets/nome.avif";
+import logo from "../assets/cf.avif";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Boxes, Mail, Menu, X, BookOpen } from "lucide-react";
 
-export default function Header() {
+export default function Header({ lang }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+
   const isActive = (path) => location.pathname === path;
+
+  const texts = {
+    pt: {
+      home: "Home",
+      about: "Sobre Nós",
+      products: "Produtos",
+      contact: "Contato",
+      budget: "Solicitar Orçamento",
+    },
+    en: {
+      home: "Home",
+      about: "About Us",
+      products: "Products",
+      contact: "Contact",
+      budget: "Request a Quote",
+    },
+  };
+
+  const t = texts[lang] || texts.pt;
 
   return (
     <header className="bg-green-800 py-3.5 sticky top-0 z-50 shadow-md shadow-green-900/30">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
-        
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 550, behavior: "smooth" })}
           className="flex items-center space-x-1 transition-transform duration-300 hover:scale-105"
         >
-          <img src={logo} alt="Logo da empresa: Chicago Foods" className="w-20 sm:w-[104px]" />
-          <img src={nome} alt="Nome da empresa: Chicago Foods" className="h-10 sm:h-[59px] mt-1" />
+          <img
+            src={logo}
+            alt="Logo da empresa: Chicago Foods"
+            className="w-20 sm:w-[104px]"
+          />
+          <img
+            src={nome}
+            alt="Nome da empresa: Chicago Foods"
+            className="h-10 sm:h-[59px] mt-1"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center justify-center gap-x-8 p-3">
-          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm px-2 font-semibold`}>
-            <Home className="w-5 h-5" /> Home
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={`flex items-center gap-2 ${
+              isActive("/") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"
+            } text-sm px-2 font-semibold`}
+          >
+            <Home className="w-5 h-5" /> {t.home}
           </Link>
-          <Link to="/sobre" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/sobre") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm font-semibold`}>
-            <BookOpen className="w-5 h-5" /> Sobre Nós
+
+          <Link
+            to="/sobre"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={`flex items-center gap-2 ${
+              isActive("/sobre")
+                ? "text-orange-300"
+                : "text-orange-100 hover:text-orange-300"
+            } text-sm font-semibold`}
+          >
+            <BookOpen className="w-5 h-5" /> {t.about}
           </Link>
-          <Link to="/produtos" className={`flex items-center gap-2 ${isActive("/produtos") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm font-semibold`}>
-            <Boxes className="w-5 h-5" /> Produtos
+
+          <Link
+            to="/produtos"
+            className={`flex items-center gap-2 ${
+              isActive("/produtos")
+                ? "text-orange-300"
+                : "text-orange-100 hover:text-orange-300"
+            } text-sm font-semibold`}
+          >
+            <Boxes className="w-5 h-5" /> {t.products}
           </Link>
-          <Link to="/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${isActive("/contato") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} text-sm ml-1 font-semibold`}>
-            <Mail className="w-5 h-5" /> Contato
-          </Link>
+
           <Link
             to="/contato"
-            onClick={() => window.scrollTo({ top: 290, behavior: "smooth" })}
-            className="hidden lg:inline-flex items-center bg-orange-400 shadow-2xl hover:bg-orange-300 text-white font-medium px-4 py-2 rounded-full transition">
-            Solicitar Orçamento
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={`flex items-center gap-2 ${
+              isActive("/contato")
+                ? "text-orange-300"
+                : "text-orange-100 hover:text-orange-300"
+            } text-sm ml-1 font-semibold`}
+          >
+            <Mail className="w-5 h-5" /> {t.contact}
+          </Link>
+
+          <Link
+            to="/contato"
+            onClick={() =>
+              window.scrollTo({ top: 290, behavior: "smooth" })
+            }
+            className="hidden lg:inline-flex items-center bg-orange-400 shadow-2xl hover:bg-orange-300 text-white font-medium px-4 py-2 rounded-full transition"
+          >
+            {t.budget}
           </Link>
         </nav>
 
@@ -54,24 +117,70 @@ export default function Header() {
       {menuOpen && (
         <div className="lg:hidden border-t border-green-700">
           <nav className="flex flex-col p-4 space-y-4">
-            <Link to="/" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className={`flex items-center gap-2 ${isActive("/") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
-              <Home className="w-5 h-5" /> Home
+            <Link
+              to="/"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setMenuOpen(false);
+              }}
+              className={`flex items-center gap-2 ${
+                isActive("/") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"
+              } font-semibold`}
+            >
+              <Home className="w-5 h-5" /> {t.home}
             </Link>
-            <Link to="/sobre" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className={`flex items-center gap-2 ${isActive("/sobre") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
-              <BookOpen className="w-5 h-5" /> Sobre Nós
-            </Link>            
-            <Link to="/produtos" onClick={() => setMenuOpen(false)} className={`flex items-center gap-2 ${isActive("/produtos") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
-              <Boxes className="w-5 h-5" /> Produtos
+
+            <Link
+              to="/sobre"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setMenuOpen(false);
+              }}
+              className={`flex items-center gap-2 ${
+                isActive("/sobre")
+                  ? "text-orange-300"
+                  : "text-orange-100 hover:text-orange-300"
+              } font-semibold`}
+            >
+              <BookOpen className="w-5 h-5" /> {t.about}
             </Link>
-            <Link to="/contato" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });setMenuOpen(false);}} className={`flex items-center gap-2 ${isActive("/contato") ? "text-orange-300" : "text-orange-100 hover:text-orange-300"} font-semibold`}>
-              <Mail className="w-5 h-5" /> Contato
+
+            <Link
+              to="/produtos"
+              onClick={() => setMenuOpen(false)}
+              className={`flex items-center gap-2 ${
+                isActive("/produtos")
+                  ? "text-orange-300"
+                  : "text-orange-100 hover:text-orange-300"
+              } font-semibold`}
+            >
+              <Boxes className="w-5 h-5" /> {t.products}
             </Link>
+
             <Link
               to="/contato"
-              onClick={() => {window.scrollTo({ top: 290, behavior: "smooth" }); 
-              setMenuOpen(false);}}
-              className="flex items-center bg-orange-400 hover:bg-orange-300 w-44 text-white font-semibold px-4 py-2 font-semibold  rounded-full shadow-2xl transition">
-              Solicitar Orçamento
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setMenuOpen(false);
+              }}
+              className={`flex items-center gap-2 ${
+                isActive("/contato")
+                  ? "text-orange-300"
+                  : "text-orange-100 hover:text-orange-300"
+              } font-semibold`}
+            >
+              <Mail className="w-5 h-5" /> {t.contact}
+            </Link>
+
+            <Link
+              to="/contato"
+              onClick={() => {
+                window.scrollTo({ top: 290, behavior: "smooth" });
+                setMenuOpen(false);
+              }}
+              className="flex items-center bg-orange-400 hover:bg-orange-300 w-44 text-white font-semibold px-4 py-2 rounded-full shadow-2xl transition"
+            >
+              {t.budget}
             </Link>
           </nav>
         </div>

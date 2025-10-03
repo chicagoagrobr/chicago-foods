@@ -1,31 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Search, Phone } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 
 const keywordMap = [
-  { keywords: ['contato', 'fale', 'suporte', 'orçamento', 'email', 'endereço'], path: '/contato', label:'Página de Contato'},
-  { keywords: ['sobre', 'empresa', 'quem somos'], path: '/', label: 'Sobre Nós'},
-  { keywords: ['produto', 'serviço', 'oferta', 'milho', 'canjica', 'fuba', 'germen', 'gritz'], path: '/produtos', label:'Produtos'},
+  { keywords: ["contato", "fale", "suporte", "orçamento", "email", "endereço"], path: "/contato", label: "Página de Contato" },
+  { keywords: ["sobre", "empresa", "quem somos"], path: "/sobre", label: "Sobre Nós" },
+  { keywords: ["produto", "serviço", "oferta", "milho", "canjica", "fuba", "germen", "gritz"], path: "/produtos", label: "Produtos" },
 ];
 
-export default function SubHeader() {
+export default function SubHeader({ lang, setLang }) {
   const [search, setSearch] = useState("");
-  const [lang, setLang] = useState("pt");
   const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const savedLang = localStorage.getItem("lang");
-    if (savedLang) setLang(savedLang);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("lang", lang);
-  }, [lang]);
-
   function toggleLang() {
-    setLang(prev => (prev === "pt" ? "en" : "pt"));
+    setLang((prev) => (prev === "pt" ? "en" : "pt"));
   }
 
   function normalize(text) {
@@ -38,17 +28,14 @@ export default function SubHeader() {
   function searchRedirect() {
     const userInput = normalize(search);
 
-    const match = keywordMap.find(item =>
-      item.keywords.some(keyword => userInput.includes(normalize(keyword)))
+    const match = keywordMap.find((item) =>
+      item.keywords.some((keyword) => userInput.includes(normalize(keyword)))
     );
 
     if (match) {
       navigate(match.path);
       setTimeout(() => {
-        window.scrollTo({
-          top: 100,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: 100, behavior: "smooth" });
       }, 100);
     } else {
       setShowToast(true);
@@ -57,10 +44,12 @@ export default function SubHeader() {
   }
 
   return (
-    <div className="bg-lime-200 font-body py-3" style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}>
+    <div
+      className="bg-lime-200 font-body py-3"
+      style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 gap-2 sm:gap-4 flex-wrap">
-
-        <Link 
+        <Link
           to="/contato"
           className="text-green-900 font-semibold text-xs sm:text-sm transition-transform duration-300 hover:scale-105 flex items-center gap-1"
         >
@@ -75,7 +64,9 @@ export default function SubHeader() {
               placeholder={lang === "pt" ? "Pesquisar..." : "Search..."}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              onKeyDown={e => { if (e.key === 'Enter') searchRedirect() }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") searchRedirect();
+              }}
               className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white
                          placeholder-green-800 w-full focus:outline-none
                          focus:ring-2 focus:ring-green-900 transition-all duration-200"
@@ -89,20 +80,20 @@ export default function SubHeader() {
             </button>
           </div>
 
-            <button
+          <button
             onClick={toggleLang}
             className="hover:scale-110 transition"
             title={lang === "pt" ? "Change to English" : "Mudar para Português"}
-            >
+          >
             <ReactCountryFlag
-                countryCode={lang === "pt" ? "BR" : "US"}
-                svg
-                style={{
+              countryCode={lang === "pt" ? "BR" : "US"}
+              svg
+              style={{
                 width: "1.5em",
-                height: "1.5em"
-                }}
+                height: "1.5em",
+              }}
             />
-            </button>
+          </button>
         </div>
       </div>
 

@@ -11,8 +11,6 @@ const ProductsContent = lazy(() => import("../pages/ProductsContent"));
 const ProductDetail = lazy(() => import("../pages/ProductDetail"));
 const PolicyPrivacyContent = lazy(() => import("../pages/PrivacyPolicyContent"));
 const AboutContent = lazy(() => import("../pages/AboutContent"));
-
-
 const Parceiros = lazy(() => import("../components/Parceiros"));
 const Footer = lazy(() => import("../components/Footer"));
 
@@ -24,7 +22,7 @@ function LoadingScreen() {
   );
 }
 
-export default function AppRoutes() {
+export default function AppRoutes({ lang, setLang }) {
   useEffect(() => {
     import("../pages/ProductsContent");
     import("../pages/ContactContent");
@@ -35,8 +33,8 @@ export default function AppRoutes() {
     <Suspense fallback={<LoadingScreen />}>
       <div className="flex flex-col min-h-screen bg-lime-75">
         <ScrollToTop />
-        <SubHeader />
-        <Header />
+        <SubHeader lang={lang} setLang={setLang} />
+        <Header lang={lang} />
 
         <main className="flex-grow">
           <Routes>
