@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "title": "Produtos | Chicago Foods",
+    "description": "Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
+  },
+  "heroText": "A <span class='text-orange-300 font-bold'>Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.",
+  "whatsappLabel": "Chat no WhatsApp",
+  "products": [
+    {
+      "id": "fuba-fino",
+      "name": "Fubá Fino",
+      "description": "Produto com alta dispersão e absorção, ideal para formulações fermentadas e panificação.",
+      "desc": "Moagem Ultrafina"
+    },
+    {
+      "id": "fuba-mimoso",
+      "name": "Fubá Mimoso",
+      "description": "Produto de textura suave e coloração uniforme, ideal para receitas tradicionais e aplicações industriais que demandam acabamento refinado.",
+      "desc": "Moagem Fina Tradicional"
+    },
+    {
+      "id": "fuba-italiano",
+      "name": "Fubá Italiano",
+      "description": "Textura encorpada com toque gourmet, para receitas tradicionais e também processos industriais modernos.",
+      "desc": "Moagem Média"
+    },
+    {
+      "id": "gritz-1",
+      "name": "Gritz 1",
+      "description": "Produto de granulometria fina, ideal para processos industriais que exigem uniformidade e boa fluidez.",
+      "desc": "Granulação Fina"
+    },
+    {
+      "id": "gritz-2",
+      "name": "Gritz 2",
+      "description": "Versátil para aplicações que exigem equilíbrio entre estrutura e solubilidade.",
+      "desc": "Granulação Intermediária"
+    },
+    {
+      "id": "gritz-3",
+      "name": "Gritz 3",
+      "description": "Partículas maiores, ideal para formulações que demandam retenção de estrutura e menor solubilidade imediata.",
+      "desc": "Granulação Grossa"
+    },
+    {
+      "id": "mixpro",
+      "name": "MixPro",
+      "description": "Blend desenvolvido para oferecer equilíbrio entre solubilidade e estrutura, unindo as características de duas granulometrias diferentes.",
+      "desc": "Mistura de Gritz1 e Gritz2"
+    },
+    {
+      "id": "canjiquinha",
+      "name": "Canjiquinha",
+      "description": "Produto robusto e tradicional com textura ideal para preparo de alimentos prontos.",
+      "desc": "Textura Encorpada"
+    },
+    {
+      "id": "canjica",
+      "name": "Canjica",
+      "description": "Grão médio ideal para preparações doces e pratos gourmet industrializados.",
+      "desc": "Grão Degerminado"
+    },
+    {
+      "id": "canjicao",
+      "name": "Canjicão",
+      "description": "Produto de grãos grandes, indicado para preparações que necessitam textura consistente e sabor característico do milho.",
+      "desc": "Grão Degerminado"
+    },
+    {
+      "id": "germen",
+      "name": "Nutrição Animal-Gérmen de Milho",
+      "description": "Subproduto nobre do milho, rico em nutrientes, sendo indicado para enriquecimento nutricional e formulações de alto valor agregado.",
+      "desc": "Alto Valor Nutricional"
+    }
+  ]
+}

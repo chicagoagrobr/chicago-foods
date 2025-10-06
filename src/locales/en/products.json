@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "title": "Products | Chicago Foods",
+    "description": "At Chicago Foods, we are committed to providing high-quality corn-based products. We transform your ideas into products that create value and trust."
+  },
+  "heroText": "A <span class='text-orange-300 font-bold'>Chicago Foods</span> offers the industrial market a complete line of yellow corn-based products, with high quality standards and uniform particle size.",
+  "whatsappLabel": "Chat on WhatsApp",
+  "products": [
+    {
+      "id": "fuba-fino",
+      "name": "Fine Cornmeal",
+      "description": "Product with high dispersion and absorption, ideal for fermented formulations and baking.",
+      "desc": "Ultrafine Milling"
+    },
+    {
+      "id": "fuba-mimoso",
+      "name": "Fine Grain Cornmeal",
+      "description": "Product with soft texture and uniform color, ideal for traditional recipes and industrial applications requiring refined finish.",
+      "desc": "Traditional Fine Milling"
+    },
+    {
+      "id": "fuba-italiano",
+      "name": "Italian Cornmeal",
+      "description": "Full-bodied texture with a gourmet touch, suitable for traditional recipes and modern industrial processes.",
+      "desc": "Medium Milling"
+    },
+    {
+      "id": "gritz-1",
+      "name": "Gritz 1",
+      "description": "Fine granularity product, ideal for industrial processes requiring uniformity and good flowability.",
+      "desc": "Fine Granulation"
+    },
+    {
+      "id": "gritz-2",
+      "name": "Gritz 2",
+      "description": "Versatile for applications requiring a balance between structure and solubility.",
+      "desc": "Intermediate Granulation"
+    },
+    {
+      "id": "gritz-3",
+      "name": "Gritz 3",
+      "description": "Larger particles, ideal for formulations requiring structure retention and lower immediate solubility.",
+      "desc": "Coarse Granulation"
+    },
+    {
+      "id": "mixpro",
+      "name": "MixPro",
+      "description": "Blend developed to offer a balance between solubility and structure, combining characteristics of two different granulations.",
+      "desc": "Blend of Gritz1 and Gritz2"
+    },
+    {
+      "id": "canjiquinha",
+      "name": "Small Hominy",
+      "description": "Robust and traditional product with texture ideal for ready-to-eat food preparation.",
+      "desc": "Full-bodied Texture"
+    },
+    {
+      "id": "canjica",
+      "name": "Hominy",
+      "description": "Medium grain, ideal for sweet preparations and industrial gourmet dishes.",
+      "desc": "Degermed Grain"
+    },
+    {
+      "id": "canjicao",
+      "name": "Large Hominy",
+      "description": "Large grain product, suitable for preparations requiring consistent texture and characteristic corn flavor.",
+      "desc": "Degermed Grain"
+    },
+    {
+      "id": "germen",
+      "name": "Animal Nutrition - Corn Germ",
+      "description": "Noble corn byproduct, rich in nutrients, recommended for nutritional enrichment and high value-added formulations.",
+      "desc": "High Nutritional Value"
+    }
+  ]
+}
