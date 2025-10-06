@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "Contact | Chicago Foods",
+    "description": "At Chicago Foods, we are committed to providing high-quality corn-based products. We transform your ideas into products that create value and trust."
+  },
+  "heroTitle": "Contact Us",
+  "heroSubtitle": "We are available to answer questions, receive suggestions, and start new partnerships.",
+  "heroImageAlt": "Collaboration between professionals in the corn industry",
+  "whatsappLabel": "Chat on WhatsApp",
+  "formLabel": "Contact form",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject of the message",
+    "message": "Message",
+    "messagePlaceholder": "Type your message...",
+    "send": "Send",
+    "sending": "Sending..."
+  },
+  "successMessage": "Thank you for contacting us! We will get back to you soon.",
+  "errorMessage": "Oops! There was a problem sending your message. Please try again.",
+  "infoTitle": "Contact Information",
+  "info": {
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressDetail": "Av. Primária Qd 07 - Jataí Industrial District, GO",
+    "note": "We will respond to your message as soon as possible!"
+  }
+}

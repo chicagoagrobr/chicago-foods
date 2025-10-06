@@ -22,7 +22,7 @@ function LoadingScreen() {
   );
 }
 
-export default function AppRoutes() {
+export default function AppRoutes({ lang, setLang }) {
   useEffect(() => {
     import("../pages/ProductsContent");
     import("../pages/ContactContent");
@@ -33,7 +33,7 @@ export default function AppRoutes() {
     <Suspense fallback={<LoadingScreen />}>
       <div className="flex flex-col min-h-screen bg-lime-75">
         <ScrollToTop />
-        <SubHeader />
+        <SubHeader lang={lang} setLang={setLang} />
         <Header />
 
         <main className="flex-grow">

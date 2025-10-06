@@ -5,9 +5,9 @@ import ReactCountryFlag from "react-country-flag";
 import { useTranslation } from "react-i18next";
 
 const keywordMap = [
-  { keywords: ["contato", "fale", "suporte", "orçamento", "email", "endereço"], path: "/contato", label: "Página de Contato" },
-  { keywords: ["sobre", "empresa", "quem somos"], path: "/sobre", label: "Sobre Nós" },
-  { keywords: ["produto", "serviço", "oferta", "milho", "canjica", "fuba", "germen", "gritz"], path: "/produtos", label: "Produtos" },
+  { keywords: ["contato", "fale", "suporte", "orçamento", "email"], path: "/contato" },
+  { keywords: ["sobre", "empresa", "quem somos"], path: "/sobre" },
+  { keywords: ["produto", "milho", "fubá", "canjica"], path: "/produtos" },
 ];
 
 export default function SubHeader() {
@@ -28,7 +28,9 @@ export default function SubHeader() {
   function searchRedirect() {
     const userInput = normalize(search);
     const match = keywordMap.find((item) =>
-      item.keywords.some((keyword) => userInput.includes(normalize(keyword)))
+      item.keywords.some((keyword) =>
+        userInput.includes(normalize(keyword))
+      )
     );
 
     if (match) {
@@ -48,28 +50,26 @@ export default function SubHeader() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 gap-2 sm:gap-4 flex-wrap">
         <Link
           to="/contato"
-          className="text-green-900 font-semibold text-xs sm:text-sm transition-transform duration-300 hover:scale-105 flex items-center gap-1"
+          className="text-green-900 font-semibold text-xs sm:text-sm flex items-center gap-1 hover:scale-105 transition-transform"
         >
           {t("subheader.contactLink")}
           <Phone className="w-4 h-5 xxs:hidden xs:flex" />
         </Link>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="relative w-48 xxs:w-40 celular:w-48 sm:w-64">
+        <div className="flex items-center gap-3">
+          <div className="relative w-48 sm:w-64">
             <input
               type="text"
               placeholder={t("subheader.searchPlaceholder")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && searchRedirect()}
-              className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white
-                         placeholder-green-800 w-full focus:outline-none
-                         focus:ring-2 focus:ring-green-900 transition-all duration-200"
+              className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white placeholder-green-800 focus:outline-none focus:ring-2 focus:ring-green-900 transition-all w-full"
             />
             <button
               onClick={searchRedirect}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-green-900 opacity-80 hover:opacity-100 transition w-4 h-4 flex items-center justify-center"
-              aria-label="Pesquisar"
+              aria-label="Search"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-green-900 opacity-80 hover:opacity-100 transition"
             >
               <Search className="w-4 h-4" />
             </button>
@@ -77,8 +77,8 @@ export default function SubHeader() {
 
           <button
             onClick={toggleLang}
-            className="hover:scale-110 transition"
             title={i18n.language === "pt" ? "Change to English" : "Mudar para Português"}
+            className="hover:scale-110 transition"
           >
             <ReactCountryFlag
               countryCode={i18n.language === "pt" ? "BR" : "US"}
@@ -94,22 +94,6 @@ export default function SubHeader() {
           {t("subheader.noPageFound")}
         </div>
       )}
-
-      <style jsx>{`
-        .animate-slide-in {
-          animation: slide-in 0.3s ease-out;
-        }
-        @keyframes slide-in {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

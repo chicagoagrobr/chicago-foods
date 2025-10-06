@@ -1,0 +1,32 @@
+{
+  "subheader": {
+    "contactLink": "Contact Us",
+    "searchPlaceholder": "Search...",
+    "noPageFound": "No page found."
+  },
+  "partners": {
+    "title": "Our Partners",
+    "alt": "Partner",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right"
+  },
+  "footer": {
+    "logoAlt": "Chicago Foods Logo",
+    "nameAlt": "Chicago Foods Name",
+    "address": "Chicago Foods. Agroindustrial District of\nJataí, GO - Av. Primária Qd 07",
+    "partnerTitle": "Become a Partner",
+    "partnerText": "We work side by side with those who feed the world. Join us.",
+    "partnerLink": "Join Us",
+    "rights": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "header": {
+    "logoAlt": "Company Logo: Chicago Foods",
+    "nameAlt": "Company Name: Chicago Foods",
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact",
+    "budget": "Request a Quote"
+  }
+}
