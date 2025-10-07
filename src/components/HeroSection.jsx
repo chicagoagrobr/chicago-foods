@@ -1,32 +1,15 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaCheckCircle } from "react-icons/fa";
 import funcionario from "../assets/funcionario.avif";
-
-const features = [
-  {
-    title: "Produção Personalizada",
-    text: "Capacidade de adaptação para atender especificações exclusivas.",
-  },
-  {
-    title: "Qualidade e Segurança como Prioridade",
-    text: "Processos controlados, rastreabilidade total e padrão internacional de segurança alimentar, respeitando o meio ambiente e o produtor rural.",
-  },
-  {
-    title: "Localização Estratégica",
-    text: (
-      <>
-        Complexo com silos, centros de distribuição e unidades de produção automatizadas,
-        posicionando a <span className="text-orange-300 font-bold">CHIGAGO FOODS </span> 
-        entre as mais completas estruturas do agronegócio brasileiro.
-      </>
-    ),
-  },
-];
 
 export default function HeroSection({ images, carouselAlts }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [loadedImages, setLoadedImages] = useState({});
   const [loadedImg, setLoadedImg] = useState(false);
+  const { t } = useTranslation();
+
+  const features = t("hero.features", { returnObjects: true });
 
   useEffect(() => {
     images.forEach((src, i) => {
@@ -46,7 +29,7 @@ export default function HeroSection({ images, carouselAlts }) {
     <header role="banner" className="relative">
       <section
         className="relative w-full h-[500px] overflow-hidden"
-        aria-label="Carrossel de destaques"
+        aria-label={t("hero.carouselLabel")}
       >
         {images.map((src, index) => (
           <img
@@ -54,7 +37,7 @@ export default function HeroSection({ images, carouselAlts }) {
             src={src}
             alt={carouselAlts[index]}
             loading={index === 0 ? "eager" : "lazy"}
-            fetchpriority={index === 0 ? "high" : "low"}
+            fetchPriority={index === 0 ? "high" : "low"}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out
               ${index === currentImage ? "opacity-100" : "opacity-0"}
               ${loadedImages[index] ? "blur-0 scale-100" : "blur-sm scale-105"}`}
@@ -68,7 +51,7 @@ export default function HeroSection({ images, carouselAlts }) {
         <div className="flex justify-center sm:justify-start -mt-[10px]">
           <img
             src={funcionario}
-            alt="Funcionário da Chicago Foods garantindo qualidade na produção"
+            alt={t("hero.altFuncionario")}
             loading="eager"
             fetchpriority="high"
             onLoad={() => setLoadedImg(true)}
@@ -78,7 +61,7 @@ export default function HeroSection({ images, carouselAlts }) {
         </div>
 
         <div className="bg-black/50 backdrop-blur-lg border border-white/10 rounded-xl p-6 md:p-8 text-lime-50 shadow-2xl medium:mr-14 sm:-mt-[90px] md:-mt-[100px] lg:mr-6">
-          <h1 className="sr-only">Destaques da Chicago Foods</h1> {/* para SEO e acessibilidade */}
+          <h1 className="sr-only">{t("hero.heading")}</h1>
           <ul className="space-y-6 sm:text-xs medium:text-sm lg:text-base xl:text-lg leading-relaxed">
             {features.map((f, i) => (
               <li key={i}>

@@ -28,5 +28,24 @@
     "products": "Produtos",
     "contact": "Contato",
     "budget": "Solicitar Orçamento"
+  },
+  "hero": {
+    "altFuncionario": "Funcionário da Chicago Foods garantindo qualidade na produção",
+    "carouselLabel": "Carrossel de destaques",
+    "heading": "Destaques da Chicago Foods",
+    "features": [
+      {
+        "title": "Produção Personalizada",
+        "text": "Capacidade de adaptação para atender especificações exclusivas."
+      },
+      {
+        "title": "Qualidade e Segurança como Prioridade",
+        "text": "Processos controlados, rastreabilidade total e padrão internacional de segurança alimentar, respeitando o meio ambiente e o produtor rural."
+      },
+      {
+        "title": "Localização Estratégica",
+        "text": "Complexo com silos, centros de distribuição e unidades de produção automatizadas, posicionando a Chicago Foods entre as mais completas estruturas do agronegócio brasileiro."
+      }
+    ]
   }
 }

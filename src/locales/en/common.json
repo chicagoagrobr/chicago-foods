@@ -28,5 +28,24 @@
     "products": "Products",
     "contact": "Contact",
     "budget": "Request a Quote"
+  },
+  "hero": {
+    "altFuncionario": "Chicago Foods employee ensuring production quality",
+    "carouselLabel": "Highlights carousel",
+    "heading": "Chicago Foods Highlights",
+    "features": [
+      {
+        "title": "Customized Production",
+        "text": "Ability to adapt to meet exclusive specifications."
+      },
+      {
+        "title": "Quality and Safety as a Priority",
+        "text": "Controlled processes, full traceability, and international food safety standards, while respecting the environment and rural producers."
+      },
+      {
+        "title": "Strategic Location",
+        "text": "A complex with silos, distribution centers, and automated production units, positioning Chicago Foods among the most complete agribusiness structures in Brazil."
+      }
+    ]
   }
 }
