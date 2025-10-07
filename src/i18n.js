@@ -5,11 +5,13 @@ import translationEN from "./locales/en/common.json";
 import contactEN from "./locales/en/contact.json";
 import productsEN from "./locales/en/products.json";
 import productDetailEN from "./locales/en/productsDetail.json";
+import aboutEN from "./locales/en/about.json";
 
 import translationPT from "./locales/pt/common.json";
 import contactPT from "./locales/pt/contact.json";
 import productsPT from "./locales/pt/products.json";
 import productDetailPT from "./locales/pt/productsDetail.json"; 
+import aboutPT from "./locales/pt/about.json";
 
 i18n
   .use(initReactI18next)
@@ -20,12 +22,14 @@ i18n
         contact: contactEN,
         products: productsEN,
         productDetail: productDetailEN,
+        about: aboutEN,
       },
       pt: {
         translation: translationPT,
         contact: contactPT,
         products: productsPT,
         productDetail: productDetailPT,
+        about: aboutPT,
       },
     },
     lng: "pt",

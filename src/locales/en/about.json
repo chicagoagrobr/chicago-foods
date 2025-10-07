@@ -1,0 +1,46 @@
+{
+  "seo": {
+    "title": "About Us | Chicago Foods",
+    "description": "At Chicago Foods, we are committed to providing high-quality corn-based products. We transform ideas into products that generate value and trust."
+  },
+  "hero": {
+    "heading_part1": "Transforming agricultural potential into",
+    "highlight": "solid businesses",
+    "subheading": "Agricultural production, innovation in the market",
+    "button": "Learn More"
+  },
+  "about": {
+    "title": "Who We Are",
+    "text_part1": "",
+    "highlight": "Chicago Foods",
+    "text_part2": " was founded with the mission of transforming the agricultural potential of the Midwest into solid, innovative, and sustainable businesses. With strong roots in Goiás, we have established ourselves in agribusiness, especially in the production, industrialization, and commercialization of corn derivatives and other commodities."
+  },
+  "history": {
+    "title": "Our History",
+    "text": "Over the years, we have expanded our structure and diversified our operations, always focusing on efficiency, quality, and value generation for producers, customers, and partners. Our trajectory is marked by the combination of rural tradition with a modern business vision, resulting in impactful projects such as grain industrialization, exports, and strategic partnerships."
+  },
+  "mission": {
+    "text_part1": "Today, ",
+    "highlight": "Chicago Foods",
+    "text_part2": " stands as an integrated group that combines agricultural production, the food industry, and market strategies within a sustainable growth ecosystem. Our commitment is to keep innovating, strengthening the production chain, and contributing to regional and national development."
+  },
+  "products": {
+    "title": "Our Products",
+    "list": {
+      "fuba-fino": "Fine Cornmeal",
+      "fuba-mimoso": "Soft Cornmeal",
+      "fuba-italiano": "Italian Cornmeal",
+      "gritz-1": "Gritz 1",
+      "gritz-2": "Gritz 2",
+      "gritz-3": "Gritz 3",
+      "mixpro": "MixPro",
+      "canjiquinha": "Broken Corn",
+      "canjica": "Hominy Corn",
+      "canjicao": "Large Hominy Corn",
+      "germen": "Animal Nutrition - Corn Germ"
+    }
+  },
+  "buttons": {
+    "whatsapp": "Chat on WhatsApp"
+  }
+}
