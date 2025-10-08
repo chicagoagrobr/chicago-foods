@@ -57,7 +57,7 @@ export default function SubHeader() {
         </Link>
 
         <div className="flex items-center gap-3">
-          <div className="relative w-48 sm:w-64">
+          <div className="relative w-36 celular:w-48 sm:w-64">
             <input
               type="text"
               placeholder={t("subheader.searchPlaceholder")}
