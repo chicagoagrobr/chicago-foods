@@ -1,0 +1,31 @@
+{
+  "seo": {
+    "title": "Política de Privacidade | Chicago Foods",
+    "description": "Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
+  },
+  "header": {
+    "title": "Política de Privacidade",
+    "intro": "Este site não coleta, armazena ou compartilha informações pessoais de seus usuários. Nosso objetivo é fornecer informações sem necessidade de cadastro ou dados pessoais."
+  },
+  "sections": [
+    {
+      "title": "Dados que não coletamos",
+      "content": [
+        "Nome, e-mail, telefone, endereço ou qualquer outro dado pessoal.",
+        "Informações de geolocalização ou cookies para rastreamento."
+      ]
+    },
+    {
+      "title": "Serviços externos",
+      "content": "Nosso site utiliza apenas serviços externos para melhorar a experiência do usuário, como bibliotecas de fontes ou envio de formulários de contatos. Esses serviços não coletam dados pessoais diretamente para nós."
+    },
+    {
+      "title": "Segurança",
+      "content": "Embora não coletemos informações pessoais, mantemos medidas técnicas para garantir que o site esteja seguro e funcionando corretamente."
+    },
+    {
+      "title": "Atualizações",
+      "content": "Esta política de privacidade pode ser atualizada ocasionalmente. Recomendamos que os usuários verifiquem periodicamente a página."
+    }
+  ]
+}
