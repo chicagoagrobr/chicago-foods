@@ -18,7 +18,7 @@ import gritz2 from "../assets/gritz2.avif";
 import gritz3 from "../assets/gritz3.avif";
 import mixpro from "../assets/mixpro.avif";
 import fundo3 from "../assets/fundo3.avif";
-import empresa from "../assets/empresa3.avif";
+import empresa from "../assets/empresa.avif";
 import colaboracao from "../assets/colaboracao.avif";
 
 import "slick-carousel/slick/slick.css";
