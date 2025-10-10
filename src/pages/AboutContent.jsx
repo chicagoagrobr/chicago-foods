@@ -89,7 +89,8 @@ export default function AboutContent() {
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-gray-100 font-medium drop-shadow-md">
-            {t("hero.subheading")}
+            {t("hero.subheading")}{" "}
+            <span className="text-orange-300">{t("hero.highlight2")}</span>
           </p>
 
           <div className="mt-8">
