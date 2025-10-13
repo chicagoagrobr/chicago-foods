@@ -5,7 +5,8 @@
     "noPageFound": "Nenhuma página encontrada."
   },
   "partners": {
-    "title": "Nossos Parceiros",
+    "title": "Nossos",
+    "title2": "Parceiros",
     "alt": "Parceiro",
     "scrollLeft": "Rolar para a esquerda",
     "scrollRight": "Rolar para a direita"

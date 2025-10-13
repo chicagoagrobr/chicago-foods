@@ -5,7 +5,8 @@
     "noPageFound": "No page found."
   },
   "partners": {
-    "title": "Our Partners",
+    "title": "Our",
+    "title2": "Partners",
     "alt": "Partner",
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right"

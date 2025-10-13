@@ -35,6 +35,7 @@ export default function Parceiros() {
       <div className="flex justify-center items-center gap-10 relative">
         <h2 className="text-xl font-semibold text-gray-800 whitespace-nowrap text-center">
           {t("partners.title")}
+          <span className="block ml-1">{t("partners.title2")}</span>
         </h2>
 
         <div
