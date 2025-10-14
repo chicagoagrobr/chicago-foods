@@ -16,9 +16,10 @@ export default function SubHeader() {
   const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
 
-  function toggleLang() {
-    const newLang = i18n.language === "pt" ? "en" : "pt";
-    i18n.changeLanguage(newLang);
+  function changeLang(lang) {
+    if (i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+    }
   }
 
   function normalize(text) {
@@ -52,8 +53,9 @@ export default function SubHeader() {
           to="/contato"
           className="text-green-900 font-semibold text-xs sm:text-sm flex items-center gap-1 hover:scale-105 transition-transform"
         >
-          {t("subheader.contactLink")}
-          <Phone className="w-4 h-5 xxs:hidden xs:flex" />
+          <span className="hidden big:inline">{t("subheader.contactLink")}</span>
+
+          <Phone className="w-4 h-5" />
         </Link>
 
         <div className="flex items-center gap-3">
@@ -75,17 +77,23 @@ export default function SubHeader() {
             </button>
           </div>
 
-          <button
-            onClick={toggleLang}
-            title={i18n.language === "pt" ? "Change to English" : "Mudar para Português"}
-            className="hover:scale-110 transition"
-          >
-            <ReactCountryFlag
-              countryCode={i18n.language === "pt" ? "BR" : "US"}
-              svg
-              style={{ width: "1.5em", height: "1.5em" }}
-            />
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => changeLang("pt")}
+              title="Mudar para Português"
+              className={`hover:scale-110 transition ${i18n.language === "pt" ? "scale-125" : ""}`}
+            >
+              <ReactCountryFlag countryCode="BR" svg style={{ width: "1.5em", height: "1.5em" }} />
+            </button>
+
+            <button
+              onClick={() => changeLang("en")}
+              title="Change to English"
+              className={`hover:scale-110 transition ${i18n.language === "en" ? "scale-125" : ""}`}
+            >
+              <ReactCountryFlag countryCode="US" svg style={{ width: "1.5em", height: "1.5em" }} />
+            </button>
+          </div>
         </div>
       </div>
 
