@@ -13,7 +13,7 @@ export default function Header() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-green-800 py-3.5 sticky top-0 z-50 shadow-md shadow-green-900/30">
+    <header className="bg-green-800 dark:bg-green-900 py-3.5 sticky top-0 z-50 shadow-md shadow-green-900/30">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
         <Link
           to="/"

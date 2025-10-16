@@ -58,13 +58,13 @@ export default function SubHeader() {
 
   return (
     <div
-      className="bg-lime-200 dark:bg-gray-900 dark:text-gray-100 font-body py-3 transition-colors duration-300"
+      className="bg-lime-200 dark:bg-gray-800 dark:text-gray-100 font-body py-3 transition-colors duration-300"
       style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 gap-2 sm:gap-4 flex-wrap">
         <Link
           to="/contato"
-          className="text-green-900 dark:text-lime-200 font-semibold text-xs sm:text-sm flex items-center gap-1 hover:scale-105 transition-transform"
+          className="text-green-900 dark:text-orange-100 font-semibold text-xs sm:text-sm flex items-center gap-1 hover:scale-105 transition-transform"
         >
           <span className="hidden big:inline">{t("subheader.contactLink")}</span>
           <Phone className="w-4 h-5" />
@@ -78,12 +78,12 @@ export default function SubHeader() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && searchRedirect()}
-              className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white dark:bg-gray-800 dark:text-white placeholder-green-800 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-900 transition-all w-full"
+              className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white dark:bg-gray-600 dark:text-orange-100 placeholder-green-800 dark:placeholder-orange-100 focus:outline-none focus:ring-2 focus:ring-green-900 transition-all w-full"
             />
             <button
               onClick={searchRedirect}
               aria-label="Search"
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-green-900 dark:text-lime-200 opacity-80 hover:opacity-100 transition"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-green-900 dark:text-orange-100 opacity-80 hover:opacity-100 transition"
             >
               <Search className="w-4 h-4" />
             </button>
@@ -113,7 +113,7 @@ export default function SubHeader() {
             title={darkMode ? "Modo claro" : "Modo escuro"}
           >
             {darkMode ? (
-              <Sun className="text-lime-50" />
+              <Sun className="text-orange-100" />
             ) : (
               <Moon className="text-green-900" />
             )}
