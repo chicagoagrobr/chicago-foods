@@ -44,20 +44,23 @@ export default function HeroSection({ images, carouselAlts }) {
             style={{ transitionProperty: "filter, transform, opacity" }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 dark:from-black/60 dark:via-black/30 dark:to-black/60 pointer-events-none" />
       </section>
 
       <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-0 relative -mt-[430px] items-center">
         <div className="flex justify-center sm:justify-start -mt-[10px]">
-          <img
-            src={funcionario}
-            alt={t("hero.altFuncionario")}
-            loading="eager"
-            fetchpriority="high"
-            onLoad={() => setLoadedImg(true)}
-            className={`w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 object-cover shadow-xl rounded-2xl transition duration-400
-              ${loadedImg ? "blur-0 opacity-100" : "blur-xs opacity-70"}`}
-          />
+          <div className="relative w-[320px] lg:w-[380px] h-[500px] medium:ml-12 lg:ml-10 xl:ml-24 rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src={funcionario}
+              alt={t("hero.altFuncionario")}
+              loading="eager"
+              fetchPriority="high"
+              onLoad={() => setLoadedImg(true)}
+              className={`w-full h-full object-cover transition duration-400
+                ${loadedImg ? "blur-0 opacity-100" : "blur-xs opacity-70"}`}
+            />
+            <div className="absolute inset-0 dark:bg-black/20"></div>
+          </div>
         </div>
 
         <div className="bg-black/50 backdrop-blur-lg border border-white/10 rounded-xl p-6 md:p-8 text-lime-50 shadow-2xl medium:mr-14 sm:-mt-[90px] md:-mt-[100px] lg:mr-6">
