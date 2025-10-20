@@ -27,13 +27,13 @@ export default function Parceiros() {
   return (
     <section
       ref={sectionRef}
-      className="py-3 bg-white relative px-2"
+      className="py-3 bg-white dark:bg-green-950 relative px-2"
       style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex justify-center items-center gap-10 relative">
-        <h2 className="text-xl font-semibold text-gray-800 whitespace-nowrap text-center">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 whitespace-nowrap text-center">
           {t("partners.title")}
           <span className="block ml-1">{t("partners.title2")}</span>
         </h2>

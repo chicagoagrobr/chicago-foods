@@ -34,7 +34,7 @@ export default function HomeContent() {
       />
 
       <main
-        className="w-full relative bg-white dark:bg-zinc-900 dark:text-orange-100"
+        className="w-full relative bg-white dark:bg-zinc-900 dark:text-gray-200"
         style={{ boxShadow: `inset 0px -4px 6px rgba(0,0,0,0.10)` }}
       >
         <HeroSection images={images} carouselAlts={carouselAlts} />
@@ -71,7 +71,7 @@ export default function HomeContent() {
 
             <div className="flex flex-col gap-8 text-center text-lg md:text-sm xl:text-lg md:text-left">
               <div>
-                <h3 className="text-xl big:text-2xl sm:text-3xl md:text-xl xl:text-2xl font-semibold mb-4 dark:text-white">
+                <h3 className="text-xl big:text-2xl sm:text-3xl md:text-xl xl:text-2xl font-semibold mb-4">
                   {t("production.title")}
                 </h3>
                 <p className="mb-4 sm:text-left">{t("production.subtitle")}</p>
@@ -92,13 +92,13 @@ export default function HomeContent() {
 
         <section className="relative px-6 mt-4 lg:mt-16 mb-24 md:px-32 max-w-[1600px] mx-auto">
           <div className="bg-gradient-to-br from-lime-50 via-white to-green-50 dark:from-zinc-800 dark:to-green-800 rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-800">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-orange-50 mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-50 mb-4">
               {t("trust.title")}
             </h3>
-            <p className="text-lg text-gray-700 dark:text-orange-100 mb-4 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-100 mb-4 leading-relaxed">
               {t("trust.text1")}
             </p>
-            <p className="text-lg text-gray-700 dark:text-orange-100 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-100 leading-relaxed">
               {t("trust.text2")}
             </p>
           </div>

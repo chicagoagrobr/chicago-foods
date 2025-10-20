@@ -58,7 +58,7 @@ export default function SubHeader() {
 
   return (
     <div
-      className="bg-lime-200 dark:bg-lime-950 dark:text-gray-100 font-body py-3 transition-colors duration-300"
+      className="bg-lime-200 dark:bg-green-950 dark:text-gray-100 font-body py-3 transition-colors duration-300"
       style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 gap-2 sm:gap-4 flex-wrap">
