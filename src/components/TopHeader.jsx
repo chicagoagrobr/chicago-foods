@@ -58,7 +58,7 @@ export default function SubHeader() {
 
   return (
     <div
-      className="bg-lime-200 dark:bg-zinc-800 dark:text-gray-100 font-body py-3 transition-colors duration-300"
+      className="bg-lime-200 dark:bg-lime-950 dark:text-gray-100 font-body py-3 transition-colors duration-300"
       style={{ boxShadow: `inset 0px -4px 8px rgba(0,0,0,0.2)` }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 gap-2 sm:gap-4 flex-wrap">
@@ -78,7 +78,7 @@ export default function SubHeader() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && searchRedirect()}
-              className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white dark:bg-zinc-700 dark:text-orange-100 placeholder-green-800 dark:placeholder-orange-100 focus:outline-none focus:ring-2 focus:ring-green-900 transition-all w-full"
+              className="text-sm font-semibold rounded-full px-4 py-2 pr-8 bg-white dark:bg-zinc-900 dark:text-orange-100 placeholder-green-800 dark:placeholder-orange-100 focus:outline-none focus:ring-2 focus:ring-green-900 transition-all w-full"
             />
             <button
               onClick={searchRedirect}
@@ -109,7 +109,7 @@ export default function SubHeader() {
 
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full bg-lime-50 dark:bg-zinc-700 hover:scale-110 transition"
+            className="p-2 rounded-full bg-lime-50 dark:bg-zinc-900 hover:scale-110 transition"
             title={darkMode ? "Modo claro" : "Modo escuro"}
           >
             {darkMode ? (
