@@ -69,7 +69,7 @@ export default function ContactContent() {
         image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
       />
 
-      <main className="min-h-0 text-gray-800">
+      <main className="min-h-0 text-gray-800 dark:bg-zinc-900 dark:text-gray-200">
         <a
           href="https://wa.me/5564999642170"
           target="_blank"
@@ -105,7 +105,7 @@ export default function ContactContent() {
             <form
               aria-label={t("formLabel")}
               onSubmit={handleSubmit}
-              className="space-y-4 bg-white p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto"
+              className="space-y-4 bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-2xl xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto"
             >
               <label className="block text-sm font-medium mb-1">
                 {t("form.name")}
@@ -117,7 +117,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.namePlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
               />
 
               <label className="block text-sm font-medium mb-1">
@@ -130,7 +130,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.emailPlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
               />
 
               <label className="block text-sm font-medium mb-1">
@@ -143,7 +143,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.subjectPlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800"
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
               />
 
               <label className="block text-sm font-medium mb-1">
@@ -155,7 +155,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.messagePlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800"
+                className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
               ></textarea>
 
               <button
@@ -170,8 +170,7 @@ export default function ContactContent() {
               </button>
             </form>
 
-            {/* Informações */}
-            <div className="bg-white p-8 rounded-xl shadow-2xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
+            <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-2xl flex flex-col xxs:w-[280px] celular:w-[320px] big:w-full max-w-md mx-auto">
               <h3 className="text-xl font-semibold mb-4">
                 {t("infoTitle")}
               </h3>
