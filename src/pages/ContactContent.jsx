@@ -92,7 +92,7 @@ export default function ContactContent() {
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
             <h1 className="text-2xl font-bold mb-2">
-              <span className="text-orange-300">{t("heroTitle")}</span>
+              <span className="text-orange-300 dark:text-orange-400">{t("heroTitle")}</span>
             </h1>
             <h2 className="max-w-2xl font-medium">
               {t("heroSubtitle")}
@@ -117,7 +117,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.namePlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-700 dark:border-none"
               />
 
               <label className="block text-sm font-medium mb-1">
@@ -130,7 +130,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.emailPlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-700 dark:border-none"
               />
 
               <label className="block text-sm font-medium mb-1">
@@ -143,7 +143,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.subjectPlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
+                className="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-700 dark:border-none"
               />
 
               <label className="block text-sm font-medium mb-1">
@@ -155,7 +155,7 @@ export default function ContactContent() {
                 onChange={handleChange}
                 placeholder={t("form.messagePlaceholder")}
                 required
-                className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-800"
+                className="w-full border rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-800 dark:bg-zinc-700 dark:border-none"
               ></textarea>
 
               <button
@@ -176,7 +176,7 @@ export default function ContactContent() {
               </h3>
 
               <div className="flex items-start gap-4 mb-4">
-                <FaEnvelope className="text-green-800 mt-1" />
+                <FaEnvelope className="text-green-800 dark:text-green-500 mt-1" />
                 <div>
                   <p className="font-medium">{t("info.email")}</p>
                   <p>contato@chicagofoods.com.br</p>
@@ -184,7 +184,7 @@ export default function ContactContent() {
               </div>
 
               <div className="flex items-start gap-4 mb-4">
-                <FaPhoneAlt className="text-green-800 mt-1" />
+                <FaPhoneAlt className="text-green-800 dark:text-green-500 mt-1" />
                 <div>
                   <p className="font-medium">{t("info.phone")}</p>
                   <p>(64) 99964-2170</p>
@@ -192,14 +192,14 @@ export default function ContactContent() {
               </div>
 
               <div className="flex items-start gap-4 mb-4">
-                <FaMapMarkerAlt className="text-green-800 mt-1" />
+                <FaMapMarkerAlt className="text-green-800 dark:text-green-500 mt-1" />
                 <div>
                   <p className="font-medium">{t("info.address")}</p>
                   <p>{t("info.addressDetail")}</p>
                 </div>
               </div>
 
-              <p className="mt-6 text-sm text-green-800">
+              <p className="mt-6 text-sm text-green-800 dark:text-green-500">
                 {t("info.note")}
               </p>
             </div>
