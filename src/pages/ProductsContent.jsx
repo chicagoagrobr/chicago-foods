@@ -55,7 +55,7 @@ export default function ProductsPage() {
         url="https://chicagofoods.com.br/produtos"
         image="https://chicagofoods.com.br/cf_512_square_adjusted.png"
       />
-      <main className="min-h-screen text-gray-800 overflow-hidden">
+      <main className="min-h-screen text-gray-800 dark:bg-zinc-900 overflow-hidden">
         <a
           href="https://wa.me/5564999642170"
           target="_blank"
@@ -76,7 +76,7 @@ export default function ProductsPage() {
             className="w-full h-[180px] object-cover"
             style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.25)` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/15 flex flex-col justify-center items-center text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/15 dark:from-black/60 flex flex-col justify-center items-center text-center">
             <h1
               className="text-white text-lg font-medium md:text-xl max-w-4xl leading-relaxed"
               dangerouslySetInnerHTML={{ __html: t("heroText") }}
@@ -90,7 +90,7 @@ export default function ProductsPage() {
               <Link
                 key={product.id}
                 to={`/produtos/${product.id}`}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105"
+                className="bg-white dark:bg-zinc-700 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105"
               >
                 <div className="relative h-48 w-full">
                   {!loadedImages[product.id] && (
@@ -113,9 +113,9 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="p-5 flex flex-col h-full">
-                  <h2 className="text-lg font-bold text-gray-700">{product.name}</h2>
-                  <div className="text-green-700">{product.desc}</div>
-                  <p className="text-sm text-gray-600 mt-2">{product.description}</p>
+                  <h2 className="text-lg font-bold text-gray-700 dark:text-gray-100">{product.name}</h2>
+                  <div className="text-green-700 dark:text-green-400">{product.desc}</div>
+                  <p className="text-sm text-gray-600 dark:text-gray-200 mt-2">{product.description}</p>
                 </div>
               </Link>
             ))}
