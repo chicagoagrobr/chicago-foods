@@ -59,7 +59,7 @@ export default function HeroSection({ images, carouselAlts }) {
               className={`w-full h-full object-cover transition duration-400
                 ${loadedImg ? "blur-0 opacity-100" : "blur-xs opacity-70"}`}
             />
-            <div className="absolute inset-0 dark:bg-black/20"></div>
+            <div className="absolute inset-0 dark:bg-black/10"></div>
           </div>
         </div>
 
