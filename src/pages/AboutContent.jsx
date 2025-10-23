@@ -104,12 +104,12 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-white dark:bg-zinc-900">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-4xl font-bold text-green-900 drop-shadow-md">
+          <h2 className="text-4xl font-bold text-green-900 dark:text-green-600 drop-shadow-md">
             {t("about.title")}
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+          <p className="text-lg md:text-xl leading-relaxed text-gray-800 dark:text-gray-100">
             {t("about.text_part1")}
             <span className="text-orange-400 font-bold">{t("about.highlight")}</span>
             {t("about.text_part2")}
@@ -117,46 +117,48 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-12 md:py-16 px-4 md:px-6 gap-8 md:gap-12">
-        <div className="md:w-1/2 space-y-4 md:space-y-6 p-4 md:p-12">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl text-green-900 font-bold mb-2 md:mb-4">
-            {t("history.title")}
-          </h3>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-800">
-            {t("history.text")}
-          </p>
-        </div>
+      <div className="dark:bg-zinc-700">
+        <section className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-12 md:py-16 px-4 md:px-6 gap-8 md:gap-12">
+          <div className="md:w-1/2 space-y-4 md:space-y-6 p-4 md:p-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl text-green-900 dark:text-green-600 font-bold mb-2 md:mb-4">
+              {t("history.title")}
+            </h3>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-800 dark:text-gray-100">
+              {t("history.text")}
+            </p>
+          </div>
 
-        <div className="md:w-1/2 w-full">
-          <Slider
-            dots
-            infinite
-            speed={500}
-            slidesToShow={1}
-            slidesToScroll={1}
-            autoplay
-            autoplaySpeed={3000}
-          >
-            {carouselImages.map((img, index) => (
-              <div key={index}>
-                <img
-                  src={img}
-                  alt={`Foto ${index + 1}`}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  decoding="async"
-                  className="w-full h-64 sm:h-80 md:h-96 object-cover"
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </section>
+          <div className="md:w-1/2 w-full">
+            <Slider
+              dots
+              infinite
+              speed={500}
+              slidesToShow={1}
+              slidesToScroll={1}
+              autoplay
+              autoplaySpeed={3000}
+            >
+              {carouselImages.map((img, index) => (
+                <div key={index}>
+                  <img
+                    src={img}
+                    alt={`Foto ${index + 1}`}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
+                    className="w-full h-64 sm:h-80 md:h-96 object-cover"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
+      </div>
 
-      <section className="max-w-full mx-auto py-16 px-6 bg-white">
+      <section className="max-w-full mx-auto py-16 px-6 bg-white dark:bg-zinc-900">
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-lime-50 via-white to-green-50 rounded-2xl shadow-xl border-l-4 border-green-800 p-8 md:p-12 hover:scale-105 transition-transform duration-300">
-            <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-lime-50 via-white to-green-50 dark:from-zinc-600 dark:via-green-700 dark:to-orange-400 rounded-2xl shadow-xl border-l-4 border-green-800 p-8 md:p-12 hover:scale-105 transition-transform duration-300">
+            <p className="text-lg md:text-xl leading-relaxed text-gray-800 dark:text-gray-100">
               {t("mission.text_part1")}
               <span className="text-orange-400 font-bold">{t("mission.highlight")}</span>
               {t("mission.text_part2")}
@@ -165,9 +167,9 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-zinc-900">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl text-green-900 font-bold mb-10">
+          <h2 className="text-3xl text-green-900 dark:text-green-600 font-bold mb-10">
             {t("products.title")}
           </h2>
 
@@ -184,7 +186,7 @@ export default function AboutContent() {
                   className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover rounded-full shadow-xl hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
-                <h3 className="mt-2 text-sm font-medium text-gray-800">
+                <h3 className="mt-2 text-sm font-medium text-gray-800 dark:text-gray-100">
                   {t(`products.list.${product.id}`)}
                 </h3>
               </Link>
