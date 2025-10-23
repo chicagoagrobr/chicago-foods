@@ -44,7 +44,7 @@ export default function HeroSection({ images, carouselAlts }) {
             style={{ transitionProperty: "filter, transform, opacity" }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 dark:from-black/60 dark:via-black/30 dark:to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 dark:from-black/40 dark:via-black/30 dark:to-black/60 pointer-events-none" />
       </section>
 
       <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-0 relative -mt-[430px] items-center">
