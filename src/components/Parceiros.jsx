@@ -14,7 +14,7 @@ export default function Parceiros() {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -200 : 200;
+      const scrollAmount = direction === "left" ? -400 : 400;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
@@ -32,7 +32,7 @@ export default function Parceiros() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex justify-center items-center gap-10 relative">
+      <div className="max-w-screen-medium3 mx-auto flex justify-center items-center gap-10 relative">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 whitespace-nowrap text-center">
           {t("partners.title")}
           <span className="block ml-1">{t("partners.title2")}</span>
@@ -60,7 +60,7 @@ export default function Parceiros() {
         {hovered && (
           <button
             onClick={() => scroll("left")}
-            className="absolute left-[120px] bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
+            className="absolute left-[120px] bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition"
             aria-label={t("partners.scrollLeft")}
           >
             <ChevronLeft size={20} />
@@ -70,7 +70,7 @@ export default function Parceiros() {
         {hovered && (
           <button
             onClick={() => scroll("right")}
-            className="absolute right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition medium3:hidden"
+            className="absolute right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 transition"
             aria-label={t("partners.scrollRight")}
           >
             <ChevronRight size={20} />
