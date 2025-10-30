@@ -77,10 +77,9 @@ export default function ProductsPage() {
             style={{ boxShadow: `0px 4px 12px rgba(0,0,0,0.25)` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 dark:from-black/60 flex flex-col justify-center items-center text-center">
-            <h1
-              className="text-white text-lg font-medium md:text-xl max-w-4xl leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: t("heroText") }}
-            />
+            <div className="flex flex-nowrap max-w-4xl">
+              <h1 className="text-white text-lg font-medium md:text-xl"><span className="text-orange-400">{t("heroTitle")}{" "}</span>{t("heroText")}</h1>
+            </div>
           </div>
         </section>
 

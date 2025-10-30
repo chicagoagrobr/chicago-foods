@@ -3,7 +3,8 @@
     "title": "Produtos | Chicago Foods",
     "description": "Na Chicago Foods, temos o compromisso de fornecer derivados de milho de alta qualidade. Transformamos suas ideias em produtos que geram valor e confiança."
   },
-  "heroText": "A <span class='text-orange-300 font-bold'>Chicago Foods</span> oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.",
+  "heroTitle": "Chicago Foods",
+  "heroText": "oferece ao mercado industrial uma linha completa de produtos à base de milho amarelo, com alto padrão de qualidade e uniformidade granulométrica.",
   "whatsappLabel": "Chat no WhatsApp",
   "products": [
     {

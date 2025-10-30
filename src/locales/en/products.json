@@ -3,7 +3,8 @@
     "title": "Products | Chicago Foods",
     "description": "At Chicago Foods, we are committed to providing high-quality corn-based products. We transform your ideas into products that create value and trust."
   },
-  "heroText": "A <span class='text-orange-300 font-bold'>Chicago Foods</span> offers the industrial market a complete line of yellow corn-based products, with high quality standards and uniform particle size.",
+  "heroTitle": "Chicago Foods",
+  "heroText": "offers the industrial market a complete line of yellow corn-based products, with high quality standards and uniform particle size.",
   "whatsappLabel": "Chat on WhatsApp",
   "products": [
     {
