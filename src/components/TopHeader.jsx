@@ -4,11 +4,18 @@ import { Search, Phone, Moon, Sun } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import { useTranslation } from "react-i18next";
 
-const keywordMap = [
-  { keywords: ["contato", "fale", "suporte", "orçamento", "email"], path: "/contato" },
-  { keywords: ["sobre", "empresa", "quem somos"], path: "/sobre" },
-  { keywords: ["produto", "milho", "fubá", "canjica"], path: "/produtos" },
-];
+const keywordMap = {
+  pt: [
+    { keywords: ["contato", "fale", "suporte", "orçamento", "email"], path: "/contato" },
+    { keywords: ["sobre", "empresa", "quem somos"], path: "/sobre" },
+    { keywords: ["produto", "milho", "fubá", "canjica"], path: "/produtos" },
+  ],
+  en: [
+    { keywords: ["contact", "support", "budget", "email"], path: "/contato" },
+    { keywords: ["about", "company", "who we are"], path: "/sobre" },
+    { keywords: ["product", "corn", "grits", "flour"], path: "/produtos" },
+  ],
+};
 
 export default function SubHeader() {
   const { t, i18n } = useTranslation();
@@ -43,7 +50,9 @@ export default function SubHeader() {
 
   function searchRedirect() {
     const userInput = normalize(search);
-    const match = keywordMap.find((item) =>
+    const currentLang = i18n.language.startsWith("en") ? "en" : "pt";
+
+    const match = keywordMap[currentLang].find((item) =>
       item.keywords.some((keyword) => userInput.includes(normalize(keyword)))
     );
 
