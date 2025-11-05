@@ -43,9 +43,11 @@ export default function HomeContent() {
           href="https://wa.me/5564999642170"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
+          aria-label={t("whatsapp")}
         >
-          <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake-every-10s z-40">
+          <button 
+            title={t("whatsapp")}  
+            className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg animate-shake-every-10s z-40">
             <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8 text-white" />
           </button>
         </a>
