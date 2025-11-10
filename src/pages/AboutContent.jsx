@@ -159,7 +159,7 @@ export default function AboutContent() {
 
       <section className="max-w-full mx-auto py-16 px-6 bg-white dark:bg-zinc-900">
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-lime-50 via-white to-green-50 dark:from-zinc-600 dark:via-green-700 dark:to-orange-400 rounded-2xl shadow-xl border-l-4 border-green-800 p-8 md:p-12 hover:scale-105 transition-transform duration-300">
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-lime-200 via-white to-orange-300 dark:from-zinc-600 dark:via-green-700 dark:to-orange-400 rounded-2xl shadow-xl border-l-4 border-green-800 p-8 md:p-12 hover:scale-105 transition-transform duration-300">
             <p className="text-lg md:text-xl leading-relaxed text-gray-800 dark:text-gray-100">
               {t("mission.text_part1")}
               <span className="text-orange-400 font-bold">{t("mission.highlight")}</span>
