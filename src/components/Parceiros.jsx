@@ -24,6 +24,20 @@ export default function Parceiros() {
     setParceiros(allImages);
   }, []);
 
+  useEffect(() => {
+    const scrollInterval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+        if (scrollLeft >= scrollWidth / 2) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "auto" });
+        } else {
+          scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+        }
+      }
+    }, 3000);
+    return () => clearInterval(scrollInterval);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -42,7 +56,7 @@ export default function Parceiros() {
           ref={scrollRef}
           className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pl-2"
         >
-          {parceiros.map((logo, index) => (
+          {[...parceiros, ...parceiros].map((logo, index) => (
             <img
               key={index}
               src={logo}
