@@ -130,7 +130,7 @@ export default function AboutContent() {
             </p>
           </div>
 
-          <div className="md:w-1/2 w-full">
+          <div className="w-5/6 md:w-1/2">
             <Slider
               dots
               infinite
