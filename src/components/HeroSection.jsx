@@ -68,7 +68,7 @@ export default function HeroSection({ images, carouselAlts }) {
           <ul className="space-y-6 sm:text-xs medium:text-sm lg:text-base xl:text-lg leading-relaxed">
             {features.map((f, i) => (
               <li key={i}>
-                <h2 className="flex items-center gap-2 text-orange-200 font-bold mb-1">
+                <h2 className="flex items-center gap-2 text-orange-300 font-bold mb-1">
                   <FaCheckCircle size={20} className="text-green-400" />
                   <span>{f.title}</span>
                 </h2>
