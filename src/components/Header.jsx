@@ -67,7 +67,7 @@ export default function Header() {
           <Link
             to="/contato"
             onClick={() => window.scrollTo({ top: 290, behavior: "smooth" })}
-            className="hidden lg:inline-flex items-center bg-orange-400 shadow-2xl hover:bg-orange-300 text-white font-medium px-4 py-2 rounded-full transition"
+            className="hidden lg:inline-flex items-center bg-orange-400 shadow-2xl hover:bg-orange-500 hover:scale-105 text-white font-medium px-4 py-2 rounded-full transition"
           >
             {t("header.budget")}
           </Link>
@@ -139,7 +139,7 @@ export default function Header() {
                 window.scrollTo({ top: 290, behavior: "smooth" });
                 setMenuOpen(false);
               }}
-              className="flex items-center bg-orange-400 hover:bg-orange-300 w-44 text-white font-semibold px-4 py-2 rounded-full shadow-2xl transition"
+              className="flex items-center bg-orange-400 hover:bg-orange-500 hover:scale-105 w-44 text-white font-semibold px-4 py-2 rounded-full shadow-2xl transition"
             >
               {t("header.budget")}
             </Link>
