@@ -81,7 +81,7 @@ export default function ProductsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 dark:from-black/60 flex flex-col justify-center items-center text-center">
             <div className="flex flex-nowrap max-w-4xl">
-              <h1 className="text-white text-lg font-medium md:text-xl"><span className="text-orange-400">{t("heroTitle")}{" "}</span>{t("heroText")}</h1>
+              <h1 className="text-white text-lg font-medium md:text-xl"><span className="text-orange-300 font-bold">{t("heroTitle")}{" "}</span>{t("heroText")}</h1>
             </div>
           </div>
         </section>
