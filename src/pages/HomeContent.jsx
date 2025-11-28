@@ -6,7 +6,6 @@ import img2 from '../assets/fundo2.avif';
 import img3 from '../assets/fundo3.avif';
 import img4 from '../assets/fundo4.avif';
 import colaboracao from '../assets/colaboracao.avif';
-import CepeaWidget from '../components/CepeaWidget';
 import SEO from "../components/SEO";
 import HeroSection from "../components/HeroSection";
 import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
@@ -61,7 +60,7 @@ export default function HomeContent() {
         </section>
 
         <section className="w-full py-10 px-4 mb-6 mt-8 flex justify-center">
-          <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="w-full h-[400px] relative flex xxs:-mt-24 md:mt-0">
               <img src={empresa} alt={t("images.alt1")} loading="lazy" decoding="async"
                 className="absolute left-[26%] big:left-[34%] top-56 md:top-40 xxs:w-[210px] lg:w-[300px] xl:w-[340px] rounded-2xl shadow-2xl" />
@@ -73,7 +72,7 @@ export default function HomeContent() {
 
             <div className="flex flex-col gap-8 text-center text-lg md:text-sm xl:text-lg md:text-left">
               <div>
-                <h3 className="text-xl big:text-2xl dark:text-orange-400 dark:font-bold sm:text-3xl md:text-xl xl:text-2xl font-semibold mb-4">
+                <h3 className="text-xl big:text-xl dark:text-orange-400 dark:font-bold sm:text-3xl md:text-xl xl:text-2xl font-semibold mb-4">
                   {t("production.title")}
                 </h3>
                 <p className="mb-4 sm:text-left">{t("production.subtitle")}</p>
