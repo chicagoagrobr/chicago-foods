@@ -83,11 +83,6 @@ export default function HomeContent() {
                   <li>{t("production.item3")}</li>
                 </ul>
               </div>
-              <div className="flex justify-center md:justify-start md:-ml-10 xl:ml-0 -mt-10">
-                <div className="scale-[0.70] celular:scale-75 xs:scale-90 big:scale-100 md:scale-75 xl:scale-100">
-                  <CepeaWidget />
-                </div>
-              </div>
             </div>
           </div>
         </section>
