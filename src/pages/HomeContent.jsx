@@ -72,7 +72,7 @@ export default function HomeContent() {
 
             <div className="flex flex-col gap-8 text-center text-lg md:text-sm xl:text-lg md:text-left">
               <div>
-                <h3 className="text-xl big:text-xl dark:text-orange-400 dark:font-bold sm:text-3xl md:text-xl xl:text-2xl font-semibold mb-4">
+                <h3 className="text-xl big:text-xl text-green-900 dark:text-orange-400 font-bold sm:text-3xl md:text-xl xl:text-2xl mb-4">
                   {t("production.title")}
                 </h3>
                 <p className="mb-4 sm:text-left">{t("production.subtitle")}</p>
